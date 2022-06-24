@@ -1,29 +1,28 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING(30),
-        allowNull: false,
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {model: 'Users'}
       },
-      lastName: {
-        type: Sequelize.STRING(30),
-        allowNull: false,
+      buisnessId: {
+        type: Sequelize.INTEGER,
+        references: {model: 'Businesses'}
       },
-      email: {
-        type: Sequelize.STRING(256),
+      rating: {
         allowNull: false,
-        unique: true
+        type: Sequelize.INTEGER
       },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
-        allowNull: false
+      review: {
+        allowNull: false,
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -37,8 +36,7 @@ module.exports = {
       }
     });
   },
-
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Reviews');
   }
 };
