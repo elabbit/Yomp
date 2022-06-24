@@ -8,19 +8,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 30],
+        len: [2, 30],
       }
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 30],
+        len: [2, 30],
       }
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         len: [3, 256]
       }
@@ -95,6 +96,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function (models) {
     // associations can be defined here
+    User.hasMany(models.Business, {foreignKey: 'ownerId', onDelete: 'cascade',
+    hooks: true})
+    User.hasMany(models.Review, {foreignKey: 'userId', onDelete: 'cascade',
+    hooks: true})
   };
 
   return User;
