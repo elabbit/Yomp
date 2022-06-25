@@ -5,8 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const BusinessList = () => {
-    const businesses = useSelector(state => state.business)
-    console.log(businesses)
+    const businesses = Object.values(useSelector(state => state.business))
 
     const dispatch = useDispatch();
 

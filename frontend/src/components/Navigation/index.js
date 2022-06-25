@@ -10,7 +10,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <>
+      <NavLink exact to="/business/add">Add Business</NavLink>
       <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (
