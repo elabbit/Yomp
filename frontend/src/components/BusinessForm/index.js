@@ -5,7 +5,7 @@ import { states } from '../../Data/states';
 import { addBusiness } from '../../store/business';
 
 
-const addBusinessForm = () => {
+const BusinessForm = () => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -15,34 +15,58 @@ const addBusinessForm = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zipcode, setZipcode] = useState('');
+    const [validationErrors, setValidationErrors] = useState([]);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+
+    useEffect(() => {
+        const errors = []
+        if (title.length > 50) errors.push('Title can not exceed 50 characters.')
+        if (description.length > 250) errors.push('Description can not exceed 250 characters.')
+        if (address.length > 50) errors.push('Address can not exceed 50 characters.')
+        if (city.length > 30) errors.push('City can not exceed 30 characters.')
+        if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 digits.')
+        setValidationErrors(errors)
+
+    }, [title, description, address, city, zipcode]);
+
 
     const handleSubmit = async (e) => {
-e.preventDefault();
+        e.preventDefault();
+        setHasSubmitted(true);
+        if (validationErrors.length) return;
 
-const newBus = {
-title,
-description,
-address,
-city,
-state,
-zipcode,
-ownerId: sessionUser.id
-};
+        const newBus = {
+            title,
+            description,
+            address,
+            city,
+            state,
+            zipcode,
+            ownerId: sessionUser.id
+        };
 
-let createdBus = await dispatch(addBusiness(newBus))
+        let createdBus = await dispatch(addBusiness(newBus))
 
-if(createdBus) {
-    history.push(`/business/${createdBus.id}`)
-}
+        if (createdBus) {
+            history.push(`/business/${createdBus.id}`)
+        }
     }
 
     const handleCancelClick = () => {
-
+        history.goBack()
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                {hasSubmitted &&
+                    <ul className="errors">
+                        {
+                            validationErrors.map(error => (
+                                <li key={error}>{error}</li>
+                            ))
+                        }
+                    </ul>}
                 <input
                     type="title"
                     placeholder="Title"
@@ -78,11 +102,11 @@ if(createdBus) {
                     value={zipcode}
                     onChange={e => setZipcode(e.target.value)} />
 
-                <button type="submit">Add A Business</button>
+                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add A Business</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
         </div>
     );
 }
 
-export default addBusinessForm;
+export default BusinessForm;

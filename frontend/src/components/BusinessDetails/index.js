@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+
 
 const BusinessDetails = () => {
     const { businessId } = useParams();
