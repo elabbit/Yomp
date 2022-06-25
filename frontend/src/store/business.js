@@ -16,6 +16,16 @@ const addBus = bus => ({
   bus
 })
 
+const editBus = bus => ({
+  type: EDIT_BUS,
+  bus
+})
+
+const deleteBus = id => ({
+  type: DELETE_BUS,
+  id
+})
+
 
 export const getBusinesses = () => async dispatch => {
 
@@ -42,6 +52,34 @@ export const addBusiness = (newBus) => async dispatch => {
   }
 };
 
+export const editBusiness = (bus) => async dispatch => {
+
+  const response = await csrfFetch(`/api/business/${bus.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(bus)
+  });
+
+  if (response.ok) {
+    const editedBus = await response.json();
+    dispatch(editBus(editedBus));
+    return editedBus;
+  }
+};
+
+export const deleteBusiness = (id) => async dispatch => {
+
+  const response = await csrfFetch(`/api/business/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (response.ok) {
+    const businessId = await response.json();
+    dispatch(deleteBus(businessId));
+    return businessId;
+  }
+};
+
 
 
 const businessReducer = (state = {}, action) => {
@@ -52,8 +90,15 @@ const businessReducer = (state = {}, action) => {
       return loadState;
 
     case ADD_BUS:
-      console.log(action)
       return {...state, [action.bus.id]: {...action.bus}}
+
+    case EDIT_BUS:
+      return {...state, [action.bus.id]: {...action.bus}}
+case DELETE_BUS:
+  const newState = {...state};
+  delete newState[action.id];
+  return newState;
+
     default:
       return state;
   }
