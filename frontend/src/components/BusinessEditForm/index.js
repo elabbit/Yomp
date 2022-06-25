@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { states } from '../../Data/states';
-import { addBusiness } from '../../store/business';
+import { editBusiness } from '../../store/business';
 
 
 const BusinessEditForm = ({hideForm, business}) => {
@@ -36,20 +36,21 @@ const BusinessEditForm = ({hideForm, business}) => {
         setHasSubmitted(true);
         if (validationErrors.length) return;
 
-        const newBus = {
+        const bus = {
+            ...business,
             title,
             description,
             address,
             city,
             state,
             zipcode,
-            ownerId: sessionUser.id
         };
 
-        let createdBus = await dispatch(addBusiness(newBus))
+        let editedBus = await dispatch(editBusiness(bus))
 
-        if (createdBus) {
-            history.push(`/business/${createdBus.id}`)
+        if (editedBus) {
+            hideForm();
+            history.push(`/business/${editedBus.id}`)
         }
     }
 
@@ -105,7 +106,7 @@ const BusinessEditForm = ({hideForm, business}) => {
                     value={zipcode}
                     onChange={e => setZipcode(e.target.value)} />
 
-                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add A Business</button>
+                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Confirm Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
         </div>

@@ -1,8 +1,9 @@
-import { NavLink, Route, useParams } from "react-router-dom"
+import { NavLink, Route, useParams, useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBusinesses } from "../../store/business";
 import BusinessEditForm from '../BusinessEditForm'
+import { deleteBusiness } from "../../store/business";
 
 
 const BusinessDetails = () => {
@@ -12,11 +13,16 @@ const BusinessDetails = () => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [showEditForm, setShowEditForm] = useState(false);
-    console.log(showEditForm)
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(getBusinesses());
     }, [dispatch])
+
+    const handleDelete = async () => {
+        const deleted = await dispatch(deleteBusiness(businessId))
+        if(deleted) history.push('/');
+    }
 
     return (
         showEditForm ?
@@ -28,7 +34,10 @@ const BusinessDetails = () => {
                         <div>{business.title}</div>
                         {sessionUser?.id === business?.ownerId &&
                         (
+                            <div>
                             <button onClick={()=>setShowEditForm(true)}>Edit</button>
+                            <button onClick={handleDelete}>Delete</button>
+                            </div>
                         )
                         }
                         <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
