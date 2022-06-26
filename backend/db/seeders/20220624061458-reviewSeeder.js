@@ -121,7 +121,7 @@ module.exports = {
         userId: 4,
         businessId: 10,
         rating: 3,
-        review: "mashburger makes great fries. It's why I'm sitting here yet again, downing unrefillable sugar water, in an eternal wait. There's always an eternal wait. Covid-19 times are tough, but some places handle it better than others. This Smashburger location handles it poorly. But... they have great fries."
+        review: "Smashburger makes great fries. It's why I'm sitting here yet again, downing unrefillable sugar water, in an eternal wait. There's always an eternal wait. Covid-19 times are tough, but some places handle it better than others. This Smashburger location handles it poorly. But... they have great fries."
       },
       {
         userId: 6,

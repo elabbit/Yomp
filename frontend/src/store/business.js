@@ -1,7 +1,6 @@
 import { csrfFetch } from './csrf';
 
 const GET_ALLBUS = 'business/GET_ALLBUS';
-const GET_ONEBUS = 'business/GET_ONEBUS';
 const ADD_BUS = 'business/ADD_BUS';
 const EDIT_BUS = 'business/EDIT_BUS';
 const DELETE_BUS = 'business/DELETE_BUS';
