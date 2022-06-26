@@ -1,9 +1,9 @@
-import { NavLink, Route, useParams, useHistory } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBusinesses } from "../../store/business";
 import BusinessEditForm from '../BusinessEditForm'
-import { deleteBusiness } from "../../store/business";
+import DeleteBusModal from "../DeleteBusModal";
 
 
 const BusinessDetails = () => {
@@ -13,16 +13,13 @@ const BusinessDetails = () => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [showEditForm, setShowEditForm] = useState(false);
-    const history = useHistory();
+
 
     useEffect(() => {
         dispatch(getBusinesses());
     }, [dispatch])
 
-    const handleDelete = async () => {
-        const deleted = await dispatch(deleteBusiness(businessId))
-        if(deleted) history.push('/');
-    }
+
 
     return (
         showEditForm ?
@@ -36,7 +33,7 @@ const BusinessDetails = () => {
                         (
                             <div>
                             <button onClick={()=>setShowEditForm(true)}>Edit</button>
-                            <button onClick={handleDelete}>Delete</button>
+                            <DeleteBusModal businessTitle={business.title}/>
                             </div>
                         )
                         }
