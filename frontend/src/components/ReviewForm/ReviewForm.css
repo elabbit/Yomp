@@ -15,19 +15,21 @@
 }
 
 .wrapper label:before {
-	content: '★';
+	font-family: 'Font Awesome\ 5 Free';
+	/* font-weight: 900; */
+	content: "\f005";
 	position: relative;
 	display: block;
-	font-size: 16pt;
 	color: black;
 }
 
 .wrapper label:after {
-	content: '★';
+	font-family: 'Font Awesome\ 5 Free';
+	font-weight: 900;
+	content: "\f005";
 	position: absolute;
 	display: block;
-	font-size: 16pt;
-	color: teal;
+	color: black;
 	top: 0;
 	opacity: 0;
 	transition: .6s;
