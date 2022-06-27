@@ -5,6 +5,7 @@ import { getBusinesses } from "../../store/business";
 import BusinessEditForm from '../BusinessEditForm'
 import DeleteBusModal from "../DeleteBusModal";
 import Reviews from "../Reviews";
+import StarRating from "../StarRating";
 
 
 
@@ -26,6 +27,7 @@ const BusinessDetails = () => {
                 <div>
 
                     <h1>{business.title}</h1>
+                    <StarRating key={`rating${business.title}`} rating={business.rating} />
                     {showEditForm ?
                         <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
                         :
@@ -38,6 +40,7 @@ const BusinessDetails = () => {
                                     </div>
                                 )
                             }
+
                             <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
                             <div>{business.description}</div>
                         </>}

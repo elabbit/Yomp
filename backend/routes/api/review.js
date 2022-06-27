@@ -9,7 +9,6 @@ async function updateRating(businessId) {
         where: { businessId },
     });
     const business = await Business.findByPk(businessId)
-
     const ratings = reviews.map((review) => review.rating)
     let sum = 0;
     ratings.forEach((num) => sum += num)
@@ -47,7 +46,7 @@ router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 
     })
 
-    updateRating(businessId);
+    const newRating = updateRating(businessId);
 
     return res.json(userRev);
 }));
