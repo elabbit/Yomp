@@ -47,11 +47,12 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     return res.json(editedReview);
 }));
 
-//DELETE A BUSINESS
+//DELETE A REVIEW
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const id = req.params.id;
-    const business = await Business.findByPk(id)
-    await business.destroy();
+    const review = await Review.findByPk(id)
+    await review.destroy();
+
     return res.json(id)
 }))
 

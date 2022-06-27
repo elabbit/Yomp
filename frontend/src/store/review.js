@@ -73,9 +73,9 @@ export const deleteReview = (id) => async dispatch => {
   });
 
   if (response.ok) {
-    const businessId = await response.json();
-    dispatch(deleteRev(businessId));
-    return businessId;
+    const id = await response.json();
+    dispatch(deleteRev(id));
+    return id;
   }
 };
 
@@ -97,8 +97,12 @@ const reviewReducer = (state = [], action) => {
       replaceRev.review = action.rev.review;
       return editState;
     case DELETE_REV:
-      const newState = { ...state };
-      delete newState[action.id];
+      const newState = [...state];
+      let delIndex;
+      for (let i = 0; i < newState.length; i++) {
+        if (action.id === newState[i].id) delIndex = i;
+      }
+      newState.splice(delIndex, 1)
       return newState;
 
     default:

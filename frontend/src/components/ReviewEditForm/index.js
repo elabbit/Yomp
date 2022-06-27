@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-
 import { editReview } from "../../store/review";
 
 const ReviewEditForm = ({ hideForm, rev }) => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState(rev.review);
     const [validationErrors, setValidationErrors] = useState([]);
@@ -30,7 +27,6 @@ const ReviewEditForm = ({ hideForm, rev }) => {
         const edited = await dispatch(editReview(editedRev))
         if (edited) {
             hideForm();
-            // history.push(`/business/${edited.businessId}`)
         }
     }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReviewEditForm from '../ReviewEditForm';
+import ReviewDeleteModal from '../ReviewDeleteModal'
 
 const RevEditToggle = ({ rev }) => {
 
@@ -11,7 +12,7 @@ const RevEditToggle = ({ rev }) => {
             :
             <div>
                 <button onClick={() => setShowRevEdit(true)}>Edit</button>
-                {/* <DeleteBusModal businessTitle={business.title} /> */}
+                <ReviewDeleteModal rev={rev} />
             </div>
 
     )
