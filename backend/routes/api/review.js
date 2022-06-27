@@ -8,7 +8,10 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 const businessId = req.params.id;
     const reviews = await Review.findAll({
         where: {businessId},
-        include: [User]
+        include: [User],
+        order: [
+            ['createdAt', 'DESC']
+        ]
     });
     return res.json(reviews);
 }));
@@ -22,6 +25,7 @@ userId,businessId,rating,review
     const newRev = await Review.create({ userId,businessId,rating,review })
     const userRev = await Review.findByPk(newRev.id, {
         include: [User]
+
     })
     return res.json(userRev);
 }));
