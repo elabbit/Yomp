@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { getBusinesses } from "../../store/business";
 import { NavLink } from 'react-router-dom'
+import StarRating from "../StarRating";
 
 
 const BusinessList = () => {
@@ -16,11 +17,10 @@ const BusinessList = () => {
     return (
         <div>
             {businesses.map(bus => (
-                <NavLink key={bus.id} to={`/business/${bus.id}`}>
-                    <div>
-                        {bus.title}
-                    </div>
-                </NavLink>
+                <div key={`div${bus.title}`}>
+                    <NavLink key={bus.id} to={`/business/${bus.id}`}>{bus.title}</NavLink>
+                    {/* <StarRating key={`rating${bus.title}`} businessId={bus.id} /> */}
+                </div>
             ))}
         </div>
     )

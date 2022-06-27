@@ -89,14 +89,14 @@ const businessReducer = (state = {}, action) => {
       return loadState;
 
     case ADD_BUS:
-      return {...state, [action.bus.id]: {...action.bus}}
+      return { ...state, [action.bus.id]: { ...action.bus } }
 
     case EDIT_BUS:
-      return {...state, [action.bus.id]: {...action.bus}}
-case DELETE_BUS:
-  const newState = {...state};
-  delete newState[action.id];
-  return newState;
+      return { ...state, [action.bus.id]: { ...action.bus } }
+    case DELETE_BUS:
+      const newState = { ...state };
+      delete newState[action.id];
+      return newState;
 
     default:
       return state;
