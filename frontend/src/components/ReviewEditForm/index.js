@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { getBusinesses } from "../../store/business";
 import { editReview } from "../../store/review";
+
 
 const ReviewEditForm = ({ hideForm, rev }) => {
     const dispatch = useDispatch();
@@ -27,6 +29,7 @@ const ReviewEditForm = ({ hideForm, rev }) => {
         const edited = await dispatch(editReview(editedRev))
         if (edited) {
             hideForm();
+            dispatch(getBusinesses())
         }
     }
 

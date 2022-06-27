@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import './ReviewForm.css'
 import { addReview } from "../../store/review";
+import { getBusinesses } from "../../store/business";
 
 const ReviewForm = ({ userId, hideForm }) => {
     const { businessId } = useParams();
@@ -12,6 +13,7 @@ const ReviewForm = ({ userId, hideForm }) => {
     const [review, setReview] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
+
 
     useEffect(() => {
         const errors = []
@@ -34,6 +36,7 @@ const ReviewForm = ({ userId, hideForm }) => {
             setReview('');
             setHasSubmitted(false);
             hideForm();
+            dispatch(getBusinesses())
             history.push(`/business/${createdRev.businessId}`)
         }
     }

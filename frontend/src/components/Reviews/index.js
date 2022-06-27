@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getReviews } from "../../store/review";
 import RevEditToggle from "../RevEditToggle";
 import ReviewForm from "../ReviewForm";
+import StarRating from "../StarRating";
 
 function Reviews({ business, userId }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -40,7 +41,7 @@ function Reviews({ business, userId }) {
                             {reviews.map((rev) => (
                                 <li key={rev.id}>
                                     <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
-                                    <div>{`Rating: ${rev.rating}`}</div>
+                                    <StarRating rating={rev.rating}/>
                                     <div>{rev.review}</div>
                                     {sessionUser?.id === rev.userId &&
                                         (
