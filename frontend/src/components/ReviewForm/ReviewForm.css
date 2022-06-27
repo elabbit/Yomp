@@ -1,0 +1,45 @@
+.wrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.wrapper input {
+	display: none;
+}
+
+.wrapper label {
+	display: block;
+	cursor: pointer;
+
+}
+
+.wrapper label:before {
+	content: '★';
+	position: relative;
+	display: block;
+	font-size: 16pt;
+	color: black;
+}
+
+.wrapper label:after {
+	content: '★';
+	position: absolute;
+	display: block;
+	font-size: 16pt;
+	color: teal;
+	top: 0;
+	opacity: 0;
+	transition: .6s;
+}
+
+.wrapper label:hover:after,
+.wrapper label:hover~label:after,
+.wrapper input:checked~label:after {
+	opacity: 1;
+}
+
+#rating-container {
+	height: 35px;
+	position: relative;
+}

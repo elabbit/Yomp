@@ -30,6 +30,31 @@ userId,businessId,rating,review
     return res.json(userRev);
 }));
 
+//EDIT A REVIEW
+router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const {
+      id,rating,review
+    } = req.body;
+
+    const editedReview = await Review.findByPk(id, {
+        include: [User]
+    })
+
+    editedReview.rating = rating;
+    editedReview.review = review;
+    await editedReview.save();
+
+    return res.json(editedReview);
+}));
+
+//DELETE A BUSINESS
+router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const id = req.params.id;
+    const business = await Business.findByPk(id)
+    await business.destroy();
+    return res.json(id)
+}))
+
 
 
 

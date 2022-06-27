@@ -102,7 +102,7 @@ const BusinessForm = () => {
                     value={zipcode}
                     onChange={e => setZipcode(e.target.value)} />
 
-                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add A Business</button>
+                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
         </div>

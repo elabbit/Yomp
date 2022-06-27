@@ -10,14 +10,14 @@ const getAllRev = revList => ({
   revList
 })
 
-const addRev = bus => ({
+const addRev = rev => ({
   type: ADD_REV,
-  bus
+  rev
 })
 
-const editRev = bus => ({
+const editRev = rev => ({
   type: EDIT_REV,
-  bus
+  rev
 })
 
 const deleteRev = id => ({
@@ -36,39 +36,39 @@ export const getReviews = (id) => async dispatch => {
   }
 };
 
-export const addReview = (newBus) => async dispatch => {
+export const addReview = (newRev) => async dispatch => {
 
-  const response = await csrfFetch(`/api/business`, {
+  const response = await csrfFetch(`/api/review/${newRev.businessId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newBus)
+    body: JSON.stringify(newRev)
   });
 
   if (response.ok) {
-    const createdBus = await response.json();
-    dispatch(addRev(createdBus));
-    return createdBus;
+    const createdRev = await response.json();
+    dispatch(addRev(createdRev));
+    return createdRev;
   }
 };
 
-export const editReview = (bus) => async dispatch => {
+export const editReview = (editedRev) => async dispatch => {
 
-  const response = await csrfFetch(`/api/business/${bus.id}`, {
+  const response = await csrfFetch(`/api/review/${editedRev.businessId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(bus)
+    body: JSON.stringify(editedRev)
   });
 
   if (response.ok) {
-    const editedBus = await response.json();
-    dispatch(editRev(editedBus));
-    return editedBus;
+    const edited = await response.json();
+    dispatch(editRev(edited));
+    return edited;
   }
 };
 
 export const deleteReview = (id) => async dispatch => {
 
-  const response = await csrfFetch(`/api/business/${id}`, {
+  const response = await csrfFetch(`/api/review/${id}`, {
     method: 'DELETE',
   });
 
@@ -87,14 +87,19 @@ const reviewReducer = (state = [], action) => {
       return [...action.revList];
 
     case ADD_REV:
-      return {...state, [action.bus.id]: {...action.bus}}
+
+      return [action.rev, ...state]
 
     case EDIT_REV:
-      return {...state, [action.bus.id]: {...action.bus}}
-case DELETE_REV:
-  const newState = {...state};
-  delete newState[action.id];
-  return newState;
+      const editState = [...state]
+      const replaceRev = editState.find((rev) => rev.id === action.rev.id)
+      replaceRev.rating = action.rev.rating;
+      replaceRev.review = action.rev.review;
+      return editState;
+    case DELETE_REV:
+      const newState = { ...state };
+      delete newState[action.id];
+      return newState;
 
     default:
       return state;

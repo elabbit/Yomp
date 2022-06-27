@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBusinesses } from "../../store/business";
 import BusinessEditForm from '../BusinessEditForm'
 import DeleteBusModal from "../DeleteBusModal";
 import Reviews from "../Reviews";
+
 
 
 const BusinessDetails = () => {
@@ -14,22 +15,21 @@ const BusinessDetails = () => {
     const dispatch = useDispatch();
     const [showEditForm, setShowEditForm] = useState(false);
 
-
     useEffect(() => {
         dispatch(getBusinesses());
     }, [dispatch])
 
 
-
     return (
-        showEditForm ?
-            <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
-            :
-            (
-                business ? (
-                    <div>
-                        <div>
-                            <h1>{business.title}</h1>
+        business ?
+            <>
+                <div>
+
+                    <h1>{business.title}</h1>
+                    {showEditForm ?
+                        <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
+                        :
+                        <>
                             {sessionUser?.id === business?.ownerId &&
                                 (
                                     <div>
@@ -40,17 +40,13 @@ const BusinessDetails = () => {
                             }
                             <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
                             <div>{business.description}</div>
-                        </div>
-                        <div>
-                        <h2>Reviews</h2>
-                        <Reviews business={business}/>
-                        </div>
-                    </div>
-                )
-                    :
-                    (
-                        <div>Loading...</div>
-                    )
+                        </>}
+                </div>
+                <Reviews business={business} userId={sessionUser?.id} />
+            </>
+            :
+            (
+                <div>Loading...</div>
             )
     )
 }
