@@ -15,7 +15,7 @@ module.exports = {
       title: {
         allowNull: false,
         type: Sequelize.STRING(50)
-      },
+    },
       description: {
         allowNull: false,
         type: Sequelize.TEXT
@@ -35,6 +35,11 @@ module.exports = {
       zipcode: {
         allowNull: false,
         type: Sequelize.STRING(5)
+      },
+      rating: {
+        allowNull: false,
+        type: Sequelize.DECIMAL,
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,

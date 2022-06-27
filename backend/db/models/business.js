@@ -28,7 +28,12 @@ module.exports = (sequelize, DataTypes) => {
     zipcode: {
       allowNull: false,
       type: DataTypes.STRING(5)
+    },
+    rating:{
+      allowNull: false,
+      type: DataTypes.DECIMAL
     }
+
   }, {});
   Business.associate = function(models) {
     // associations can be defined here

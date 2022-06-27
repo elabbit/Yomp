@@ -12,6 +12,7 @@ function DeleteBusModal({ rev }) {
 
     const handleDelete = async () => {
      await dispatch(deleteReview(rev.id))
+
     }
     return (
         <>
