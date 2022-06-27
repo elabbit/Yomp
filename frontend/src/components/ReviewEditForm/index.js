@@ -4,7 +4,7 @@ import { editReview } from "../../store/review";
 
 const ReviewEditForm = ({ hideForm, rev }) => {
     const dispatch = useDispatch();
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = useState(rev.rating);
     const [review, setReview] = useState(rev.review);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);

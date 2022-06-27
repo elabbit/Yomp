@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import BusinessList from "./components/BusinessList"
 import BusinessDetails from "./components/BusinessDetails";
 import BusinessForm from "./components/BusinessForm"
-import BusinessEditForm from "./components/BusinessEditForm"
+import DemoLogin from "./components/DemoLogin";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +27,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/demo">
+            <DemoLogin />
           </Route>
         </Switch>
       )}
