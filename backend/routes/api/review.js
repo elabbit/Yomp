@@ -3,11 +3,30 @@ const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const { User, Business, Review } = require('../../db/models')
 
+
+async function updateRating(businessId) {
+    const reviews = await Review.findAll({
+        where: { businessId },
+    });
+    const business = await Business.findByPk(businessId)
+
+    const ratings = reviews.map((review) => review.rating)
+    let sum = 0;
+    ratings.forEach((num) => sum += num)
+    const average = sum / ratings.length;
+    const roundedAverage = Math.round(average / 0.5) * 0.5;
+
+    business.rating = roundedAverage;
+    business.save();
+
+}
+
+
 //GET REVIEWS
 router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-const businessId = req.params.id;
+    const businessId = req.params.id;
     const reviews = await Review.findAll({
-        where: {businessId},
+        where: { businessId },
         include: [User],
         order: [
             ['createdAt', 'DESC']
@@ -19,21 +38,24 @@ const businessId = req.params.id;
 //ADD A REVIEW
 router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const {
-userId,businessId,rating,review
+        userId, businessId, rating, review
     } = req.body;
 
-    const newRev = await Review.create({ userId,businessId,rating,review })
+    const newRev = await Review.create({ userId, businessId, rating, review })
     const userRev = await Review.findByPk(newRev.id, {
         include: [User]
 
     })
+
+    updateRating(businessId);
+
     return res.json(userRev);
 }));
 
 //EDIT A REVIEW
 router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const {
-      id,rating,review
+        id, rating, review
     } = req.body;
 
     const editedReview = await Review.findByPk(id, {
@@ -44,6 +66,8 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     editedReview.review = review;
     await editedReview.save();
 
+    updateRating(editedReview.businessId)
+
     return res.json(editedReview);
 }));
 
@@ -51,7 +75,9 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const id = req.params.id;
     const review = await Review.findByPk(id)
+    updateRating(review.businessId)
     await review.destroy();
+
 
     return res.json(id)
 }))

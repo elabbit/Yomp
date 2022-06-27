@@ -16,7 +16,8 @@ module.exports = {
     address: '1680 29th St',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 4.5
   },
   {
     ownerId: 2,
@@ -25,7 +26,8 @@ module.exports = {
     address: '1855 29th St Ste 1154',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 4.5
   },
   {
     ownerId: 1,
@@ -34,7 +36,8 @@ module.exports = {
     address: '1606 Conestoga St Ste 3',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 3.5
   },
   {
     ownerId: 3,
@@ -43,7 +46,8 @@ module.exports = {
     address: '2000 Arapahoe Ave',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80302'
+    zipcode: '80302',
+    rating: 3
   },
   {
     ownerId: 4,
@@ -52,7 +56,8 @@ module.exports = {
     address: '4479 Bdwy',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80304'
+    zipcode: '80304',
+    rating: 5
   },
   {
     ownerId: 5,
@@ -61,7 +66,8 @@ module.exports = {
     address: '2655 28th St',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 3.5
   },
   {
     ownerId: 6,
@@ -70,7 +76,8 @@ module.exports = {
     address: '2750 Glenwood Dr Ste 4',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 3
   },
   {
     ownerId: 5,
@@ -79,7 +86,8 @@ module.exports = {
     address: '2855 28th St',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 4
   },
   {
     ownerId: 1,
@@ -88,7 +96,8 @@ module.exports = {
     address: '1650 28th St Ste 1228',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 4.5
   },
   {
     ownerId: 3,
@@ -97,7 +106,8 @@ module.exports = {
     address: '1650 28th St Space 1226',
     city: 'Boulder',
     state: 'Colorado',
-    zipcode: '80301'
+    zipcode: '80301',
+    rating: 3
   }
 ], {});
   },

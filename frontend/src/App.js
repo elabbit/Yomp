@@ -34,16 +34,18 @@ function App() {
         </Switch>
       )}
       <Switch>
-       <Route exact path='/'>
-      <BusinessList />
+        <Route exact path='/'>
+          <BusinessList />
         </Route>
         <Route exact path='/business/add'>
-      <BusinessForm />
+          <BusinessForm />
         </Route>
         <Route exact path='/business/:businessId'>
-      <BusinessDetails />
+          <BusinessDetails />
         </Route>
-
+        <Route>
+          <h2>404 Page not found.</h2>
+        </Route>
       </Switch>
     </>
   );

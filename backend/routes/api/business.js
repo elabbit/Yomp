@@ -9,6 +9,7 @@ router.get('/', asyncHandler(async (req, res, next) => {
     const businesses = await Business.findAll({
         include: [User]
     });
+
     return res.json(businesses);
 }));
 

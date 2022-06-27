@@ -19,7 +19,7 @@ const BusinessList = () => {
             {businesses.map(bus => (
                 <div key={`div${bus.title}`}>
                     <NavLink key={bus.id} to={`/business/${bus.id}`}>{bus.title}</NavLink>
-                    {/* <StarRating key={`rating${bus.title}`} businessId={bus.id} /> */}
+                    <StarRating key={`rating${bus.title}`} rating={bus.rating} />
                 </div>
             ))}
         </div>
