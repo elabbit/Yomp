@@ -7,7 +7,6 @@ import { editBusiness } from '../../store/business';
 
 const BusinessEditForm = ({hideForm, business}) => {
 
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState(business.title);
