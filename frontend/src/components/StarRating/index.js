@@ -14,7 +14,7 @@ const StarRating = ({ rating }) => {
                 : +rating === 1 ?
                     <div>
                         <div className="fas fa-star"></div>
-                        <div className="fas fa-star-half-alt"></div>
+                        <div className="far fa-star"></div>
                         <div className="far fa-star"></div>
                         <div className="far fa-star"></div>
                         <div className="far fa-star"></div>
