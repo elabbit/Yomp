@@ -1,82 +1,89 @@
 import './StarRating.css'
 
 const StarRating = ({ rating }) => {
-
     return (
         <div className='stars'>
-            {rating == 1 ?
+            {rating === '0' ?
                 <div>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
+                    <div className="far fa-star"></div>
+                    <div className="far fa-star"></div>
+                    <div className="far fa-star"></div>
+                    <div className="far fa-star"></div>
+                    <div className="far fa-star"></div>
                 </div>
-                : rating == 1.5 ?
+                : rating === '1' ?
                     <div>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star-half-alt"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <div className="fas fa-star"></div>
+                        <div className="fas fa-star-half-alt"></div>
+                        <div className="far fa-star"></div>
+                        <div className="far fa-star"></div>
+                        <div className="far fa-star"></div>
                     </div>
-                    : rating == 2 ?
+                    : rating === '1.5' ?
                         <div>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
-                            <i className="far fa-star"></i>
+                            <div className="fas fa-star"></div>
+                            <div className="fas fa-star-half-alt" divd="one-half"></div>
+                            <div className="far fa-star"></div>
+                            <div className="far fa-star"></div>
+                            <div className="far fa-star"></div>
                         </div>
-                        : rating == 2.5 ?
+                        : rating === '2' ?
                             <div>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star-half-alt"></i>
-                                <i className="far fa-star"></i>
-                                <i className="far fa-star"></i>
+                                <div className="fas fa-star"></div>
+                                <div className="fas fa-star"></div>
+                                <div className="far fa-star"></div>
+                                <div className="far fa-star"></div>
+                                <div className="far fa-star"></div>
                             </div>
-                            : rating == 3 ?
+                            : rating === '2.5'?
                                 <div>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="far fa-star"></i>
-                                    <i className="far fa-star"></i>
+                                    <div className="fas fa-star"></div>
+                                    <div className="fas fa-star"></div>
+                                    <div className="fas fa-star-half-alt"></div>
+                                    <div className="far fa-star"></div>
+                                    <div className="far fa-star"></div>
                                 </div>
-                                : rating == 3.5 ?
+                                : rating === '3' ?
                                     <div>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star"></i>
-                                        <i className="fas fa-star-half-alt"></i>
-                                        <i className="far fa-star"></i>
+                                        <div className="fas fa-star"></div>
+                                        <div className="fas fa-star"></div>
+                                        <div className="fas fa-star"></div>
+                                        <div className="far fa-star"></div>
+                                        <div className="far fa-star"></div>
                                     </div>
-                                    : rating == 4 ?
+                                    : rating === '3.5' ?
                                         <div>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="far fa-star"></i>
+                                            <div className="fas fa-star"></div>
+                                            <div className="fas fa-star"></div>
+                                            <div className="fas fa-star"></div>
+                                            <div className="fas fa-star-half-alt"></div>
+                                            <div className="far fa-star"></div>
                                         </div>
-                                        : rating == 4.5 ?
+                                        : rating === '4' ?
                                             <div>
-                                                <i className="fas fa-star"></i>
-                                                <i className="fas fa-star"></i>
-                                                <i className="fas fa-star"></i>
-                                                <i className="fas fa-star"></i>
-                                                <i className="fas fa-star-half-alt"></i>
+                                                <div className="fas fa-star"></div>
+                                                <div className="fas fa-star"></div>
+                                                <div className="fas fa-star"></div>
+                                                <div className="fas fa-star"></div>
+                                                <div className="far fa-star"></div>
                                             </div>
-                                            : rating == 5 ?
+                                            : rating === '4.5'?
                                                 <div>
-                                                    <i className="fas fa-star"></i>
-                                                    <i className="fas fa-star"></i>
-                                                    <i className="fas fa-star"></i>
-                                                    <i className="fas fa-star"></i>
-                                                    <i className="fas fa-star"></i>
+                                                    <div className="fas fa-star"></div>
+                                                    <div className="fas fa-star"></div>
+                                                    <div className="fas fa-star"></div>
+                                                    <div className="fas fa-star"></div>
+                                                    <div className="fas fa-star-half-alt"></div>
                                                 </div>
-                                                : null
+                                                : rating === '5' ?
+                                                    <div>
+                                                        <div className="fas fa-star"></div>
+                                                        <div className="fas fa-star"></div>
+                                                        <div className="fas fa-star"></div>
+                                                        <div className="fas fa-star"></div>
+                                                        <div className="fas fa-star"></div>
+                                                    </div>
+                                                    : null
 
             }
         </div>

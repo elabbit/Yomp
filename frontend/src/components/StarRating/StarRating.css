@@ -1,3 +1,45 @@
-.stars *{
-    color:teal;
+.stars {
+    margin: 5px;
+
+}
+
+.fas,
+.far {
+    color: teal;
+    font-size: 9pt;
+    background-color:rgb(188, 220, 124);
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    margin: 1px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.far {
+    opacity: .3;
+}
+
+
+.fa-star-half-alt {
+    display: inline-block;
+    position: relative;
+    font-size: 9pt;
+    color: rgba(0, 128, 128, .3);
+    background: conic-gradient(rgba(188, 220, 124, .3) 0deg 180deg, rgb(188, 220, 124) 180deg 360deg);
+}
+
+.fa-star-half-alt:after {
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    content: "\f005";
+    position: absolute;
+    left: 3px;
+    top: 0;
+    width: 35%;
+    overflow: hidden;
+    color: teal;
+
 }

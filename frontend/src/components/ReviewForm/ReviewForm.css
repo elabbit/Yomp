@@ -1,4 +1,5 @@
 .wrapper {
+
 	position: absolute;
 	display: flex;
 	flex-direction: row-reverse;
@@ -15,24 +16,42 @@
 }
 
 .wrapper label:before {
+	font-size: 9pt;
 	font-family: 'Font Awesome\ 5 Free';
-	/* font-weight: 900; */
+
 	content: "\f005";
 	position: relative;
 	display: block;
-	color: black;
+	color: teal;
+	background-color: rgb(188, 220, 124);
+	border-radius: 5px;
+	height: 20px;
+	width: 20px;
+	margin: 1px;
+	opacity: .3;
+	line-height: 20px;
+	text-align: center;
 }
 
 .wrapper label:after {
+	font-size: 9pt;
 	font-family: 'Font Awesome\ 5 Free';
 	font-weight: 900;
 	content: "\f005";
 	position: absolute;
 	display: block;
-	color: black;
+	color: teal;
 	top: 0;
 	opacity: 0;
 	transition: .6s;
+	background-color: rgb(188, 220, 124);
+	border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    margin: 1px;
+    line-height: 20px;
+    text-align: center;
+
 }
 
 .wrapper label:hover:after,
@@ -42,6 +61,7 @@
 }
 
 #rating-container {
-	height: 35px;
+	margin-top: -15px;
+	height: 30px;
 	position: relative;
 }

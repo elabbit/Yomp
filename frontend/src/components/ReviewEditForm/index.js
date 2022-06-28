@@ -11,9 +11,12 @@ const ReviewEditForm = ({ hideForm, rev }) => {
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
+
+
+
     useEffect(() => {
         const errors = []
-        if(!rating) errors.push("Please select a rating.")
+        if (!rating) errors.push("Please select a rating.")
         setValidationErrors(errors)
 
     }, [rating]);
@@ -21,10 +24,10 @@ const ReviewEditForm = ({ hideForm, rev }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
-        if(validationErrors.length) return;
+        if (validationErrors.length) return;
         const editedRev = {
             ...rev,
-           rating, review
+            rating, review
         }
         const edited = await dispatch(editReview(editedRev))
         if (edited) {
@@ -40,6 +43,7 @@ const ReviewEditForm = ({ hideForm, rev }) => {
 
     return (
         <div className='form-container'>
+
             <form onSubmit={handleSubmit}>
                 {hasSubmitted &&
                     <ul className="errors">
@@ -49,7 +53,7 @@ const ReviewEditForm = ({ hideForm, rev }) => {
                             ))
                         }
                     </ul>}
-
+                    <h4>Please select a rating:</h4>
                 <div id="rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />
@@ -72,7 +76,7 @@ const ReviewEditForm = ({ hideForm, rev }) => {
                         value={review}
                         onChange={e => setReview(e.target.value)} />
                 </div>
-                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Submit Review</button>
+                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Submit Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
         </div>

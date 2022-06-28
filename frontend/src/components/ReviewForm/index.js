@@ -57,7 +57,7 @@ const ReviewForm = ({ userId, hideForm }) => {
                             ))
                         }
                     </ul>}
-
+                    <h4>Please select a rating:</h4>
                 <div id="rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />

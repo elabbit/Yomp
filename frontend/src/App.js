@@ -10,6 +10,7 @@ import BusinessDetails from "./components/BusinessDetails";
 import BusinessForm from "./components/BusinessForm"
 import DemoLogin from "./components/DemoLogin";
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
