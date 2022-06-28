@@ -15,7 +15,10 @@
 
 #business-container a {
     color: teal;
+}
 
+#business-container a:hover{
+    text-decoration: underline;
 }
 
 #list-container {

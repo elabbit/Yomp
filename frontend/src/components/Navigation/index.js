@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Navigation.css';
 import * as sessionActions from '../../store/session';
 import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -44,10 +45,10 @@ function Navigation({ isLoaded }) {
         <div id='right-side'>
           <div id='login-signup-button'>
             <LoginFormModal />
-            <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
+            <SignupFormModal />
           </div>
           <div id='demo-button'>
-            <span>Try our </span>
+            <span>Try our</span>
             <NavLink id="demo-link" to="/demo">Demo User</NavLink>
           </div>
         </div>
