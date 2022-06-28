@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Navigation.css';
 import * as sessionActions from '../../store/session';
+import LoginFormModal from '../LoginFormModal';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -42,7 +43,7 @@ function Navigation({ isLoaded }) {
       <>
         <div id='right-side'>
           <div id='login-signup-button'>
-            <NavLink id="login-button" to="/login">Log In</NavLink>
+            <LoginFormModal />
             <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
           </div>
           <div id='demo-button'>

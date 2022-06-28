@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
-function LoginFormPage() {
+function LoginForm({hideModal}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -51,8 +51,9 @@ function LoginFormPage() {
         />
       </label>
       <button type="submit">Log In</button>
+      <button onClick={hideModal}>Cancel</button>
     </form>
   );
 }
 
-export default LoginFormPage;
+export default LoginForm;

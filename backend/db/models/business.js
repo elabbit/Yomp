@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     rating:{
       allowNull: false,
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL,
+      defaultValue:0
     }
 
   }, {});
