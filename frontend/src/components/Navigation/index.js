@@ -59,7 +59,7 @@ function Navigation({ isLoaded }) {
       <div id='left-side'>
         <NavLink exact to="/">
           <span id='logo'>yomp </span>
-          <i id="yelp" class="fab fa-yelp"></i></NavLink>
+          <i id="yelp" className="fab fa-yelp"></i></NavLink>
       </div>
       {isLoaded && sessionLinks}
     </div>
