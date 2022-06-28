@@ -3,7 +3,7 @@ import './StarRating.css'
 const StarRating = ({ rating }) => {
     return (
         <div className='stars'>
-            {rating === '0' ?
+            {+rating === 0 ?
                 <div>
                     <div className="far fa-star"></div>
                     <div className="far fa-star"></div>
@@ -11,7 +11,7 @@ const StarRating = ({ rating }) => {
                     <div className="far fa-star"></div>
                     <div className="far fa-star"></div>
                 </div>
-                : rating === '1' ?
+                : +rating === 1 ?
                     <div>
                         <div className="fas fa-star"></div>
                         <div className="fas fa-star-half-alt"></div>
@@ -19,7 +19,7 @@ const StarRating = ({ rating }) => {
                         <div className="far fa-star"></div>
                         <div className="far fa-star"></div>
                     </div>
-                    : rating === '1.5' ?
+                    : +rating === 1.5 ?
                         <div>
                             <div className="fas fa-star"></div>
                             <div className="fas fa-star-half-alt" divd="one-half"></div>
@@ -27,7 +27,7 @@ const StarRating = ({ rating }) => {
                             <div className="far fa-star"></div>
                             <div className="far fa-star"></div>
                         </div>
-                        : rating === '2' ?
+                        : +rating === 2 ?
                             <div>
                                 <div className="fas fa-star"></div>
                                 <div className="fas fa-star"></div>
@@ -35,7 +35,7 @@ const StarRating = ({ rating }) => {
                                 <div className="far fa-star"></div>
                                 <div className="far fa-star"></div>
                             </div>
-                            : rating === '2.5'?
+                            : +rating === 2.5 ?
                                 <div>
                                     <div className="fas fa-star"></div>
                                     <div className="fas fa-star"></div>
@@ -43,7 +43,7 @@ const StarRating = ({ rating }) => {
                                     <div className="far fa-star"></div>
                                     <div className="far fa-star"></div>
                                 </div>
-                                : rating === '3' ?
+                                : +rating === 3 ?
                                     <div>
                                         <div className="fas fa-star"></div>
                                         <div className="fas fa-star"></div>
@@ -51,7 +51,7 @@ const StarRating = ({ rating }) => {
                                         <div className="far fa-star"></div>
                                         <div className="far fa-star"></div>
                                     </div>
-                                    : rating === '3.5' ?
+                                    : +rating === 3.5 ?
                                         <div>
                                             <div className="fas fa-star"></div>
                                             <div className="fas fa-star"></div>
@@ -59,7 +59,7 @@ const StarRating = ({ rating }) => {
                                             <div className="fas fa-star-half-alt"></div>
                                             <div className="far fa-star"></div>
                                         </div>
-                                        : rating === '4' ?
+                                        : +rating === 4 ?
                                             <div>
                                                 <div className="fas fa-star"></div>
                                                 <div className="fas fa-star"></div>
@@ -67,7 +67,7 @@ const StarRating = ({ rating }) => {
                                                 <div className="fas fa-star"></div>
                                                 <div className="far fa-star"></div>
                                             </div>
-                                            : rating === '4.5'?
+                                            : +rating === 4.5 ?
                                                 <div>
                                                     <div className="fas fa-star"></div>
                                                     <div className="fas fa-star"></div>
@@ -75,7 +75,7 @@ const StarRating = ({ rating }) => {
                                                     <div className="fas fa-star"></div>
                                                     <div className="fas fa-star-half-alt"></div>
                                                 </div>
-                                                : rating === '5' ?
+                                                : +rating === 5 ?
                                                     <div>
                                                         <div className="fas fa-star"></div>
                                                         <div className="fas fa-star"></div>
