@@ -26,15 +26,14 @@ function Navigation({ isLoaded }) {
           <NavLink exact to="/business/add">Add Business</NavLink>
         </div>
         <div id='right-side'>
-        <div id='logout-button-div'>
-        <button id='logout-button' onClick={logout}>Log Out</button>
+          <div id='logout-button-div'>
+            <button id='logout-button' onClick={logout}>Log Out</button>
           </div>
-            <div id='welcome-message'>
-                Welcome {sessionUser.firstname}
-            </div>
-
-
-
+          <div id='welcome-message'>{'Welcome '}
+            <span id="user-name">
+              {sessionUser.firstName}
+              </span>
+          </div>
         </div>
       </>
     );
@@ -43,14 +42,13 @@ function Navigation({ isLoaded }) {
       <>
         <div id='right-side'>
           <div id='login-signup-button'>
-          <NavLink id="login-button" to="/login">Log In</NavLink>
-          <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
+            <NavLink id="login-button" to="/login">Log In</NavLink>
+            <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
           </div>
-            <div id='demo-button'>
-              <span>Try our </span>
-          <NavLink to="/demo">Demo User</NavLink>
-            </div>
-
+          <div id='demo-button'>
+            <span>Try our </span>
+            <NavLink to="/demo">Demo User</NavLink>
+          </div>
         </div>
       </>
     );
