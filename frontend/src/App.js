@@ -22,31 +22,30 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/demo">
+          <Route exact path="/demo">
             <DemoLogin />
+          </Route>
+          <Route exact path='/'>
+            <BusinessList />
+          </Route>
+          <Route exact path='/business/add'>
+            <BusinessForm />
+          </Route>
+          <Route exact path='/business/:businessId'>
+            <BusinessDetails />
+          </Route>
+          <Route>
+            <h2>This page doesn't exist!</h2>
           </Route>
         </Switch>
       )}
-      <Switch>
-        <Route exact path='/'>
-          <BusinessList />
-        </Route>
-        <Route exact path='/business/add'>
-          <BusinessForm />
-        </Route>
-        <Route exact path='/business/:businessId'>
-          <BusinessDetails />
-        </Route>
-        <Route>
-          <h2>404 Page not found.</h2>
-        </Route>
-      </Switch>
+
     </>
   );
 }

@@ -1,36 +1,69 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import './Navigation.css';
+import * as sessionActions from '../../store/session';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+    history.push('/')
+  };
+
+
+
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-      <NavLink exact to="/business/add">Add Business</NavLink>
-      <ProfileButton user={sessionUser} />
+        <div id='center-side'>
+          <NavLink exact to="/business/add">Add Business</NavLink>
+        </div>
+        <div id='right-side'>
+        <div id='logout-button-div'>
+        <button id='logout-button' onClick={logout}>Log Out</button>
+          </div>
+            <div id='welcome-message'>
+                Welcome {sessionUser.firstname}
+            </div>
+
+
+
+        </div>
       </>
     );
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/demo">Demo</NavLink>
+        <div id='right-side'>
+          <div id='login-signup-button'>
+          <NavLink id="login-button" to="/login">Log In</NavLink>
+          <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
+          </div>
+            <div id='demo-button'>
+              <span>Try our </span>
+          <NavLink to="/demo">Demo User</NavLink>
+            </div>
+
+        </div>
       </>
     );
   }
 
   return (
-    <div>
-      <div>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
+    <div id='header-container'>
+      <div id='left-side'>
+        <NavLink exact to="/">
+          <span id='logo'>yomp </span>
+          <i id="yelp" class="fab fa-yelp"></i></NavLink>
       </div>
+      {isLoaded && sessionLinks}
     </div>
   );
 }

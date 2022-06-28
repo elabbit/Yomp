@@ -1,0 +1,78 @@
+#header-container {
+    margin: none;
+    margin-bottom:20px;
+    border-bottom: teal solid 4px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#left-side,
+#center-side,
+#right-side {
+    margin: 20px;
+}
+
+a {
+    color: rgba(45, 46, 47, 1);
+}
+
+#left-side * {
+    font-weight: bolder;
+    font-size: 25pt;
+}
+
+#left-side{
+    margin-left:40px;
+}
+
+#logo{
+font-family:Arial Rounded MT Bold;
+
+}
+
+#yelp{
+    color:teal;
+}
+
+#right-side{
+    margin-top:35px;
+    margin-right:40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+#login-button, #signup-button{
+    background-color: teal;
+    border-radius: 8px;
+    padding:5px;
+    padding-left: 10px;
+    padding-right:10px;
+
+    margin:5px;
+    margin-top:10px;
+    color:white;
+
+}
+
+#demo-button {
+    margin:5px;
+    margin-top:10px;
+    margin-left:15px;
+}
+
+#logout-button{
+    background-color: teal;
+    border-radius: 8px;
+    padding:5px;
+    padding-left: 10px;
+    padding-right:10px;
+    color:white;
+    border:transparent;
+    margin-right: 20px;
+}

@@ -1,1 +1,14 @@
 /* TODO Add site wide styles */
+
+
+body {
+    margin: 0;
+    color: rgba(45, 46, 47, 1);
+    font-size: 14px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
