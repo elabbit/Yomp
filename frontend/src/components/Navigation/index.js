@@ -47,7 +47,7 @@ function Navigation({ isLoaded }) {
           </div>
           <div id='demo-button'>
             <span>Try our </span>
-            <NavLink to="/demo">Demo User</NavLink>
+            <NavLink id="demo-link" to="/demo">Demo User</NavLink>
           </div>
         </div>
       </>

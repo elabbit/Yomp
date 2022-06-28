@@ -72,6 +72,14 @@ font-family:Arial Rounded MT Bold;
     margin:5px;
     margin-top:10px;
     margin-left:15px;
+
+}
+
+#demo-link{
+    color:teal;
+}
+#demo-link:hover{
+    text-decoration: underline;
 }
 
 #logout-button{
