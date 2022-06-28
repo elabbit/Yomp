@@ -6,7 +6,6 @@ import Navigation from "./components/Navigation";
 import BusinessList from "./components/BusinessList"
 import BusinessDetails from "./components/BusinessDetails";
 import BusinessForm from "./components/BusinessForm"
-import DemoLogin from "./components/DemoLogin";
 
 
 function App() {
@@ -21,9 +20,6 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/demo">
-            <DemoLogin />
-          </Route>
           <Route exact path='/'>
             <BusinessList />
           </Route>

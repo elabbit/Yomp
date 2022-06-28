@@ -14,11 +14,15 @@ function Navigation({ isLoaded }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    history.push('/')
+
   };
 
+  const demoLogin = () => {
+    const credential = 'demo@email.com';
+    const password = 'password'
+    dispatch(sessionActions.login({ credential, password }))
 
-
+  }
 
   let sessionLinks;
   if (sessionUser) {
@@ -49,7 +53,7 @@ function Navigation({ isLoaded }) {
           </div>
           <div id='demo-button'>
             <span>Try our</span>
-            <NavLink id="demo-link" to="/demo">Demo User</NavLink>
+            <button id='demo-link' onClick={demoLogin} >Demo User</button>
           </div>
         </div>
       </>
