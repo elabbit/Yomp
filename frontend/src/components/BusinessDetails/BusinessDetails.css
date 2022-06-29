@@ -1,0 +1,12 @@
+button{
+    cursor: pointer;
+    background-color: teal;
+    border-radius: 5px;
+    color: white;
+    border: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin:5px;
+
+}

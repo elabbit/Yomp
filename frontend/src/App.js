@@ -5,7 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BusinessList from "./components/BusinessList"
 import BusinessDetails from "./components/BusinessDetails";
-import BusinessForm from "./components/BusinessForm"
+
 
 
 function App() {
@@ -22,9 +22,6 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <BusinessList />
-          </Route>
-          <Route exact path='/business/add'>
-            <BusinessForm />
           </Route>
           <Route exact path='/business/:businessId'>
             <BusinessDetails />

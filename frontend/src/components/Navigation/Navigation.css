@@ -79,7 +79,7 @@ a {
 
 }
 
-#demo-link {
+.nav-button {
     color: teal;
     background-color: transparent;
     border:none;
@@ -87,8 +87,9 @@ a {
     font-size:14px;
 }
 
-#demo-link:hover {
+.nav-button:hover {
     text-decoration: underline;
+    cursor:pointer;
 }
 
 #login-button,
@@ -96,10 +97,8 @@ a {
     cursor: pointer;
     background-color: teal;
     border-radius: 8px;
-
     color: white;
     border: transparent;
-
     font-size: 14px;
     font-weight: bold;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -5,6 +5,7 @@ import './Navigation.css';
 import * as sessionActions from '../../store/session';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import BusinessFormModal from '../BusinessFormModal';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -29,7 +30,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <div id='center-side'>
-          <NavLink exact to="/business/add">Add Business</NavLink>
+          <BusinessFormModal/>
         </div>
         <div id='right-side'>
           <div id='logout-button-div'>
@@ -53,7 +54,7 @@ function Navigation({ isLoaded }) {
           </div>
           <div id='demo-button'>
             <span>Try our</span>
-            <button id='demo-link' onClick={demoLogin} >Demo User</button>
+            <button id='demo-link' className='nav-button' onClick={demoLogin}>Demo User</button>
           </div>
         </div>
       </>

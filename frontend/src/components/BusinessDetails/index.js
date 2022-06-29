@@ -6,6 +6,7 @@ import BusinessEditForm from '../BusinessEditForm'
 import DeleteBusModal from "../DeleteBusModal";
 import Reviews from "../Reviews";
 import StarRating from "../StarRating";
+import './BusinessDetails.css'
 
 
 

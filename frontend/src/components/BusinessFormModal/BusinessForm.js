@@ -5,7 +5,7 @@ import { states } from '../../Data/states';
 import { addBusiness } from '../../store/business';
 
 
-const BusinessForm = () => {
+const BusinessForm = ({hideModal}) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -49,11 +49,8 @@ const BusinessForm = () => {
 
         if (createdBus) {
             history.push(`/business/${createdBus.id}`)
+            hideModal();
         }
-    }
-
-    const handleCancelClick = () => {
-        history.goBack()
     }
 
     return (
@@ -103,7 +100,7 @@ const BusinessForm = () => {
                     onChange={e => setZipcode(e.target.value)} />
 
                 <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <button onClick={hideModal}>Cancel</button>
             </form>
         </div>
     );
