@@ -21,7 +21,7 @@ const BusinessForm = ({hideModal}) => {
     useEffect(() => {
         const errors = []
         if (title.length > 50) errors.push('Title can not exceed 50 characters.')
-        if (description.length > 250) errors.push('Description can not exceed 250 characters.')
+        if (description.length > 500) errors.push('Description can not exceed 500 characters.')
         if (address.length > 50) errors.push('Address can not exceed 50 characters.')
         if (city.length > 30) errors.push('City can not exceed 30 characters.')
         if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 digits.')

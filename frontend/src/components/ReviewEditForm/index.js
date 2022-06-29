@@ -12,8 +12,6 @@ const ReviewEditForm = ({ hideForm, rev }) => {
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
 
-
-
     useEffect(() => {
         const errors = []
         if (!rating) errors.push("Please select a rating.")
@@ -32,7 +30,6 @@ const ReviewEditForm = ({ hideForm, rev }) => {
         const edited = await dispatch(editReview(editedRev))
         if (edited) {
             hideForm();
-            dispatch(getBusinesses())
         }
     }
 
