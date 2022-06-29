@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RevEditToggle from "../RevEditToggle";
 import StarRating from "../StarRating";
+import "./ReviewSingle.css"
 
 const ReviewSingle = ({ rev, sessionUser }) => {
     const [showRev, setShowRev] = useState(true);

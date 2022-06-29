@@ -30,7 +30,7 @@ a {
 #left-side {
     margin-left: 40px;
     margin-top: 10px;
-    min-width:135px
+    min-width: 135px
 }
 
 #logo {
@@ -51,10 +51,11 @@ a {
 
 }
 
-#login-signup-button, #logout-button-div {
+#login-signup-button,
+#logout-button-div {
     margin-top: 35px;
-    min-width:160px;
-    display:flex;
+    min-width: 160px;
+    display: flex;
     justify-content: right;
 
 }
@@ -64,18 +65,19 @@ a {
 .nav-button {
     color: teal;
     background-color: transparent;
-    border:none;
-    font-weight:bold;
-    font-size:14px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .nav-button:hover {
     text-decoration: underline;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #login-button,
-#signup-button, #logout-button {
+#signup-button,
+#logout-button {
     cursor: pointer;
     background-color: teal;
     border-radius: 4px;
@@ -87,32 +89,32 @@ a {
     padding: 8px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-left:10px;
-    transition:.5s;
+    margin-left: 10px;
+    transition: .5s;
 }
 
 #login-button:hover,
-#signup-button:hover, #logout-button:hover {
-    color:teal;
-
-background-color: rgb(188, 220, 124)
+#signup-button:hover,
+#logout-button:hover {
+    color: teal;
+    background-color: rgb(188, 220, 124)
 }
 
 
 #demo-button {
-    display:flex;
+    display: flex;
     justify-content: right;
     align-items: center;
 }
 
 
 #welcome-message {
-    display:flex;
+    display: flex;
     justify-content: right;
     margin-top: 0px;
     margin-right: 10px;
     align-items: center;
-    margin-bottom:5px;
+    margin-bottom: 5px;
 
 }
 
@@ -124,10 +126,11 @@ background-color: rgb(188, 220, 124)
 
 }
 
-#demo-link{
-    margin-top:0px;
+#demo-link {
+    margin-top: 0px;
 }
-#demo-span{
-    margin-top:-5px;
+
+#demo-span {
+    margin-top: -5px;
     margin-right: -4px;
 }

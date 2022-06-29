@@ -22,3 +22,43 @@ margin: auto;
 min-width: 540px;
 max-width: 1100px;
 }
+
+#large-stars * div.fas,#large-stars * div.far {
+    color: teal;
+    font-size: 18pt;
+    background-color:rgb(188, 220, 124);
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+#large-stars * div.fa-star-half-alt {
+    display: inline-block;
+    position: relative;
+    font-size: 18pt;
+    color: rgba(0, 128, 128, .3);
+    background: conic-gradient(rgba(188, 220, 124, .3) 0deg 180deg, rgb(188, 220, 124) 180deg 360deg);
+}
+
+#large-stars * div.fa-star-half-alt:after {
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    content: "\f005";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 34.5%;
+    overflow: hidden;
+    color: teal;
+
+}
+
+#large-stars{
+    margin-top:-15px;
+    margin-left:-10px;
+}

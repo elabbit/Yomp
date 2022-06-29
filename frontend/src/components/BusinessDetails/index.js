@@ -32,7 +32,10 @@ const BusinessDetails = () => {
                         <div>
 
                             <h1>{business.title}</h1>
+                            <div id="large-stars">
                             <StarRating key={`rating${business.title}`} rating={business.rating} />
+                            </div>
+                            <h4>Owner: {`${business.User.firstName} ${business.User.lastName}`}</h4>
                             {showEditForm ?
                                 <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
                                 :
@@ -46,8 +49,6 @@ const BusinessDetails = () => {
                                         )
                                     }
 
-                                    <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
-                                    <div>{business.description}</div>
                                 </>}
                         </div>
                         <Reviews business={business} userId={sessionUser?.id} />

@@ -15,10 +15,20 @@ function Reviews({ business, userId }) {
 
     useEffect(() => {
         dispatch(getReviews(business.id));
-    }, [dispatch, business])
+    }, [dispatch])
 
     return (
         <div id="big-review-container">
+            <div id="info-container">
+            <div id="business-info">
+            <h4>Address</h4>
+                <div>{business.address}</div>
+                <div>{business.city}, {business.state} {business.zipcode}</div>
+                <h4>About the Business</h4>
+                <div>{business.description}</div>
+            </div>
+            </div>
+
             <div id="review-container">
                 <h2>Reviews</h2>
                 {showRevForm ?
@@ -26,8 +36,8 @@ function Reviews({ business, userId }) {
                     :
                     <>
                         {sessionUser ?
-                            <div>
-                                <button onClick={() => setShowRevForm(true)}>Write A Review</button>
+                            <div id="write-container">
+                                <button id="write-review-button" onClick={() => setShowRevForm(true)}>Write A Review</button>
                             </div>
                             :
                             <div>
