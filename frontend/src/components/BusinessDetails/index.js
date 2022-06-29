@@ -23,35 +23,42 @@ const BusinessDetails = () => {
 
 
     return (
-        business ?
-            <>
-                <div>
+        <div id='big-business-container'>
 
-                    <h1>{business.title}</h1>
-                    <StarRating key={`rating${business.title}`} rating={business.rating} />
-                    {showEditForm ?
-                        <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
-                        :
-                        <>
-                            {sessionUser?.id === business?.ownerId &&
-                                (
-                                    <div>
-                                        <button onClick={() => setShowEditForm(true)}>Edit</button>
-                                        <DeleteBusModal businessTitle={business.title} />
-                                    </div>
-                                )
-                            }
+            <div id='business-container'>
 
-                            <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
-                            <div>{business.description}</div>
-                        </>}
-                </div>
-                <Reviews business={business} userId={sessionUser?.id} />
-            </>
-            :
-            (
-                <div>Loading...</div>
-            )
+                {business ?
+                    <>
+                        <div>
+
+                            <h1>{business.title}</h1>
+                            <StarRating key={`rating${business.title}`} rating={business.rating} />
+                            {showEditForm ?
+                                <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
+                                :
+                                <>
+                                    {sessionUser?.id === business?.ownerId &&
+                                        (
+                                            <div>
+                                                <button onClick={() => setShowEditForm(true)}>Edit</button>
+                                                <DeleteBusModal businessTitle={business.title} />
+                                            </div>
+                                        )
+                                    }
+
+                                    <div>Owner: {`${business.User.firstName} ${business.User.lastName}`}</div>
+                                    <div>{business.description}</div>
+                                </>}
+                        </div>
+                        <Reviews business={business} userId={sessionUser?.id} />
+                    </>
+                    :
+                    (
+                        <div>Loading...</div>
+                    )}
+
+            </div>
+        </div>
     )
 }
 export default BusinessDetails;

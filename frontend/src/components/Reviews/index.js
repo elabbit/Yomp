@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getReviews } from "../../store/review";
-import RevEditToggle from "../RevEditToggle";
 import ReviewForm from "../ReviewForm";
-import StarRating from "../StarRating";
 import LoginFormModal from "../LoginFormModal"
 import SignupFormModal from "../SignupFormModal"
 import './Reviews.css'
+import ReviewSingle from "../ReviewSingle";
 
 function Reviews({ business, userId }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -17,7 +16,6 @@ function Reviews({ business, userId }) {
     useEffect(() => {
         dispatch(getReviews(business.id));
     }, [dispatch, business])
-
 
     return (
         <div id="big-review-container">
@@ -44,20 +42,7 @@ function Reviews({ business, userId }) {
                             </div>
                         }
                         <div>
-                            <ul>
-                                {reviews.map((rev) => (
-                                    <li key={rev.id}>
-                                        <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
-                                        <StarRating rating={rev.rating} />
-                                        <div>{rev.review}</div>
-                                        {sessionUser?.id === rev.userId &&
-                                            (
-                                                <RevEditToggle rev={rev} />
-                                            )
-                                        }
-                                    </li>
-                                ))}
-                            </ul>
+                            <ReviewSingle reviews={reviews} sessionUser={sessionUser} />
                         </div>
                     </>
                 }
