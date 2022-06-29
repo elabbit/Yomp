@@ -1,21 +1,26 @@
+import { useState } from "react";
 import RevEditToggle from "../RevEditToggle";
 import StarRating from "../StarRating";
 
-const ReviewSingle = ({reviews, sessionUser}) =>{
+const ReviewSingle = ({ rev, sessionUser }) => {
+    const [showRev, setShowRev] = useState(true);
 
-    return(
-        reviews.map((rev) => (
-            <div key={rev.id} className="single-review">
-                <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
-                <StarRating rating={rev.rating} />
-                <div>{rev.review}</div>
-                {sessionUser?.id === rev.userId &&
-                    (
-                        <RevEditToggle rev={rev} />
-                    )
-                }
-            </div>
-                  ))
+    return (
+        <div key={rev.id} className="single-review">
+            {showRev &&
+                <>
+                    <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
+                    <StarRating rating={rev.rating} />
+                    <div>{rev.review}</div>
+                </>
+            }
+            {sessionUser?.id === rev.userId &&
+                (
+                    <RevEditToggle rev={rev} toggleRev={() => setShowRev(!showRev)} />
+                )
+            }
+        </div>
+
     )
 }
 

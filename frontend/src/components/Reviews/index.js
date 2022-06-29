@@ -42,7 +42,9 @@ function Reviews({ business, userId }) {
                             </div>
                         }
                         <div>
-                            <ReviewSingle reviews={reviews} sessionUser={sessionUser} />
+                        {reviews.map((rev) => (
+                            <ReviewSingle rev={rev} sessionUser={sessionUser} />
+                            ))}
                         </div>
                     </>
                 }

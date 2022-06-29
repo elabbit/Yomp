@@ -4,7 +4,7 @@ import { getBusinesses } from "../../store/business";
 import { editReview } from "../../store/review";
 
 
-const ReviewEditForm = ({ hideForm, rev }) => {
+const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState(rev.rating);
     const [review, setReview] = useState(rev.review);
@@ -36,6 +36,7 @@ const ReviewEditForm = ({ hideForm, rev }) => {
     const handleCancelClick = (e) => {
         e.preventDefault();
         hideForm();
+        toggleRev();
     }
 
     return (
