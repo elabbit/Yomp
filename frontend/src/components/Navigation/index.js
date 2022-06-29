@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Navigation.css';
 import * as sessionActions from '../../store/session';
@@ -10,7 +10,7 @@ import BusinessFormModal from '../BusinessFormModal';
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory();
+
 
   const logout = (e) => {
     e.preventDefault();

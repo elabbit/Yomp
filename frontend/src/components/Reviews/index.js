@@ -6,6 +6,7 @@ import LoginFormModal from "../LoginFormModal"
 import SignupFormModal from "../SignupFormModal"
 import './Reviews.css'
 import ReviewSingle from "../ReviewSingle";
+import TestComp from "../TestComp";
 
 function Reviews({ business, userId }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -15,10 +16,11 @@ function Reviews({ business, userId }) {
 
     useEffect(() => {
         dispatch(getReviews(business.id));
-    }, [dispatch])
+    }, [dispatch, business.id])
 
     return (
         <div id="big-review-container">
+            <TestComp />
             <div id="info-container">
             <div id="business-info">
             <h4>Address</h4>
@@ -53,7 +55,7 @@ function Reviews({ business, userId }) {
                         }
                         <div>
                         {reviews.map((rev) => (
-                            <ReviewSingle rev={rev} sessionUser={sessionUser} />
+                            <ReviewSingle key={rev.id} rev={rev} sessionUser={sessionUser} />
                             ))}
                         </div>
                     </>
