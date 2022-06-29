@@ -19,17 +19,22 @@ const BusinessList = () => {
         <div id="big-businesslist-container">
             <div id='businesslist-container'>
                 <div id='businesslist-header'>
-
                     <h2>Browse Businesses</h2>
                 </div>
                 <div id='list-container'>
                     {businesses.map(bus => (
                         <div className='businesslist-box' key={`div${bus.title}`}>
-                            <NavLink key={bus.id} to={`/business/${bus.id}`}>{bus.title}</NavLink>
-                            <StarRating key={`rating${bus.title}`} rating={bus.rating} />
-                            <div className="businesslist-des">
-                                {bus.description}
+                            <div className="businesslist-nav">
+                            <NavLink  key={bus.id} to={`/business/${bus.id}`}>{bus.title}</NavLink>
                             </div>
+                            <StarRating key={`rating${bus.title}`} rating={bus.rating} />
+                            <div className="businesslist-add">
+                                <div>{bus.address}</div>
+                                <div>{bus.city}, {bus.state} {bus.zipcode}</div>
+                            </div>
+                            <p className="businesslist-des">
+                                {bus.description}
+                            </p>
                         </div>
                     ))}
                 </div>

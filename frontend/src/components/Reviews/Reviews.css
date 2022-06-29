@@ -52,7 +52,7 @@ max-width: 280px;
     margin: 20px;
     border: 1px solid rgba(188, 220, 124, .3);
     border-radius: 5px;
-
+height:500px;
 
 
 }
@@ -83,3 +83,23 @@ max-width: 280px;
     margin-top: -18px;
     margin-bottom: 10px;
 }
+
+h4{
+margin-bottom:4px;
+}
+
+#website-link{
+   color:teal;
+   font-weight:500;
+    margin-left:-5px;
+    text-overflow: ellipsis;
+word-wrap:break-word;
+}
+#website-link:hover{
+text-decoration: underline;
+ }
+ /* #website-link-container{
+    background-color: red;
+
+    box-sizing: content-box;
+    } */

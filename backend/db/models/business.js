@@ -29,6 +29,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING(5)
     },
+    phoneNumber: {
+      allowNull: false,
+      type: DataTypes.STRING(10)
+    },
+    website: {
+      allowNull: false,
+      type: DataTypes.STRING(250)
+    },
     rating:{
       allowNull: false,
       type: DataTypes.DECIMAL,

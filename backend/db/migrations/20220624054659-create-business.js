@@ -36,6 +36,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(5)
       },
+      phoneNumber: {
+        allowNull: false,
+        type: Sequelize.STRING(10)
+      },
+      website: {
+        allowNull: false,
+        type: Sequelize.STRING(250)
+      },
       rating: {
         allowNull: false,
         type: Sequelize.DECIMAL,

@@ -36,17 +36,17 @@ module.exports = {
       {
         userId: 2,
         businessId: 3,
-        rating: 4,
-        review: "This is Boulder's best breakfast burrito hands down.  Every day is different and I have never been disappointed.  Bonus on Fridays they have donuts. One flavor and again they are amazing."
+        rating: 2,
+        review: "This place needs an adult in management at this location.  Food is good but orders are always completed incorrectly!  Get an adult in here that can guide these kids. 4 people here and i know of 2 orders that were completely wrong."
       },
       {
         userId: 6,
         businessId: 3,
         rating: 3,
-        review: "If you want meat, expensive, fancy and overrated meat, this is the place to go.   It was very good but not worth the money or the time it took. Too specialized in my opinion."
+        review: "I had heard mixed reviews regarding this place. Went in to order and they had very few customers at noon. Ordered two burgers and fries with just water to drink and bill was $27! They had 7 people working so they are fully staffed. We waited 29 minutes on our food! Food was tasty but way too expensive for a fast food restaurant and service was awfully slow. We will not go back. I only gave them 3 stars because taste of food was very good."
       },
       {
-        userId: 1,
+        userId: 3,
         businessId: 4,
         rating: 3,
         review: "The snarfburger and onion rings are delicious. It is a no-frills fastfood outlet that is located in a small shack. However, the food quality is inconsistent, either a hit or miss, especially during peak hours. Waiting times can also be long during peak hours."
@@ -61,61 +61,61 @@ module.exports = {
         userId: 3,
         businessId: 5,
         rating: 5,
-        review: "I chose this restaurant out of convenience during my vacation near Boulder and I am so glad I did. I'm not familiar with Tibetan or Nepalese food but I'm now a big fan."
+        review: "This was my first visit to this Red Robin location. I didn't have to wait long to be seated. My friend and I were seated at a booth. I did observe that Robin Robin, practices safe distance within their restaurant. I was amazed how fast my food was brought to my table, after I ordered it. I am looking forward to dining at Red Robin in the near future."
       },
       {
         userId: 6,
         businessId: 5,
-        rating: 5,
-        review: "Little Tibet in Boulder, Colorado has colorful and flavorful Tibetan and Indian food.  The Naan bread, pork belly chili fry, saag paneer and chicken tikka masala was all excellent.  The restaurant does not look like much, but it is some of the best Indian food I have had anywhere."
+        rating: 4,
+        review: "As usual great dinner at Red Robin. I aways order the turkey burger with onion straws which is my favorite. My wife ordered the burger with guacamole and oinion straws. We always enjoy sitting in the bar area due to the great sports coverage. Here is a good tip to resister in line and there are special 2 for one offers etc. we will be back for sure"
       },
       {
-        userId: 4,
+        userId: 3,
         businessId: 6,
-        rating: 3,
-        review: "Pho was good, generous with amount of  basil/limes/jalapeños/shoots. Broth was very dark for my friend who got chicken and added a lobster tail, typically broth is more clear but flavorful. Didn't have the traditional anise flavor but their version was tasty.  Mine seemed salty."
+        rating: 4,
+        review: "Two of us drove here this evening to get to Checker Burgers with cheese and bacon for $5. You cannot beat that. And the burgers are delish! The secret sauce seems to lean more toward Russian dressing. The burger was fresh, hot, and juicy-- this really hit the spot. Bonus: Our server was fast and friendly. Thanks, Checker Burger!"
       },
       {
         userId: 2,
         businessId: 6,
-        rating: 4,
-        review: "Chez Thuy never disappoints. Their takeout meals always become lunch the next day, and the creamy peanut curry noodles have some of the best sauce I've ever tasted. They're extremely friendly, I'd recommend this local business to anyone!"
+        rating: 3,
+        review: "Checkers has typical American fast food fare.  The food is decent but not outstanding.  It is a nice place to stop for a quick bite to eat but not worth going out of the way for food."
       },
       {
         userId: 4,
         businessId: 7,
-        rating: 3,
-        review:"The food was good. Small portions for the money and you don't get all of the sides that usually come with a Korean meal. Spicy pork bulgogi was drenched in sauce, too much IMO."
+        rating: 5,
+        review:"Always consistent. Appreciate how they have people outside to take your order and speed things up. Pro tip- get the burger with extra everything, animal style, and cut chili peppers. I like mine lettuce wrapped. It's like a salad sandwich. Plus, add some grilled onions on the fries. Voila. Done deal. Enjoy."
       },
       {
         userId: 5,
         businessId: 7,
-        rating: 3,
-        review: "What kind of Korean Restaurant doesn't offer sides of kimchi? This is ridiculous. Food is okay but I'm used to Korean restaurants where they serve little side dishes of fermented vegetables and stuff."
+        rating: 5,
+        review: "Just wanted to update this in n out and compliment everyone on the excellent customer service! Very friendly and no matter what time you go, expect to wait in line at any in n out franchise. This location however, has a fast and consistent line reminding myself why I get so excited to get a double double meal animal style everything, every time I go. Huge shout to everyone at this location and appreciate everything you all do in this time of our lives"
       },
       {
         userId: 6,
         businessId: 8,
         rating: 4,
-        review: "So happy to have stumbled on this place. Everything we ordered was wonderful! And they have plenty of vegan options to choose from"
+        review: "Stopped in because I am currently obsessed with patty melts and found out that Habit Burger can switch to sourdough on any charburger.  The burger was good but a little on the small side.  The onion rings are great and the green bean tempura amazing.  I would come back just for the sides but also want to check out the ahi burger next time.  Service very friendly."
       },
       {
         userId: 4,
         businessId: 8,
         rating: 4,
-        review: "Legit Vietnamese food in Boulder! Had the spicy beef pho, veggie rolls and iced coffee. Everything was amazing."
+        review: "As for the food, my family and I all ordered the Double Char Burger with added bacon and a side of fries. The burger, although a tiny bit sloppy looking, was incredibly delicious and packed with flavor! The patties were cooked nicely, the bacon was crispy and the fries were decent but I didn't mind that too much because of how good the burger really tasted. If you're looking for a good burger joint in the Teterboro/Carlstadt area, I'd recommend coming to this location for a bite!"
       },
       {
         userId: 2,
         businessId: 9,
-        rating: 5,
-        review: "Great ramen in Boulder! I loved the special spicy garlic ramen and I get the combo and also get the spicy beef gyozas. The gyozas are amazing!! Full of flavor and are so crispy! I also love the ramen. The broth itself is so flavorful and doesn't contain any pork like most ramen places."
+        rating: 4,
+        review: "Even though I have lived in Raleigh for the past 5 years I had never had a chance to try Char Grill for myself. I finally decided to go and try it and I was not disappointed! I really wish I had gone sooner, it's a really good place to get some quick, good, and pretty affordable food. I tried their grilled chicken sandwich and fries. The sandwich was really juicy and had a good amount of toppings, and the fries were perfectly salty and crunchy. I will definitely be going back, really solid fast food shop!"
       },
       {
-        userId: 3,
+        userId: 5,
         businessId: 9,
         rating: 4,
-        review: "Have been here maybe half a dozen times. Big fan of the takoyaki octopus appetizer. The ramen is decent as well. My go to is the Garnet. Easy to find location in the mall next to Chipotle."
+        review: "Nom nom nom. This is my favorite burger spot! Char grill has a great classic burger and is made right in front of you, fresh to order. They have a few different options & I recommend a milkshake to go with it! The milkshakes are really soft serve ice cream but always hit the spot. Their fries are pretty good too! This is definitely a guilty pleasure. Two people can eat a burger, fries, and share a large milkshake for about $15!"
       },
       {
         userId: 4,
