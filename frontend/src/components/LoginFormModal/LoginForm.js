@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './LoginForm.css';
 
-function LoginForm({hideModal}) {
+function LoginForm({ hideModal }) {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  // const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -23,31 +23,49 @@ function LoginForm({hideModal}) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-      <button onClick={hideModal}>Cancel</button>
-    </form>
+    <div id="login-form-container">
+      <div id="login-header">
+        <h2>
+          login</h2>
+      </div>
+      <div id="error-container">
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+      </div>
+      <form id="login-form" onSubmit={handleSubmit}>
+        <div id="login-input-container">
+
+          <label className="login-label">
+            Email
+            <input
+              className="login-input"
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          </label>
+          <label className="login-label">
+            Password
+            <input
+              className="login-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+
+        </div>
+        <div id="login-btn-container">
+        <button type="submit">Log In</button>
+        <button onClick={hideModal}>Cancel</button>
+
+        </div>
+      </form>
+
+    </div>
   );
 }
 

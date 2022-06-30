@@ -98,10 +98,7 @@ const reviewReducer = (state = [], action) => {
       return editState;
     case DELETE_REV:
       const newState = [...state];
-      let delIndex;
-      for (let i = 0; i < newState.length; i++) {
-        if (action.id === newState[i].id) delIndex = i;
-      }
+      const delIndex = newState.findIndex(obj => obj.id === +action.id)
       newState.splice(delIndex, 1)
       return newState;
 

@@ -16,9 +16,28 @@
     left: 0;
     bottom: 0;
     background-color: rgba(47, 79, 79,.7);
+
   }
 
   #modal-content {
     position: absolute;
     background-color:white;
+    border-radius: 5px;
+    display:flex;
+  }
+
+
+  #modal button {
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color:teal;
+    color: white;
+    transition:.5s;
+    font-size:11pt;
+  }
+  #modal button:hover{
+    color:teal;
+    background-color:teal;
+    background-color: rgb(188, 220, 124);
   }

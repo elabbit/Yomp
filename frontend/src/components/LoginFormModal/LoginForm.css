@@ -1,0 +1,86 @@
+#login-form-container {
+border-radius: 4px;
+width:350px;
+min-height:200px;
+padding:20px;
+
+}
+
+#login-header{
+
+    border-bottom:4px solid teal;
+    margin-bottom:20px;
+    margin-left:-20px;
+    margin-right:-20px;
+    margin-top: -20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-header h2{
+    font-family: Arial Rounded MT Bold;
+}
+
+#login-form{
+    display:flex;
+    flex-direction: column;
+    width:300px;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top:-10px;
+
+}
+#login-form *{
+    margin:3px;
+}
+
+#login-form button{
+    margin:5px;
+width:160px;
+height:35px
+
+}
+
+.login-input{
+    margin:5px;
+        background-color: rgb(188, 220, 124, .4);
+        border: none;
+        padding: 5px;
+        border-radius: 4px;
+        color: rgba(45, 46, 47, 1);
+
+
+    }
+
+.login-input:focus {
+        background-color: rgb(188, 220, 124, .7);
+        outline: solid 2px rgba(0, 128, 128, .8);
+
+    }
+
+#login-input-container{
+display:flex;
+flex-direction: column;
+
+}
+
+.login-label{
+    display:flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#login-btn-container{
+margin-top:10px;
+    display:flex;
+}
+
+#error-container ul{
+    font-style:italic;
+    list-style:none;
+    margin-left:-25px;
+    margin-top:-5px;
+    margin-bottom: 18px;
+}

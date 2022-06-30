@@ -20,6 +20,8 @@ const BusinessEditForm = ({ hideForm, business }) => {
     const [validationErrors, setValidationErrors] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
+
+
     useEffect(() => {
         const errors = []
         if (title.length > 50) errors.push('Title can not exceed 50 characters.')
@@ -139,9 +141,10 @@ const BusinessEditForm = ({ hideForm, business }) => {
                     required
                     value={description}
                     onChange={e => setDescription(e.target.value)} />
-
+<div id="bus-edit-buttons">
                 <button type="submit" >Confirm Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
+</div>
             </form>
         </div>
     );

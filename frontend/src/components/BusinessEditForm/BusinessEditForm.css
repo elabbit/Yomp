@@ -77,4 +77,11 @@
     font-size: 14px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     resize: none;
+    margin-bottom:15px;
+}
+
+#bus-edit-buttons{
+    display:flex;
+    justify-content: center;
+
 }

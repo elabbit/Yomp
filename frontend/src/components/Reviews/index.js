@@ -37,10 +37,10 @@ function Reviews({ business, userId }) {
                             <div id="business-info">
                             {sessionUser?.id === business?.ownerId &&
                                 (
-                                    <div>
+                                    <span id="edit-delete-bus-buttons">
                                         <button onClick={() => setShowEditForm(true)}>Edit</button>
                                         <DeleteBusModal businessTitle={business.title} />
-                                    </div>
+                                    </span>
                                 )
                             }
                                 <h4>Address</h4>

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getBusinesses } from "../../store/business";
 
 import Reviews from "../Reviews";
