@@ -1,0 +1,19 @@
+.edit-rev-buttons{
+	margin-top: 10px;
+display: flex;
+justify-content: center;
+}
+
+.edit-rev-buttons button{
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    color:teal;
+    background-color: rgb(188, 220, 124);
+    transition:.5s;
+}
+.add-rev-buttons button:hover{
+    background-color:teal;
+   color: white;
+   opacity: .5;
+}

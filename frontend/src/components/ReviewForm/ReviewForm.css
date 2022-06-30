@@ -60,7 +60,7 @@
 	opacity: 1;
 }
 
-#rating-container {
+#add-rating-container {
 	margin-top: -15px;
 	height: 30px;
 	position: relative;
@@ -82,13 +82,44 @@
 }
 #add-reviewtext:focus{
     outline: none;
-    border: solid 1.5px teal;
+    border: solid 2px teal;
 }
 
-.form-container{
+.add-rev-container{
 		border-radius: 8px;
 		padding: 20px;
 		border: 1px solid rgba(188, 220, 124, .3);
 		margin-top: 20px;
 
+}
+
+#add-text-container{
+margin-right:20px;
+
+}
+
+.add-rev-container h4{
+	font-weight:450;
+	margin-top:0px;
+	margin-bottom: 20px;
+}
+
+#add-rev-buttons{
+	margin-top: 10px;
+display: flex;
+justify-content: center;
+}
+
+#add-rev-buttons button{
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    color:teal;
+    background-color: rgb(188, 220, 124);
+    transition:.5s;
+}
+#add-rev-buttons button:hover{
+    background-color:teal;
+   color: white;
+   opacity: .5;
 }

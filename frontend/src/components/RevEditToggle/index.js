@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReviewEditForm from '../ReviewEditForm';
 import ReviewDeleteModal from '../ReviewDeleteModal'
+import "./RevEditToggle.css"
 
 const RevEditToggle = ({ rev, toggleRev}) => {
 
@@ -15,7 +16,7 @@ const RevEditToggle = ({ rev, toggleRev}) => {
         showRevEdit ?
             <ReviewEditForm hideForm={() => setShowRevEdit(false)} toggleRev={toggleRev} rev={rev}/>
             :
-            <div>
+            <div class='edit-rev-buttons'>
                 <button onClick={onEditRev}>Edit</button>
                 <ReviewDeleteModal rev={rev} />
             </div>

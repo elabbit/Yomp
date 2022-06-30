@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './ReviewForm.css'
 import { addReview } from "../../store/review";
-import { getBusinesses } from "../../store/business";
+import ErrorModal from '../ErrorModal';
+
 
 const ReviewForm = ({ userId, hideForm }) => {
     const { businessId } = useParams();
     const dispatch = useDispatch();
-    const history = useHistory();
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
-    const [hasSubmitted, setHasSubmitted] = useState(false);
 
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const errors = []
@@ -25,8 +25,9 @@ const ReviewForm = ({ userId, hideForm }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true);
-        if (validationErrors.length) return;
+        if (validationErrors.length){
+            return setShowModal(true);
+        }
         const newRev = {
             userId, businessId, rating, review
         }
@@ -34,12 +35,11 @@ const ReviewForm = ({ userId, hideForm }) => {
         if (createdRev) {
             setRating(0);
             setReview('');
-            setHasSubmitted(false);
             hideForm();
-            dispatch(getBusinesses())
-            history.push(`/business/${createdRev.businessId}`)
         }
     }
+
+
 
     const handleCancelClick = (e) => {
         e.preventDefault();
@@ -47,18 +47,11 @@ const ReviewForm = ({ userId, hideForm }) => {
     }
 
     return (
-        <div className='form-container'>
+        <div className='add-rev-container'>
             <form onSubmit={handleSubmit}>
-                {hasSubmitted &&
-                    <ul className="errors">
-                        {
-                            validationErrors.map(error => (
-                                <li key={error}>{error}</li>
-                            ))
-                        }
-                    </ul>}
-                <h5>Please select a rating:</h5>
-                <div id="rating-container">
+            <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} />
+                <h4>Please select a rating:</h4>
+                <div id="add-rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />
                         <label htmlFor="rate1"></label>
@@ -72,7 +65,7 @@ const ReviewForm = ({ userId, hideForm }) => {
                         <label htmlFor="rate5"></label>
                     </div>
                 </div>
-                <div>
+                <div id="add-text-container">
                     <textarea
                         id="add-reviewtext"
                         type="review"
@@ -81,8 +74,10 @@ const ReviewForm = ({ userId, hideForm }) => {
                         value={review}
                         onChange={e => setReview(e.target.value)} />
                 </div>
-                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Submit Review</button>
+                <div id="add-rev-buttons">
+                <button type="submit" >Submit Review</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
+                </div>
             </form>
         </div>
     )

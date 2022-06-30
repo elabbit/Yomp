@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getBusinesses } from "../../store/business";
+
 
 import Reviews from "../Reviews";
 import StarRating from "../StarRating";
@@ -40,7 +41,9 @@ const BusinessDetails = () => {
                     </>
                     :
                     (
-                        <div>Loading...</div>
+                        <div>Please wait or return
+                            <Link to="/">home.</Link>
+                        </div>
                     )}
 
             </div>

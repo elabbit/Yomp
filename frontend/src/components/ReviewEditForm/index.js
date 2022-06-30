@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
+// import ErrorModal from '../ErrorModal';
+// import {useEffect} from "react";
+import './ReviewEditForm.css'
 
 
 const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState(rev.rating);
     const [review, setReview] = useState(rev.review);
-    const [validationErrors, setValidationErrors] = useState([]);
-    const [hasSubmitted, setHasSubmitted] = useState(false);
+    // const [validationErrors, setValidationErrors] = useState([]);
+    // const [showModal, setShowModal] = useState(false);
 
+    // useEffect(() => {
+    //     const errors = []
+    //     if (!rating) errors.push("Please select a rating.")
+    //     setValidationErrors(errors)
 
-    useEffect(() => {
-        const errors = []
-        if (!rating) errors.push("Please select a rating.")
-        setValidationErrors(errors)
-
-    }, [rating]);
+    // }, [rating]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true);
-        if (validationErrors.length) return;
+    //     if (validationErrors.length){
+    //      return setShowModal(true);
+    // }
         const editedRev = {
             ...rev,
             rating, review
@@ -40,19 +43,12 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     }
 
     return (
-        <div className='form-container'>
+        <div className='edit-rev-container'>
 
             <form onSubmit={handleSubmit}>
-                {hasSubmitted &&
-                    <ul className="errors">
-                        {
-                            validationErrors.map(error => (
-                                <li key={error}>{error}</li>
-                            ))
-                        }
-                    </ul>}
+            {/* <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} /> */}
                     <h4>Please select a rating:</h4>
-                <div id="rating-container">
+                <div id="edit-rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />
                         <label htmlFor="rate1"></label>
@@ -66,16 +62,19 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
                         <label htmlFor="rate5"></label>
                     </div>
                 </div>
-                <div>
+              <div id="edit-text-container">
                     <textarea
+                       id="edit-reviewtext"
                         type="review"
                         placeholder="Review"
                         required
                         value={review}
                         onChange={e => setReview(e.target.value)} />
                 </div>
-                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Submit Edit</button>
+                <div class="edit-rev-buttons">
+                <button type="submit" >Submit Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
+                </div>
             </form>
         </div>
     )

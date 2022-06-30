@@ -1,0 +1,38 @@
+
+#edit-rating-container {
+	margin-top: -15px;
+	height: 30px;
+	position: relative;
+}
+
+
+#edit-reviewtext{
+	padding:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    border: none;
+    border-radius: 4px;
+    height:100px;
+    background-color: rgba(188, 220, 124, .4);
+	width:100%;
+
+
+
+}
+#edit-reviewtext:focus{
+    outline: none;
+    border: solid 2px teal;
+}
+
+
+
+#edit-text-container{
+margin-right:20px;
+
+}
+
+.edit-rev-container h4{
+	font-weight:450;
+	margin-top:0px;
+	margin-bottom: 20px;
+}

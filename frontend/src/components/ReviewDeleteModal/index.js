@@ -19,11 +19,17 @@ function DeleteBusModal({ rev }) {
             <button onClick={() => setShowModal(true)}>Delete</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <div>
-                        <h2>DELETE CONFIRMATION</h2>
-                        <div>{`Are you sure you want to remove this review?`}</div>
+                    <div id="modal-form-container">
+                    <div id="modal-header">
+                        <h2>delete confirmation</h2>
+                    </div>
+                    <div id='modal-container'>
+                        <div>{`Are you sure you want to delete this review?`}</div>
+                        </div>
+                        <div id="modal-btn-container">
                         <button onClick={handleDelete}>Delete</button>
                         <button onClick={() => setShowModal(false)}>Cancel</button>
+                        </div>
                     </div>
                 </Modal>
             )}
