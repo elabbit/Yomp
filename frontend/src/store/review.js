@@ -26,6 +26,16 @@ const deleteRev = id => ({
 })
 
 
+
+export const getRecentReviews = () => async dispatch => {
+  const response = await csrfFetch(`/api/review/recent`);
+
+  if (response.ok) {
+    const revList = await response.json();
+    dispatch(getAllRev(revList));
+  }
+};
+
 export const getReviews = (id) => async dispatch => {
 
   const response = await csrfFetch(`/api/review/${id}`);
@@ -78,6 +88,9 @@ export const deleteReview = (id) => async dispatch => {
     return id;
   }
 };
+
+
+
 
 
 

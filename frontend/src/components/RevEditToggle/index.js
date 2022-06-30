@@ -16,7 +16,7 @@ const RevEditToggle = ({ rev, toggleRev}) => {
         showRevEdit ?
             <ReviewEditForm hideForm={() => setShowRevEdit(false)} toggleRev={toggleRev} rev={rev}/>
             :
-            <div class='edit-rev-buttons'>
+            <div className='edit-rev-buttons'>
                 <button onClick={onEditRev}>Edit</button>
                 <ReviewDeleteModal rev={rev} />
             </div>

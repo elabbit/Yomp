@@ -21,6 +21,21 @@ async function updateRating(businessId) {
 }
 
 
+//GETRECETREVIEWS
+router.get('/recent', asyncHandler(async (req, res, next) => {
+    const reviews = await Review.findAll({
+        limit: 12,
+        include: [User, Business],
+        order: [
+            ['updatedAt', 'DESC']
+        ]
+    });
+    return res.json(reviews);
+}));
+
+
+
+
 //GET REVIEWS
 router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const businessId = req.params.id;
@@ -33,6 +48,8 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     });
     return res.json(reviews);
 }));
+
+
 
 //ADD A REVIEW
 router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {

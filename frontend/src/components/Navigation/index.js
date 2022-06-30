@@ -30,10 +30,14 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <div id='center-side'>
+
+<NavLink to='/'>home</NavLink>
+<NavLink to='/burgerjoints'>browse</NavLink>
+<NavLink to='/about'>about</NavLink>
+
+
         </div>
         <div id='right-side'>
-
-
           <div id='logout-button-div'>
           <BusinessFormModal/>
             <button id='logout-button' onClick={logout}>Log Out</button>
@@ -49,6 +53,14 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
+              <div id='center-side'>
+
+   <NavLink to='/'>home</NavLink>
+   <NavLink to='/burgerjoints'>browse</NavLink>
+   <NavLink to='/about'>about</NavLink>
+
+
+           </div>
         <div id='right-side'>
           <div id='login-signup-button'>
             <LoginFormModal />

@@ -41,8 +41,10 @@ const BusinessDetails = () => {
                     </>
                     :
                     (
-                        <div>Please wait or return
+                        <div id="notfound">
+                        <h2>Please wait or return
                             <Link to="/">home.</Link>
+                        </h2>
                         </div>
                     )}
 

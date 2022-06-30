@@ -5,6 +5,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BusinessList from "./components/BusinessList"
 import BusinessDetails from "./components/BusinessDetails";
+import HomePage from "./components/HomePage";
+import About from "./components/About";
 
 
 function App() {
@@ -21,15 +23,23 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path='/'>
+            <HomePage />
+          </Route>
+          <Route exact path='/about'>
+            <About />
+          </Route>
+          <Route exact path='/burgerjoints'>
             <BusinessList />
           </Route>
-          <Route exact path='/burgerjoint/:businessId'>
+          <Route exact path='/burgerjoints/:businessId'>
             <BusinessDetails />
           </Route>
           <Route>
-            <h2>This page doesn't exist! Please return
-            <Link to="/">home.</Link>
-            </h2>
+            <div className="body-container" id="notfound">
+              <h2>This page doesn't exist! Please return
+                <Link to="/">home.</Link>
+              </h2>
+            </div>
           </Route>
         </Switch>
       )}
