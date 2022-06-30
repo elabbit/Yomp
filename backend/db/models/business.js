@@ -34,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(10)
     },
     website: {
-      allowNull: false,
       type: DataTypes.STRING(250)
     },
     rating:{

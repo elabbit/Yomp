@@ -8,6 +8,7 @@
 #review-log>button:hover {
     text-decoration: underline;
     cursor: pointer;
+    background-color: white;
 }
 
 #review-sign>button {
@@ -20,6 +21,7 @@
 #review-sign>button:hover {
     text-decoration: underline;
     cursor: pointer;
+    background-color: white;
 }
 
 #big-review-container {
@@ -39,20 +41,22 @@
 
 
 
-#info-container{
+#info-container {
     grid-area: info;
 }
 
 
 
 #business-info {
-position: absolute;
-max-width: 280px;
+    position: absolute;
+    width: 280px;
     padding: 20px;
     margin: 20px;
     border: 1px solid rgba(188, 220, 124, .3);
     border-radius: 5px;
-height:500px;
+    height: 550px;
+    margin-top:-50px;
+
 
 
 }
@@ -84,21 +88,23 @@ height:500px;
     margin-bottom: 10px;
 }
 
-h4{
-margin-bottom:4px;
+h4 {
+    margin-bottom: 4px;
 }
 
-#website-link{
-   color:teal;
-   font-weight:500;
-    margin-left:-5px;
+#website-link {
+    color: teal;
+    font-weight: 500;
+    margin-left: -5px;
     text-overflow: ellipsis;
-word-wrap:break-word;
+    word-wrap: break-word;
 }
-#website-link:hover{
-text-decoration: underline;
- }
- /* #website-link-container{
+
+#website-link:hover {
+    text-decoration: underline;
+}
+
+/* #website-link-container{
     background-color: red;
 
     box-sizing: content-box;

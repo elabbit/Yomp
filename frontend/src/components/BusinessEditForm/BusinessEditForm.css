@@ -1,0 +1,80 @@
+#edit-businessform>h4 {
+    font-size: 13px;
+
+
+}
+
+
+#edit-businessform {
+    margin-top: -15px;
+    padding-right: 12px;
+
+}
+
+.bus-edit {
+    background-color: rgb(188, 220, 124, .4);
+    border: none;
+    padding: 7px;
+    border-radius: 4px;
+    color: rgba(45, 46, 47, 1);
+
+
+}
+
+.bus-edit:focus {
+    background-color: rgb(188, 220, 124, .7);
+    outline: solid 2px rgba(0, 128, 128, .8);
+
+}
+
+#bus-title {
+    width: 100%;
+}
+
+#bus-address {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+#bus-city {
+    width: 27%;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+
+#bus-state {
+    width: 45%;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+
+#bus-zipcode {
+    width: 20%;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+
+#bus-edit-span {
+    display: flex;
+    width: 286px;
+    justify-content: space-evenly;
+
+}
+
+#bus-phonenumber {
+    width: 100%;
+
+}
+
+#bus-website {
+    width: 100%;
+
+}
+
+#bus-description {
+    width: 100%;
+    height: 180px;
+    font-size: 14px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    resize: none;
+}

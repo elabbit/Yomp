@@ -41,7 +41,6 @@ module.exports = {
         type: Sequelize.STRING(10)
       },
       website: {
-        allowNull: false,
         type: Sequelize.STRING(250)
       },
       rating: {

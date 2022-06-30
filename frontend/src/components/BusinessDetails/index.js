@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBusinesses } from "../../store/business";
-import BusinessEditForm from '../BusinessEditForm'
-import DeleteBusModal from "../DeleteBusModal";
+
 import Reviews from "../Reviews";
 import StarRating from "../StarRating";
 import './BusinessDetails.css'
@@ -15,7 +14,7 @@ const BusinessDetails = () => {
     const business = useSelector(state => state.business[businessId]);
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    const [showEditForm, setShowEditForm] = useState(false);
+
 
     useEffect(() => {
         dispatch(getBusinesses());
@@ -30,26 +29,12 @@ const BusinessDetails = () => {
                 {business ?
                     <>
                         <div>
-
                             <h1>{business.title}</h1>
                             <div id="large-stars">
                             <StarRating key={`rating${business.title}`} rating={business.rating} />
                             </div>
                             <h4>Owner: {`${business.User.firstName} ${business.User.lastName}`}</h4>
-                            {showEditForm ?
-                                <BusinessEditForm hideForm={() => setShowEditForm(false)} business={business} />
-                                :
-                                <>
-                                    {sessionUser?.id === business?.ownerId &&
-                                        (
-                                            <div>
-                                                <button onClick={() => setShowEditForm(true)}>Edit</button>
-                                                <DeleteBusModal businessTitle={business.title} />
-                                            </div>
-                                        )
-                                    }
 
-                                </>}
                         </div>
                         <Reviews business={business} userId={sessionUser?.id} />
                     </>

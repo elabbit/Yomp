@@ -23,11 +23,13 @@ router.post('/', asyncHandler(async (req, res, next) => {
         city,
         state,
         zipcode,
-        ownerId
+        ownerId,
+        phoneNumber,
+        website
     } = req.body;
 
 
-    const newBus = await Business.create({ title, description, address, city, state, zipcode, ownerId })
+    const newBus = await Business.create({ title, description, address, city, state, zipcode, ownerId, phoneNumber, website})
     const userBus = await Business.findByPk(newBus.id, {
         include: [User]
     })
@@ -46,7 +48,9 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
         address,
         city,
         state,
-        zipcode
+        zipcode,
+        phoneNumber,
+        website
     } = req.body;
 
     editedBus.title = title;
@@ -55,6 +59,8 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     editedBus.city = city;
     editedBus.state = state;
     editedBus.zipcode = zipcode;
+    editedBus.phoneNumber = phoneNumber;
+    editedBus.website = website;
     await editedBus.save();
 
     return res.json(editedBus);

@@ -17,7 +17,7 @@ const ReviewForm = ({ userId, hideForm }) => {
 
     useEffect(() => {
         const errors = []
-        if(!rating) errors.push("Please select a rating.")
+        if (!rating) errors.push("Please select a rating.")
 
         setValidationErrors(errors)
 
@@ -26,7 +26,7 @@ const ReviewForm = ({ userId, hideForm }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
-        if(validationErrors.length) return;
+        if (validationErrors.length) return;
         const newRev = {
             userId, businessId, rating, review
         }
@@ -57,7 +57,7 @@ const ReviewForm = ({ userId, hideForm }) => {
                             ))
                         }
                     </ul>}
-                    <h4>Please select a rating:</h4>
+                <h5>Please select a rating:</h5>
                 <div id="rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />
@@ -74,8 +74,9 @@ const ReviewForm = ({ userId, hideForm }) => {
                 </div>
                 <div>
                     <textarea
+                        id="add-reviewtext"
                         type="review"
-                        placeholder="Review"
+                        placeholder="Write a review..."
                         required
                         value={review}
                         onChange={e => setReview(e.target.value)} />

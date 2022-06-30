@@ -11,7 +11,9 @@ const ReviewSingle = ({ rev, sessionUser }) => {
             {showRev &&
                 <>
                     <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
+                    <div className='single-star-div'>
                     <StarRating rating={rev.rating} />
+                    </div>
                     <div>{rev.review}</div>
                 </>
             }

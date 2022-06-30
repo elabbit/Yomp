@@ -5,7 +5,7 @@ import { states } from '../../Data/states';
 import { addBusiness } from '../../store/business';
 
 
-const BusinessForm = ({hideModal}) => {
+const BusinessForm = ({ hideModal }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -15,6 +15,8 @@ const BusinessForm = ({hideModal}) => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zipcode, setZipcode] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [website, setWebsite] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -24,10 +26,12 @@ const BusinessForm = ({hideModal}) => {
         if (description.length > 500) errors.push('Description can not exceed 500 characters.')
         if (address.length > 50) errors.push('Address can not exceed 50 characters.')
         if (city.length > 30) errors.push('City can not exceed 30 characters.')
-        if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 digits.')
+        if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 numerical digits.')
+        if (phoneNumber.length !== 10 || isNaN(phoneNumber)) errors.push('Phone number must be 10 numerical digits.')
+        if (website.length > 250) errors.push('URL can not exceed 250 characters.')
         setValidationErrors(errors)
 
-    }, [title, description, address, city, zipcode]);
+    }, [title, description, address, city, zipcode, phoneNumber, website]);
 
 
     const handleSubmit = async (e) => {
@@ -42,6 +46,8 @@ const BusinessForm = ({hideModal}) => {
             city,
             state,
             zipcode,
+            phoneNumber,
+            website,
             ownerId: sessionUser.id
         };
 
@@ -98,8 +104,17 @@ const BusinessForm = ({hideModal}) => {
                     placeholder="Zip Code"
                     value={zipcode}
                     onChange={e => setZipcode(e.target.value)} />
-
-                <button type="submit"  disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
+                <input
+                    type="phonenumber"
+                    placeholder="Phone Number (no spaces or dashes)"
+                    value={phoneNumber}
+                    onChange={e => setPhoneNumber(e.target.value)} />
+                <input
+                    type="website"
+                    placeholder="Website URL (Optional)"
+                    value={website}
+                    onChange={e => setWebsite(e.target.value)} />
+                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
                 <button onClick={hideModal}>Cancel</button>
             </form>
         </div>
