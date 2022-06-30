@@ -30,10 +30,12 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <div id='center-side'>
-          <BusinessFormModal/>
         </div>
         <div id='right-side'>
+
+
           <div id='logout-button-div'>
+          <BusinessFormModal/>
             <button id='logout-button' onClick={logout}>Log Out</button>
           </div>
           <div id='welcome-message'>{'Welcome '}

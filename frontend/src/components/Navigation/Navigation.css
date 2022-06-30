@@ -77,7 +77,7 @@ a {
 
 #login-button,
 #signup-button,
-#logout-button {
+#logout-button, #add-bus-button {
     cursor: pointer;
     background-color: teal;
     border-radius: 4px;
@@ -95,7 +95,7 @@ a {
 
 #login-button:hover,
 #signup-button:hover,
-#logout-button:hover {
+#logout-button:hover, #add-bus-button:hover{
     color: teal;
     background-color: rgb(188, 220, 124)
 }
@@ -121,9 +121,6 @@ a {
 #user-name {
     font-weight: bold;
     margin-left: 5px;
-
-
-
 }
 
 #demo-link {

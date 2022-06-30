@@ -14,6 +14,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -22,7 +23,7 @@ function App() {
           <Route exact path='/'>
             <BusinessList />
           </Route>
-          <Route exact path='/business/:businessId'>
+          <Route exact path='/burgerjoint/:businessId'>
             <BusinessDetails />
           </Route>
           <Route>

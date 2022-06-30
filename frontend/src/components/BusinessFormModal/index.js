@@ -7,7 +7,7 @@ function BusinessFormModal() {
 
   return (
     <>
-      <button className='nav-button' onClick={() => setShowModal(true)}>Add Business</button>
+      <button id='add-bus-button' onClick={() => setShowModal(true)}>Add Burger Joint</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <BusinessForm hideModal={()=> setShowModal(false)}/>

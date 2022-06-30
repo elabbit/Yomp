@@ -7,25 +7,25 @@ import './BusinessList.css'
 
 
 const BusinessList = () => {
-    const businesses = Object.values(useSelector(state => state.business))
-
+    let businesses = Object.values(useSelector(state => state.business))
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getBusinesses());
     }, [dispatch])
+
+
 
     return (
         <div id="big-businesslist-container">
             <div id='businesslist-container'>
                 <div id='businesslist-header'>
-                    <h2>Browse Businesses</h2>
+                    <h2>Browse Burger Joints</h2>
                 </div>
                 <div id='list-container'>
                     {businesses.map(bus => (
                         <div className='businesslist-box' key={`div${bus.title}`}>
                             <div className="businesslist-nav">
-                            <NavLink  key={bus.id} to={`/business/${bus.id}`}>{bus.title}</NavLink>
+                            <NavLink  key={bus.id} to={`/burgerjoint/${bus.id}`}>{bus.title}</NavLink>
                             </div>
                             <StarRating key={`rating${bus.title}`} rating={bus.rating} />
                             <div className="businesslist-add">

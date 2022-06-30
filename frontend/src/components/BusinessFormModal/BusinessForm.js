@@ -63,7 +63,7 @@ const BusinessForm = ({ hideModal }) => {
     return (
         <div id="addbus-form-container">
             <div id="addbus-header">
-                <h2>add business</h2>
+                <h2>add burger joint</h2>
             </div>
 
             <div id="error-container">

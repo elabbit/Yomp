@@ -4,6 +4,7 @@ const GET_ALLBUS = 'business/GET_ALLBUS';
 const ADD_BUS = 'business/ADD_BUS';
 const EDIT_BUS = 'business/EDIT_BUS';
 const DELETE_BUS = 'business/DELETE_BUS';
+const SORTRATING_BUS = 'business/SORTRATING_BUS'
 
 const getAllBus = busList => ({
   type: GET_ALLBUS,
@@ -24,6 +25,7 @@ const deleteBus = id => ({
   type: DELETE_BUS,
   id
 })
+
 
 
 export const getBusinesses = () => async dispatch => {
