@@ -32,7 +32,7 @@ function SignupFormPage({hideModal}) {
     <div id="signup-form-container">
      <div id="signup-header">
         <h2>
-          login</h2>
+          sign up</h2>
       </div>
       <div id="error-container">
       <ul>
@@ -40,57 +40,49 @@ function SignupFormPage({hideModal}) {
       </ul>
       </div>
     <form id="signup-form" onSubmit={handleSubmit}>
-    <div id="singup-input-container">
-      <label className="signup-label">
-        First Name
+    <div id="signup-input-container">
+
         <input
+        placeholder="First Name"
         className="signup-input"
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
-      </label>
-      <label className="signup-label">
-        Last Name
+
         <input
+        placeholder="Last Name"
         className="signup-input"
           type="text"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-      </label>
-      <label className="signup-label">
-        Email
         <input
+        placeholder="Email"
         className="signup-input"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label className="signup-label">
-        Password
         <input
+        placeholder="Password"
         className="signup-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label className="signup-label">
-        Confirm Password
         <input
+        placeholder="Confirm Password"
         className="signup-input"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
       </div>
       <div id="signup-btn-container">
       <button type="submit">Sign Up</button>

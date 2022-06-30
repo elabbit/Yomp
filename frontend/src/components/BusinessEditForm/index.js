@@ -78,7 +78,7 @@ const BusinessEditForm = ({ hideForm, business }) => {
                     className="bus-edit"
                     id="bus-title"
                     type="title"
-                    placeholder="Title"
+                    placeholder="Name"
                     required
                     value={title}
                     onChange={e => setTitle(e.target.value)} />

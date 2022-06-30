@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { states } from '../../Data/states';
 import { addBusiness } from '../../store/business';
+import "./BusinessForm.css"
 
 
 const BusinessForm = ({ hideModal }) => {
@@ -60,8 +61,12 @@ const BusinessForm = ({ hideModal }) => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div id="addbus-form-container">
+            <div id="addbus-header">
+                <h2>add business</h2>
+            </div>
+
+            <div id="error-container">
                 {hasSubmitted &&
                     <ul className="errors">
                         {
@@ -70,52 +75,73 @@ const BusinessForm = ({ hideModal }) => {
                             ))
                         }
                     </ul>}
-                <input
-                    type="title"
-                    placeholder="Title"
-                    required
-                    value={title}
-                    onChange={e => setTitle(e.target.value)} />
-                <textarea
-                    type="description"
-                    placeholder="Description"
-                    required
-                    value={description}
-                    onChange={e => setDescription(e.target.value)} />
-                <input
-                    type="address"
-                    placeholder="Address"
-                    required
-                    value={address}
-                    onChange={e => setAddress(e.target.value)} />
-                <input
-                    type="city"
-                    placeholder="City"
-                    required
-                    value={city}
-                    onChange={e => setCity(e.target.value)} />
-                <select onChange={e => setState(e.target.value)} value={state}>
-                    {states.map(state =>
-                        <option key={state}>{state}</option>
-                    )}
-                </select>
-                <input
-                    type="zipcode"
-                    placeholder="Zip Code"
-                    value={zipcode}
-                    onChange={e => setZipcode(e.target.value)} />
-                <input
-                    type="phonenumber"
-                    placeholder="Phone Number (no spaces or dashes)"
-                    value={phoneNumber}
-                    onChange={e => setPhoneNumber(e.target.value)} />
-                <input
-                    type="website"
-                    placeholder="Website URL (Optional)"
-                    value={website}
-                    onChange={e => setWebsite(e.target.value)} />
-                <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
-                <button onClick={hideModal}>Cancel</button>
+            </div>
+
+            <form id="addbus-form" onSubmit={handleSubmit}>
+                <div id="addbus-input-container">
+
+                    <input
+                        className="addbus-input single"
+                        type="title"
+                        placeholder="Name"
+                        required
+                        value={title}
+                        onChange={e => setTitle(e.target.value)} />
+
+                    <input
+                        className="addbus-input single"
+                        type="address"
+                        placeholder="Address"
+                        required
+                        value={address}
+                        onChange={e => setAddress(e.target.value)} />
+                    <div id="bus-add-span" className='single'>
+                        <input
+                        id="add-city"
+                            className="addbus-input"
+                            type="city"
+                            placeholder="City"
+                            required
+                            value={city}
+                            onChange={e => setCity(e.target.value)} />
+                        <select className="addbus-input" id="add-state" onChange={e => setState(e.target.value)} value={state}>
+                            {states.map(state =>
+                                <option key={state}>{state}</option>
+                            )}
+                        </select>
+                        <input
+                        id="add-zipcode"
+                            className="addbus-input"
+                            type="zipcode"
+                            placeholder="Zip Code"
+                            value={zipcode}
+                            onChange={e => setZipcode(e.target.value)} />
+                    </div>
+                    <input
+                        className="addbus-input single"
+                        type="phonenumber"
+                        placeholder="Phone Number (no spaces or dashes)"
+                        value={phoneNumber}
+                        onChange={e => setPhoneNumber(e.target.value)} />
+                    <input
+                        className="addbus-input single"
+                        type="website"
+                        placeholder="Website URL (Optional)"
+                        value={website}
+                        onChange={e => setWebsite(e.target.value)} />
+                    <textarea
+                    id="add-description"
+                        className="addbus-input single"
+                        type="description"
+                        placeholder="Description"
+                        required
+                        value={description}
+                        onChange={e => setDescription(e.target.value)} />
+                </div>
+                <div id="addbus-btn-container">
+                    <button type="submit" disabled={hasSubmitted && !!validationErrors.length}>Add Business</button>
+                    <button onClick={hideModal}>Cancel</button>
+                </div>
             </form>
         </div>
     );

@@ -25,8 +25,7 @@ function LoginForm({ hideModal }) {
   return (
     <div id="login-form-container">
       <div id="login-header">
-        <h2>
-          login</h2>
+        <h2>login</h2>
       </div>
       <div id="error-container">
         <ul>
@@ -35,27 +34,24 @@ function LoginForm({ hideModal }) {
       </div>
       <form id="login-form" onSubmit={handleSubmit}>
         <div id="login-input-container">
-
-          <label className="login-label">
-            Email
             <input
               className="login-input"
               type="text"
+              placeholder='Email'
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
             />
-          </label>
-          <label className="login-label">
-            Password
+
             <input
               className="login-input"
+              placeholder='Password'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </label>
+
 
         </div>
         <div id="login-btn-container">
