@@ -13,7 +13,9 @@ const BusinessList = () => {
         dispatch(getBusinesses());
     }, [dispatch])
 
-
+    const formatNumber = (number) => {
+        return `(${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(6)}`
+    }
 
     return (
         <div id="big-businesslist-container">
@@ -31,7 +33,9 @@ const BusinessList = () => {
                             <div className="businesslist-add">
                                 <div>{bus.address}</div>
                                 <div>{bus.city}, {bus.state} {bus.zipcode}</div>
-                            </div>
+                                <div id="phone-number">{formatNumber(bus.phoneNumber)}</div>
+                                </div>
+
                             <p className="businesslist-des">
                                 {bus.description}
                             </p>

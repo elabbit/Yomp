@@ -34,7 +34,7 @@ rev?.Business ?
                                 <div className="reviewlist-nav">
                                     <NavLink key={rev.Business.id} to={`/burgerjoints/${rev.Business.id}`}>{rev.Business.title}</NavLink>
                                 </div>
-                                <StarRating key={`rating${rev.Business.title}`} rating={rev.Business.rating} />
+                                <StarRating key={`rating${rev.id}`} rating={rev.rating} />
 
                                 <p className="reviewlist-des">
                                     {rev.review}

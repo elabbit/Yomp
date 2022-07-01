@@ -1,0 +1,43 @@
+
+
+.each-container{
+display:flex;
+height:80px;
+width:250px;
+border: 1px solid rgba(188, 220, 124, .3);
+padding:20px;
+border-radius:5px;
+justify-content: center;
+align-items: center;
+
+}
+
+#burger-container{
+    display:flex;
+    justify-content: space-evenly;
+    gap:15px;
+}
+.eachlink-container{
+    width:150px;
+
+}
+
+.fa-burger{
+    font-size:40pt;
+    margin-right:15px;
+}
+
+.each-container a{
+color:teal;
+}
+
+#first{
+    color:gold;
+}
+
+#second{
+    color:silver;
+}
+#third{
+    color: brown;
+}

@@ -22,10 +22,10 @@
 
 #businesslist-container a {
     color: #008080;
-    font-size:13pt;
+    font-size: 13pt;
 }
 
-#businesslist-container a:hover{
+#businesslist-container a:hover {
     text-decoration: underline;
 }
 
@@ -51,26 +51,33 @@
 
 }
 
-.businesslist-add{
-    margin-top:10px;
-    padding-left:5px;
+.businesslist-add {
+    margin-top: 10px;
+    padding-left: 5px;
+    font-weight: 450;
 }
 
 
-.businesslist-des{
-    margin-top:10px;
-    padding-left:5px;
+.businesslist-des {
+    margin-top: 10px;
+    padding-left: 5px;
 }
 
 .businesslist-des {
-    color: rgba(47, 79, 79,.6);
-   display: -webkit-box;
-   -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
-   text-overflow: ellipsis;
-  }
-  .businesslist-nav{
-    display:flex;
+    color: rgba(47, 79, 79, .6);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.businesslist-nav {
+    display: flex;
     justify-content: left;
+}
+
+#phone-number {
+    margin-top: 5px;
+
 }
