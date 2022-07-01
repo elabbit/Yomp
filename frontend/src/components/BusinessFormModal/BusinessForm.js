@@ -55,7 +55,7 @@ const BusinessForm = ({ hideModal }) => {
         let createdBus = await dispatch(addBusiness(newBus))
 
         if (createdBus) {
-            history.push(`/business/${createdBus.id}`)
+            history.push(`/burgerjoints/${createdBus.id}`)
             hideModal();
         }
     }

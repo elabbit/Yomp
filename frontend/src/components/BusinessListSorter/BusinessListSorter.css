@@ -1,0 +1,16 @@
+.sort-nav-div{
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.sort-nav-but{
+width:90px;
+height:40px;
+margin-left:20px;
+}
+
+.sort-nav-but:focus{
+    color: teal;
+    background-color: rgb(188, 220, 124)
+}

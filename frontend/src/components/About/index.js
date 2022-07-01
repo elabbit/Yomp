@@ -8,8 +8,11 @@ const About = ()=> {
     <div className="body-container">
 
 <div className="body-content">
+<h2>
 
-                THis is about me.
+Created by Labbit.
+</h2>
+
                 </div>
     </div>
 )

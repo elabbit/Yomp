@@ -13,9 +13,10 @@ async function updateRating(businessId) {
     let sum = 0;
     ratings.forEach((num) => sum += num)
     const average = sum / ratings.length;
-    const roundedAverage = Math.round(average / 0.5) * 0.5;
+    // const roundedAverage = Math.round(average / 0.5) * 0.5;
 
-    business.rating = roundedAverage;
+    business.rating = average;
+
     business.save();
 
 }

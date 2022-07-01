@@ -129,6 +129,30 @@ module.exports = {
         rating: 3,
         review: "Have to admit the the service is quick and the staff friendly.  That being said the both my burger and the straw onions were excessively salty. I had the double bacon burger and the straw onions."
       },
+      {
+        userId: 2,
+        businessId: 11,
+        rating: 4,
+        review: "Freddy's offers excellent burgers and fries and onion rings and sundaes! Everything is made to order so the drive through does take some time to get through but I think it is worth the wait. You know your food is being made freshly and exactly how you ordered. I highly recommend trying the onion rings and the PBC sundae. It is a nice mix of chocolate, peanut butter and banana."
+      },
+      {
+        userId: 3,
+        businessId: 11,
+        rating: 4,
+        review: "I like Freddy's. Not sure what's up with the bad reviews. Must be the snobby people coming in expecting to be served hand and foot again. Those guys!!! Such stinkers! The food is good, fast, and tastes better than your average McDonald's and Wendy's."
+      },
+      {
+        userId: 5,
+        businessId: 12,
+        rating: 3,
+        review: "I was in earlier this week and no greeting and grill chicken sandwich was very dry. The butter burgers are awesome. Service is slow. Can't wait to try something else on the large menu."
+      },
+      {
+        userId: 4,
+        businessId: 12,
+        rating: 4,
+        review: "Burgers are good.. frys are good.. customer service seems to lack .. wish they wouldn't get an attitude with me over drinks having ice or me asking for some sauce .. other than that this place is good fast food"
+      },
 
     ], {});
   },

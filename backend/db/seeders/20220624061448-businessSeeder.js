@@ -128,6 +128,30 @@ module.exports = {
     phoneNumber:"3036564694",
     website:"https://smashburger.com/locations/us/co/boulder/1650-28th-street/",
     rating: 3
+  },
+  {
+    ownerId: 5,
+    title: "Freddy's Frozen Custard & Steakburgers",
+    description: "Enjoying great food without a long wait doesn’t mean your meal has to be cooked before you order it. From steakburgers to sundaes, Freddy’s makes food fresh after you ask for it because that’s the kind of quality you deserve. Take a moment to catch up with friends and family; it’s almost time to eat.",
+    address: '2300 Coalton Rd',
+    city: 'Broomfield',
+    state: 'Colorado',
+    zipcode: '80027',
+    phoneNumber:"3039518120",
+    website:"https://www.freddys.com/",
+    rating: 4
+  },
+  {
+    ownerId: 6,
+    title: "Culver's",
+    description: "Craveable as our signature combination is, the Culver family knew right away that although the business is centered around the food, it is really about the people. While folks can vividly recall the first time they bit into a ButterBurger or tasted a scoop of rich, creamy Fresh Frozen Custard, it’s our way of welcoming guests that truly makes Culver’s delicious.",
+    address: '1218 S Hover Rd',
+    city: 'Longmont',
+    state: 'Colorado',
+    zipcode: '80501',
+    phoneNumber:"3036564694",
+    website:"https://www.culvers.com/restaurants/longmont-co-hover-rd",
+    rating: 3.5
   }
 ], {});
   },

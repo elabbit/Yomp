@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import BusinessList from "./components/BusinessList"
+import BusinessListSorter from "./components/BusinessListSorter"
 import BusinessDetails from "./components/BusinessDetails";
 import HomePage from "./components/HomePage";
 import About from "./components/About";
@@ -14,6 +14,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+
   }, [dispatch]);
 
 
@@ -29,7 +30,7 @@ function App() {
             <About />
           </Route>
           <Route exact path='/burgerjoints'>
-            <BusinessList />
+            <BusinessListSorter />
           </Route>
           <Route exact path='/burgerjoints/:businessId'>
             <BusinessDetails />
