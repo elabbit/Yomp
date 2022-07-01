@@ -4,6 +4,7 @@ import { editReview } from "../../store/review";
 // import ErrorModal from '../ErrorModal';
 // import {useEffect} from "react";
 import './ReviewEditForm.css'
+import { getRating } from "../../store/business";
 
 
 const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
@@ -31,6 +32,7 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
         }
         const edited = await dispatch(editReview(editedRev))
         if (edited) {
+            await dispatch(getRating(rev.businessId))
             hideForm();
             toggleRev();
         }

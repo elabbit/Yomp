@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import { useDispatch } from 'react-redux';
 import { deleteReview} from "../../store/review";
-
+import { getRating } from "../../store/business";
 
 
 
@@ -11,8 +11,10 @@ function DeleteBusModal({ rev }) {
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
 
+
     const handleDelete = async () => {
-     await dispatch(deleteReview(rev.id))
+     const deleted = await dispatch(deleteReview(rev.id))
+if(deleted) await dispatch(getRating(rev.businessId))
     }
     return (
         <>

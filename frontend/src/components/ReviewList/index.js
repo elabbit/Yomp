@@ -45,7 +45,7 @@ rev?.Business ?
                         </div>
                         )
 :
-<h4>Loading...</h4>
+null
                     ))}
                 </div>
             </div>)
