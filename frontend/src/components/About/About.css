@@ -1,0 +1,75 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+    border: 1px solid rgba(188, 220, 124, .3);
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#signature {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#signature div {
+    font-style: italic;
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+}
+
+.contact-link {
+    color: teal;
+}
+
+
+.about-text-contact {
+    font-weight: bold;
+}
+.about-text-contact * {
+    font-weight: bold;
+    padding:5px;
+}
+.icon-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon-container a{
+font-size:20pt;
+
+
+}
+.icon-container a:hover{
+    color:rgb(188, 220, 124);
+
+    }
+
+.about-container-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+    border: 1px solid rgb(188, 220, 124, .3);
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 50px;
+    padding-left:40px;
+    padding-right:40px;
+
+}

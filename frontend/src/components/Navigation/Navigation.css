@@ -72,7 +72,7 @@ a {
 }
 
 .nav-button:hover {
-    text-decoration: underline;
+    color:rgb(188, 220, 124);
     cursor: pointer;
 }
 

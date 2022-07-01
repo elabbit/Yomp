@@ -9,7 +9,7 @@ import "./BusinessListSorter.css"
 const BusinessListSorter = () => {
     const businesses = Object.values(useSelector(state => state.business))
     const [sortType, setSortType] = useState('default');
-    const [sorted, setSorted] = useState([])
+    const [sorted, setSorted] = useState(null)
 
     const dispatch = useDispatch();
 
@@ -37,21 +37,32 @@ const BusinessListSorter = () => {
 
 
     return (
+        <div className="body-container">
+            <div className="body-content">
+                <div id="big-businesslist-container">
+                    <div id='businesslist-container'>
+                        <div id='businesslist-header'>
+                            <h2>Browse Burger Joints</h2>
+                            <div className='sort-nav-div'>
+                                <div className='button-container'>
 
-        <div id="big-businesslist-container">
-            <div id='businesslist-container'>
-                <div id='businesslist-header'>
-                    <h2>Browse Burger Joints</h2>
-                    <div className='sort-nav-div'>
-                <button className='sort-nav-but' onClick={() => setSortType('highest')}>Highest Rated</button>
-                <button className='sort-nav-but' onClick={() => setSortType('lowest')}>Lowest Rated</button>
-                <button className='sort-nav-but' onClick={() => setSortType('alpha')}>A-Z</button>
-            </div>
+                                    <button className='sort-nav-but' onClick={() => setSortType('highest')}>Highest Rated</button>
+                                    <button className='sort-nav-but' onClick={() => setSortType('lowest')}>Lowest Rated</button>
+                                    <button className='sort-nav-but' onClick={() => setSortType('alpha')}>A-Z</button>
+                                </div>
+                            </div>
+                        </div>
+                        {sorted ?
+                            <BusinessList businesses={sorted} />
+                            :
+                            (businesses &&
+                                (<BusinessList businesses={businesses} />)
+                            )
+                        }
+                    </div>
                 </div>
-                <BusinessList businesses={sorted} />
             </div>
         </div>
-
     )
 }
 

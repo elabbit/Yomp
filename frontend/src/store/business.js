@@ -124,8 +124,6 @@ const businessReducer = (state = {}, action) => {
         const updBus = action.payload;
         const newState2 = {...state}
     newState2[updBus.id].rating = updBus.rating;
-console.log(updBus)
-console.log(newState2)
         return newState2;
     default:
       return state;

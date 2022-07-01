@@ -32,6 +32,9 @@ useEffect(()=>{
 
 
     return (
+        <div className="body-container">
+
+        <div className="body-content">
         <div id='big-business-container'>
 
             <div id='business-container'>
@@ -59,6 +62,9 @@ useEffect(()=>{
 
             </div>
         </div>
+        </div>
+        </div>
+
     )
 }
 export default BusinessDetails;
