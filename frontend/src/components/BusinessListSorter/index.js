@@ -32,8 +32,8 @@ const BusinessListSorter = () => {
                 return 0;
             }))
         }
-        console.log(sorted)
-    }, [sortType])
+
+    }, [sortType, businesses])
 
 
     return (

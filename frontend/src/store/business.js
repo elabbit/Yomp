@@ -120,7 +120,7 @@ const businessReducer = (state = {}, action) => {
       return newState;
 
       case GET_RAT:
-        console.log("PAYLOAD", action.payload)
+
         const updBus = action.payload;
         const newState2 = {...state}
     newState2[updBus.id].rating = updBus.rating;
