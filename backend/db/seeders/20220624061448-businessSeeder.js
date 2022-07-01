@@ -67,7 +67,7 @@ module.exports = {
     zipcode: '21286',
     phoneNumber:"4108234224",
     website:"https://locations.redrobin.com/md/towson/450/",
-    rating: 4.5
+    rating: 3.5
   },
   {
     ownerId: 4,
@@ -91,7 +91,7 @@ module.exports = {
     zipcode: '92504',
     phoneNumber:"8007861000",
     website:"https://locations.in-n-out.com/46",
-    rating: 3
+    rating: 5
   },
   {
     ownerId: 5,
@@ -103,7 +103,7 @@ module.exports = {
     zipcode: '07608',
     phoneNumber:"2012884629",
     website:"https://www.habitburger.com/",
-    rating: 4.5
+    rating: 4
   },
   {
     ownerId: 3,

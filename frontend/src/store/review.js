@@ -4,6 +4,7 @@ const GET_ALLREV = 'review/GET_ALLREV';
 const ADD_REV = 'review/ADD_REV';
 const EDIT_REV = 'review/EDIT_REV';
 const DELETE_REV = 'review/DELETE_REV';
+const CLEAR_REV = 'review/CLEAR_REV';
 
 
 const getAllRev = revList => ({
@@ -24,6 +25,10 @@ const editRev = rev => ({
 const deleteRev = id => ({
   type: DELETE_REV,
   id
+})
+
+export const clearReviews = () => ({
+  type: CLEAR_REV
 })
 
 
@@ -112,6 +117,9 @@ const reviewReducer = (state = [], action) => {
       const delIndex = newState.findIndex(obj => obj.id === +action.id)
       newState.splice(delIndex, 1)
       return newState;
+case CLEAR_REV:
+  return null;
+
     default:
       return state;
   }

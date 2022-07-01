@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getReviews } from "../../store/review";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+
 import ReviewForm from "../ReviewForm";
 import LoginFormModal from "../LoginFormModal"
 import SignupFormModal from "../SignupFormModal"
@@ -9,16 +9,12 @@ import ReviewSingle from "../ReviewSingle";
 import BusinessEditForm from '../BusinessEditForm'
 import DeleteBusModal from "../DeleteBusModal";
 
-function Reviews({ business, userId }) {
+function Reviews({ reviews, business, userId }) {
     const sessionUser = useSelector(state => state.session.user);
-    const dispatch = useDispatch();
-    const reviews = useSelector(state => state.review)
     const [showRevForm, setShowRevForm] = useState(false);
     const [showEditForm, setShowEditForm] = useState(false);
 
-    useEffect(() => {
-        dispatch(getReviews(business.id));
-    }, [dispatch, business.id])
+
 
     const formatNumber = (number) => {
         return `(${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(6)}`

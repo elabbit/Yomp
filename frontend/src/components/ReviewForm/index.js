@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import './ReviewForm.css'
 import { addReview } from "../../store/review";
 import ErrorModal from '../ErrorModal';
+import { getRating } from "../../store/business";
 
 
 const ReviewForm = ({ userId, hideForm }) => {
@@ -32,9 +33,9 @@ const ReviewForm = ({ userId, hideForm }) => {
             userId, businessId, rating, review
         }
         const createdRev = await dispatch(addReview(newRev))
+        await dispatch(getRating(businessId))
         if (createdRev) {
-            setRating(0);
-            setReview('');
+
             hideForm();
         }
     }

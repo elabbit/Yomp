@@ -3,6 +3,13 @@ const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const { User, Business, Review } = require('../../db/models')
 
+//GET RATING
+router.get('/rating/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const bus = await Business.findByPk(req.params.id)
+
+    return res.json(bus);
+}));
+
 
 //GET ALL BUSINESSES
 router.get('/', asyncHandler(async (req, res, next) => {

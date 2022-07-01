@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getBusinesses } from "../../store/business";
+import { clearReviews, getReviews } from "../../store/review";
 
 
 import Reviews from "../Reviews";
@@ -14,12 +15,20 @@ const BusinessDetails = () => {
     const { businessId } = useParams();
     const business = useSelector(state => state.business[businessId]);
     const sessionUser = useSelector(state => state.session.user);
+    const reviews = useSelector(state => state.review)
     const dispatch = useDispatch();
+
+useEffect(()=>{
+    clearReviews();
+},[])
+
 
 
     useEffect(() => {
+        dispatch(getReviews(businessId));
         dispatch(getBusinesses());
-    }, [dispatch])
+
+    }, [dispatch,businessId])
 
 
     return (
@@ -27,17 +36,17 @@ const BusinessDetails = () => {
 
             <div id='business-container'>
 
-                {business ?
+                {business && reviews?
                     <>
                         <div>
                             <h1>{business.title}</h1>
                             <div id="large-stars">
-                            <StarRating key={`rating${business.title}`} rating={business.rating} />
+                            <StarRating key={`rating${business.title}`} rating={business.rating} id={business.id}/>
                             </div>
                             <h4>Owner: {`${business.User.firstName} ${business.User.lastName}`}</h4>
 
                         </div>
-                        <Reviews business={business} userId={sessionUser?.id} />
+                        <Reviews reviews={reviews} business={business} userId={sessionUser?.id} />
                     </>
                     :
                     (

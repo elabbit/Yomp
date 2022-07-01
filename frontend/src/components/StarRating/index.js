@@ -1,9 +1,19 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getRating } from '../../store/business';
 import './StarRating.css'
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating,id}) => {
+const dispatch = useDispatch();
+    const rounded = Math.round(+rating / 0.5) * 0.5;
+
+    useEffect(()=>{
+        if(id) dispatch(getRating(id))
+    }, [])
+
     return (
         <div className='stars'>
-            {+rating === 0 ?
+            {rounded === 0 ?
                 <div>
                     <div className="far fa-star"></div>
                     <div className="far fa-star"></div>
@@ -11,7 +21,7 @@ const StarRating = ({ rating }) => {
                     <div className="far fa-star"></div>
                     <div className="far fa-star"></div>
                 </div>
-                : +rating === 1 ?
+                : rounded === 1 ?
                     <div>
                         <div className="fas fa-star"></div>
                         <div className="far fa-star"></div>
@@ -19,7 +29,7 @@ const StarRating = ({ rating }) => {
                         <div className="far fa-star"></div>
                         <div className="far fa-star"></div>
                     </div>
-                    : +rating === 1.5 ?
+                    : rounded === 1.5 ?
                         <div>
                             <div className="fas fa-star"></div>
                             <div className="fas fa-star-half-alt" divd="one-half"></div>
@@ -27,7 +37,7 @@ const StarRating = ({ rating }) => {
                             <div className="far fa-star"></div>
                             <div className="far fa-star"></div>
                         </div>
-                        : +rating === 2 ?
+                        : rounded === 2 ?
                             <div>
                                 <div className="fas fa-star"></div>
                                 <div className="fas fa-star"></div>
@@ -35,7 +45,7 @@ const StarRating = ({ rating }) => {
                                 <div className="far fa-star"></div>
                                 <div className="far fa-star"></div>
                             </div>
-                            : +rating === 2.5 ?
+                            : rounded === 2.5 ?
                                 <div>
                                     <div className="fas fa-star"></div>
                                     <div className="fas fa-star"></div>
@@ -43,7 +53,7 @@ const StarRating = ({ rating }) => {
                                     <div className="far fa-star"></div>
                                     <div className="far fa-star"></div>
                                 </div>
-                                : +rating === 3 ?
+                                : rounded === 3 ?
                                     <div>
                                         <div className="fas fa-star"></div>
                                         <div className="fas fa-star"></div>
@@ -51,7 +61,7 @@ const StarRating = ({ rating }) => {
                                         <div className="far fa-star"></div>
                                         <div className="far fa-star"></div>
                                     </div>
-                                    : +rating === 3.5 ?
+                                    : rounded === 3.5 ?
                                         <div>
                                             <div className="fas fa-star"></div>
                                             <div className="fas fa-star"></div>
@@ -59,7 +69,7 @@ const StarRating = ({ rating }) => {
                                             <div className="fas fa-star-half-alt"></div>
                                             <div className="far fa-star"></div>
                                         </div>
-                                        : +rating === 4 ?
+                                        : rounded === 4 ?
                                             <div className='four'>
                                                 <div className="fas fa-star"></div>
                                                 <div className="fas fa-star"></div>
@@ -67,7 +77,7 @@ const StarRating = ({ rating }) => {
                                                 <div className="fas fa-star"></div>
                                                 <div className="far fa-star"></div>
                                             </div>
-                                            : +rating === 4.5 ?
+                                            : rounded === 4.5 ?
                                                 <div>
                                                     <div className="fas fa-star"></div>
                                                     <div className="fas fa-star"></div>
@@ -75,7 +85,7 @@ const StarRating = ({ rating }) => {
                                                     <div className="fas fa-star"></div>
                                                     <div className="fas fa-star-half-alt"></div>
                                                 </div>
-                                                : +rating === 5 ?
+                                                : rounded === 5 ?
                                                     <div>
                                                         <div className="fas fa-star"></div>
                                                         <div className="fas fa-star"></div>

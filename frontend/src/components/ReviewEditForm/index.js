@@ -71,7 +71,7 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
                         value={review}
                         onChange={e => setReview(e.target.value)} />
                 </div>
-                <div class="edit-rev-buttons">
+                <div className="edit-rev-buttons">
                 <button type="submit" >Submit Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
                 </div>

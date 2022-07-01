@@ -13,11 +13,12 @@ async function updateRating(businessId) {
     let sum = 0;
     ratings.forEach((num) => sum += num)
     const average = sum / ratings.length;
-    // const roundedAverage = Math.round(average / 0.5) * 0.5;
 
     business.rating = average;
 
-    business.save();
+    await business.save();
+
+    return;
 
 }
 
@@ -64,7 +65,7 @@ router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 
     })
 
-    const newRating = updateRating(businessId);
+    updateRating(businessId);
 
     return res.json(userRev);
 }));
@@ -83,7 +84,7 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     editedReview.review = review;
     await editedReview.save();
 
-    updateRating(editedReview.businessId)
+    await updateRating(editedReview.businessId);
 
     return res.json(editedReview);
 }));
@@ -92,11 +93,12 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const id = req.params.id;
     const review = await Review.findByPk(id)
-    updateRating(review.businessId)
+    const businessId = review.businessId;
     await review.destroy();
 
+    await updateRating(businessId)
 
-    return res.json(id)
+    return res.json(id);
 }))
 
 

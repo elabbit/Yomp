@@ -4,6 +4,7 @@ const GET_ALLBUS = 'business/GET_ALLBUS';
 const ADD_BUS = 'business/ADD_BUS';
 const EDIT_BUS = 'business/EDIT_BUS';
 const DELETE_BUS = 'business/DELETE_BUS';
+const GET_RAT = 'business/GET_RAT;'
 
 const getAllBus = busList => ({
   type: GET_ALLBUS,
@@ -25,7 +26,23 @@ const deleteBus = id => ({
   id
 })
 
+const getRat = payload => ({
+  type: GET_RAT,
+  payload
+})
 
+
+export const getRating = (id) => async dispatch => {
+
+  const response = await csrfFetch(`/api/business/rating/${id}`);
+
+  if (response.ok) {
+
+    const updatedBusiness = await response.json();
+    dispatch(getRat(updatedBusiness));
+
+  }
+};
 
 export const getBusinesses = () => async dispatch => {
 
@@ -102,6 +119,14 @@ const businessReducer = (state = {}, action) => {
       delete newState[action.id];
       return newState;
 
+      case GET_RAT:
+        console.log("PAYLOAD", action.payload)
+        const updBus = action.payload;
+        const newState2 = {...state}
+    newState2[updBus.id].rating = updBus.rating;
+console.log(updBus)
+console.log(newState2)
+        return newState2;
     default:
       return state;
   }

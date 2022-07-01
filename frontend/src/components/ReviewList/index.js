@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import StarRating from "../StarRating";
 import './ReviewList.css'
 import { getRecentReviews } from "../../store/review";
+import { clearReviews } from "../../store/review";
 
 
 const ReviewList = () => {
@@ -12,6 +13,7 @@ const ReviewList = () => {
 
     useEffect(() => {
         dispatch(getRecentReviews());
+        return ()=>dispatch(clearReviews());
     }, [dispatch])
 
     return (

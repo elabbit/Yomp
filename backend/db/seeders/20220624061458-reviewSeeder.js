@@ -60,13 +60,13 @@ module.exports = {
       {
         userId: 3,
         businessId: 5,
-        rating: 5,
+        rating: 4,
         review: "This was my first visit to this Red Robin location. I didn't have to wait long to be seated. My friend and I were seated at a booth. I did observe that Robin Robin, practices safe distance within their restaurant. I was amazed how fast my food was brought to my table, after I ordered it. I am looking forward to dining at Red Robin in the near future."
       },
       {
         userId: 6,
         businessId: 5,
-        rating: 4,
+        rating: 3,
         review: "As usual great dinner at Red Robin. I aways order the turkey burger with onion straws which is my favorite. My wife ordered the burger with guacamole and oinion straws. We always enjoy sitting in the bar area due to the great sports coverage. Here is a good tip to resister in line and there are special 2 for one offers etc. we will be back for sure"
       },
       {
