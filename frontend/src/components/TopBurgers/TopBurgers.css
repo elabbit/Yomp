@@ -11,6 +11,11 @@ margin:-25px;
 
 }
 
+h2{
+  margin-top:30px;
+  margin-bottom:20px;
+}
+
 /* .burger-container {
     display: flex;
     flex-direction: column;
