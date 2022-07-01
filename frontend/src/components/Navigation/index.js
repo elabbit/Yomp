@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Navigation.css';
 import * as sessionActions from '../../store/session';
@@ -31,9 +31,9 @@ function Navigation({ isLoaded }) {
       <>
         <div id='center-side'>
 
-<NavLink to='/'>home</NavLink>
-<NavLink to='/burgerjoints'>browse</NavLink>
-<NavLink to='/about'>about</NavLink>
+<NavLink  exact to='/'>home</NavLink>
+<NavLink  exact to='/burgerjoints'>browse</NavLink>
+<NavLink exact to='/about'>about</NavLink>
 
 
         </div>
@@ -55,9 +55,9 @@ function Navigation({ isLoaded }) {
       <>
               <div id='center-side'>
 
-   <NavLink to='/'>home</NavLink>
-   <NavLink to='/burgerjoints'>browse</NavLink>
-   <NavLink to='/about'>about</NavLink>
+   <NavLink exact to='/'>home</NavLink>
+   <NavLink exact to='/burgerjoints'>browse</NavLink>
+   <NavLink exact to='/about'>about</NavLink>
 
 
            </div>
@@ -78,9 +78,9 @@ function Navigation({ isLoaded }) {
   return (
     <div id='header-container'>
       <div id='left-side'>
-        <NavLink exact to="/">
+        <Link to="/">
           <span id='logo'>yomp </span>
-          <i id="yelp" className="fab fa-yelp"></i></NavLink>
+          <i id="yelp" className="fab fa-yelp"></i></Link>
       </div>
       {isLoaded && sessionLinks}
     </div>

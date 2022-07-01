@@ -9,6 +9,7 @@ const HomePage = () => {
     const businesses = Object.values(useSelector(state => state.business))
     const dispatch = useDispatch();
     useEffect(() => {
+
         dispatch(getBusinesses());
     }, [dispatch])
 

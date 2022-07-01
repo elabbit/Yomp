@@ -1,43 +1,110 @@
+.each-container {
+    display: flex;
+    height: 100px;
+    width: 330px;
+margin:-25px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top:-35px;
 
-
-.each-container{
-display:flex;
-height:80px;
-width:250px;
-border: 1px solid rgba(188, 220, 124, .3);
-padding:20px;
-border-radius:5px;
-justify-content: center;
-align-items: center;
 
 }
 
-#burger-container{
-    display:flex;
+/* .burger-container {
+    display: flex;
+    flex-direction: column;
+} */
+
+.eachlink-container {
+    width: 170px;
+
+}
+
+.fa-burger {
+    font-size: 14pt;
+    margin-right: 15px;
+}
+
+.each-container a {
+    color: teal;
+}
+
+.first {
+    background: conic-gradient(#edc800, #e3b600, #f3cf00, #ffe800,
+            #edc800, #e3b600, #f3cf00, #ffe800,
+            #edc800, #e3b600, #f3cf00, #ffe800,
+            #edc800, #e3b600, #f3cf00, #ffe800);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.second {
+    background: conic-gradient(#d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+            #d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+            #d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+            #d7d7d7, #c3c3c3, #cccccc, #c6c6c6);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.third {
+
+    background: conic-gradient(#d95641, #b14439, #b2453a, #d25645,
+            #d95641, #b14439, #b2453a, #d25645,
+            #d95641, #b14439, #b2453a, #d25645,
+            #d95641, #b14439, #b2453a, #d25645);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.link-div {
+    display: flex;
+}
+
+.leaderboard-container {
+    display: flex;
+    margin: auto;
     justify-content: space-evenly;
-    gap:15px;
+    border: 1px solid rgba(188, 220, 124, .3);
+    border-radius: 5px;
+    min-width: 600px;
+    max-width:800px;
+    padding:5px;
 }
-.eachlink-container{
-    width:150px;
+
+
+.leaderboard-list h3 {
+    display: flex;
+    justify-content: left;
+    margin-left: 27px;
 
 }
 
-.fa-burger{
-    font-size:40pt;
-    margin-right:15px;
+.leaderboard-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-bottom: 25px;;
 }
 
-.each-container a{
-color:teal;
+.rev-count{
+    margin-left:5px;
 }
 
-#first{
-    color:gold;
-}
-
-#second{
-    color:silver;
-}
-#third{
-    color: brown;
+.rev-count-num{
+    font-weight:bold;
+    margin-left:5px;
 }

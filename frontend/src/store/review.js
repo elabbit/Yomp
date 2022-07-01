@@ -5,6 +5,7 @@ const ADD_REV = 'review/ADD_REV';
 const EDIT_REV = 'review/EDIT_REV';
 const DELETE_REV = 'review/DELETE_REV';
 
+
 const getAllRev = revList => ({
   type: GET_ALLREV,
   revList
@@ -24,6 +25,7 @@ const deleteRev = id => ({
   type: DELETE_REV,
   id
 })
+
 
 
 
@@ -90,10 +92,6 @@ export const deleteReview = (id) => async dispatch => {
 };
 
 
-
-
-
-
 const reviewReducer = (state = [], action) => {
   switch (action.type) {
     case GET_ALLREV:
@@ -114,7 +112,6 @@ const reviewReducer = (state = [], action) => {
       const delIndex = newState.findIndex(obj => obj.id === +action.id)
       newState.splice(delIndex, 1)
       return newState;
-
     default:
       return state;
   }

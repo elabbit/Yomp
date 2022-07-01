@@ -29,7 +29,7 @@ router.post('/', asyncHandler(async (req, res, next) => {
     } = req.body;
 
 
-    const newBus = await Business.create({ title, description, address, city, state, zipcode, ownerId, phoneNumber, website})
+    const newBus = await Business.create({ title, description, address, city, state, zipcode, ownerId, phoneNumber, website })
     const userBus = await Business.findByPk(newBus.id, {
         include: [User]
     })
@@ -74,6 +74,28 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     return res.json(id)
 }))
 
+//GET TOP 3 MOST REVIEWED
+router.get('/topreviewed', asyncHandler(async (req, res, next) => {
+
+
+    const reviews = await Review.findAll();
+    const data = reviews.map(rev => rev.businessId)
+
+    const newObj = {};
+
+    data.forEach(ele =>
+        newObj[ele] = (newObj[ele] || 0) + 1)
+
+    const newArr = Object.entries(newObj);
+
+
+const sorted = newArr.sort((a,b) => b[1] - a[1])
+
+const resultArr = sorted.slice(0,3)
+
+
+    return res.json(resultArr);
+}));
 
 
 module.exports = router;

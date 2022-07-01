@@ -82,6 +82,9 @@ export const deleteBusiness = (id) => async dispatch => {
 
 
 
+
+
+
 const businessReducer = (state = {}, action) => {
   switch (action.type) {
     case GET_ALLBUS:
