@@ -102,7 +102,12 @@ grid-area:two;
 position: sticky;
 }
 
-#spacer{margin:140px;}
+#spacer{margin:140px;
+
+
+}
+
+
 
 @media (max-width: 800px) {
     .topbus-container {

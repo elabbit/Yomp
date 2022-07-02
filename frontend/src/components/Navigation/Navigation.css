@@ -180,6 +180,10 @@ padding-right:15px;
         align-items:center;
     }
 
+    #center-side * {
+        margin:5px;
+    }
+
 
     #header-container {
         flex-direction: column;

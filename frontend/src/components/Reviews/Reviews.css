@@ -34,7 +34,7 @@ gap:10px;
 } */
 
 #rev-container {
-    min-width:300px;
+    min-width:250px;
 width:60%;
 }
 
@@ -94,8 +94,29 @@ width:60%;
     color:rgb(188, 220, 124);
 }
 
+
+@media (min-width: 1000px) {
+    #rev-container {
+        width:65%;
+        }
+
+
+}
+
+
+
+@media (min-width: 900px) and (max-width: 999px) {
+    #rev-container {
+        width:63%;
+        }
+
+
+}
+
+
+
 @media (max-width: 800px) {
-    #review-container {
+    #rev-container {
         width:100%;
         }
 
