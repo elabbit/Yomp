@@ -109,11 +109,7 @@ const BusinessDetails = () => {
                     </>
                     :
                     (
-                        <div id="notfound">
-                            <h2>Please wait or return
-                                <Link to="/">home.</Link>
-                            </h2>
-                        </div>
+                       <h4>Loading...</h4>
                     )}
 
             </div>

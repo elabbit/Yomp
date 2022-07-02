@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
-const { User, Business, Review } = require('../../db/models')
+const { User, Business, Review, Photo } = require('../../db/models')
 
 
 async function updateRating(businessId) {
@@ -43,7 +43,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const businessId = req.params.id;
     const reviews = await Review.findAll({
         where: { businessId },
-        include: [User],
+        include: [User, Photo],
         order: [
             ['createdAt', 'DESC']
         ]

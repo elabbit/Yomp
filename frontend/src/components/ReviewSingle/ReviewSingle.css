@@ -7,5 +7,24 @@
 
 .single-star-div {
 margin-left:-6px;
+}
 
+.rev-img-container{
+    display:flex;
+    flex-direction: row;
+
+}
+
+.rev-img{
+    max-height:150px;
+    max-width:150px;
+    overflow: hidden;
+border-radius: 8px;
+    margin:15px;
+}
+
+.rev-img img{
+    max-width:100%;
+    max-width:100%;
+    transform: scale(2);
 }
