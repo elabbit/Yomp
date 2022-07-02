@@ -164,6 +164,9 @@ padding-right:15px;
 
 }
 
+#demo-span{
+    margin-right:-5px;
+}
 
 @media (max-width: 750px) {
 

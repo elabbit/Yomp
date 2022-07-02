@@ -18,7 +18,7 @@ function Reviews({ reviews, business, userId }) {
 
     return (
         <div id="big-review-container">
-            <div id="review-container">
+            <div id="rev-container">
                 <h2>Reviews</h2>
                 {showRevForm ?
                     <ReviewForm hideForm={() => setShowRevForm(false)} business={business} userId={userId} />
