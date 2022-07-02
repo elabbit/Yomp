@@ -146,9 +146,10 @@ a {
 #right-side {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content:flex-end; */
     width: 33%;
-
+align-items:flex-end;
+padding-right:15px;
 
 }
 
@@ -164,19 +165,22 @@ a {
 }
 
 
-@media (max-width: 710px) {
+@media (max-width: 750px) {
 
     #left-side,
     #center-side,
     #right-side {
+        margin:5px;
+        padding:0px;
         flex-direction: column;
         width: 100%;
-
+        align-items:center;
     }
 
 
     #header-container {
         flex-direction: column;
         justify-content: center;
+        min-width:200px;
     }
 }

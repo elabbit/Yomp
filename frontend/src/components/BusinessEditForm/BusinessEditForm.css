@@ -56,7 +56,7 @@
 
 #bus-edit-span {
     display: flex;
-    width: 286px;
+    width: 108%;
     justify-content: space-evenly;
 
 }
@@ -77,11 +77,11 @@
     font-size: 14px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     resize: none;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 #bus-edit-buttons{
     display:flex;
     justify-content: center;
-
+margin-bottom: -15px;
 }

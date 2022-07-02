@@ -24,52 +24,22 @@
     background-color: white;
 }
 
-#big-review-container {
-    margin: auto;
-    min-width: 540px;
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "reviews info";
-}
+/* #big-review-container {
+margin:aut0;
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+width:100%;
+gap:10px;
+} */
 
 #review-container {
-    grid-area: reviews;
+    min-width:300px;
+width:60%;
 }
 
 
 
-
-#info-container {
-    position:sticky;
-
-    grid-area: info;
-}
-
-#info-container button{
-    padding:5px;
-    padding-left:10px;
-    padding-right:10px;
-    color:teal;
-    background-color: rgb(188, 220, 124);
-    transition:.5s;
-}
-#info-container button:hover{
-    background-color:teal;
-   color: white;
-   opacity: .5;
-}
-#business-info {
-    position: fixed;
-    width: 280px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid rgba(188, 220, 124, .3);
-    border-radius: 5px;
-    margin-top:-100px;
-
-}
 
 #write-review-button {
     cursor: pointer;
@@ -98,8 +68,9 @@
     margin-bottom: 10px;
 }
 
-h4 {
+#business-info h4 {
     margin-bottom: 4px;
+    margin-top:0px;;
 }
 
 #website-link {
@@ -121,4 +92,12 @@ h4 {
 
 .link-div a:hover {
     color:rgb(188, 220, 124);
+}
+
+@media (max-width: 800px) {
+    #review-container {
+        width:100%;
+        }
+
+
 }

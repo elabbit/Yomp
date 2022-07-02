@@ -20,7 +20,7 @@ const ReviewList = () => {
         reviews ?
             (<div>
                 <div id='reviewlist-header'>
-                    <h2>Recent Reviews</h2>
+                <span className='burger-header-text'><h2>Recent Reviews</h2></span>
                 </div>
                 <div id='list-container'>
                     {reviews.map(rev => (

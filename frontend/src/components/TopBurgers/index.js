@@ -15,7 +15,7 @@ const TopBurgers = ({ businesses, topThree }) => {
 
     return (
         <>
-            <h2>Current Leaderboard</h2>
+            <span className='burger-header-text'><h2>Current Leaderboard</h2></span>
             <div className="leaderboard-container">
                 <div className="leaderboard-list">
                     <h3>Top Rated Burgers</h3>
