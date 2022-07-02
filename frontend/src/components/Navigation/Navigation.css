@@ -1,20 +1,22 @@
 #header-container {
-    margin: none;
+    /* margin: none;
     margin-bottom: 20px;
-    border-bottom: teal solid 4px;
-    width: 100%;
+
+    min-width:540px;
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-width: 540px;
+    justify-content: space-between; */
+    margin: auto;
+    width: 100%;
+    display: flex;
+    border-bottom: teal solid 4px;
+    justify-content: space-evenly;
+    margin-top:15px;
+    padding-bottom:15px;
 }
 
-#left-side,
-#center-side,
-#right-side {
-    margin: 20px;
-}
+
 
 a {
     color: rgba(45, 46, 47, 1);
@@ -22,16 +24,7 @@ a {
     padding-right: 5px;
 }
 
-#left-side * {
-    font-weight: bolder;
-    font-size: 25pt;
-}
 
-#left-side {
-    margin-left: 40px;
-    margin-top: 10px;
-    min-width: 290px;
-}
 
 #logo {
     font-family: Arial Rounded MT Bold;
@@ -42,19 +35,11 @@ a {
     color: teal;
 }
 
-#right-side {
-    margin-top: 0px;
-    margin-right: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 290px;
 
-}
 
 #login-signup-button,
 #logout-button-div {
-    margin-top: 35px;
+
     min-width: 160px;
     display: flex;
     justify-content: right;
@@ -72,13 +57,14 @@ a {
 }
 
 .nav-button:hover {
-    color:rgb(188, 220, 124);
+    color: rgb(188, 220, 124);
     cursor: pointer;
 }
 
 #login-button,
 #signup-button,
-#logout-button, #add-bus-button {
+#logout-button,
+#add-bus-button {
     cursor: pointer;
     background-color: teal;
     border-radius: 4px;
@@ -90,13 +76,14 @@ a {
     padding: 8px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: 10px;
+
     transition: .5s;
 }
 
 #login-button:hover,
 #signup-button:hover,
-#logout-button:hover, #add-bus-button:hover{
+#logout-button:hover,
+#add-bus-button:hover {
     color: teal;
     background-color: rgb(188, 220, 124)
 }
@@ -124,30 +111,72 @@ a {
     margin-left: 5px;
 }
 
-#demo-link {
-    margin-top: 0px;
+
+
+#center-side a {
+    padding: 5px;
+    border-radius: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 33%;
+    display: flex;
+    justify-content: center;
 }
 
-#demo-span {
-    margin-top: -5px;
-    margin-right: -4px;
-}
-
-#center-side a{
-padding:5px;
-border-radius: 6px;
-margin-left:10px;
-margin-right:10px;
-padding-left:10px;
-padding-right:10px;
-}
-
-#center-side a:hover{
+#center-side a:hover {
     background-color: rgb(188, 220, 124, .6);
+
+}
+
+.active {
+
+    background-color: rgb(0, 128, 128, .5);
+}
+
+#left-side,
+#center-side,
+#right-side {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    margin:5px;
+}
+#right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
+
+
+}
+
+#left-side{
+    padding-left:20px;
+  margin-top:-10px;
+}
+
+#left-side * {
+    font-weight: bolder;
+    font-size: 25pt;
+
+}
+
+
+@media (max-width: 710px) {
+
+    #left-side,
+    #center-side,
+    #right-side {
+        flex-direction: column;
+        width: 100%;
 
     }
 
-.active{
 
-    background-color: rgb(0, 128, 128, .5);
+    #header-container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
