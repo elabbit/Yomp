@@ -14,7 +14,7 @@ function PhotoModal({ hideModal, showModal, imageURL }) {
               <img className='actual-photo' src={imageURL} alt=''></img>
             </div>
             <div id="modal-btn-container">
-              <button id="modal-button" onClick={hideModal}>Continue</button>
+              <button id="photo-modal-button" onClick={hideModal}>Continue</button>
             </div>
           </div>
         </Modal>

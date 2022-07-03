@@ -99,3 +99,13 @@ border: 5px;
 
   margin-bottom: -20px;
 }
+
+
+#photo-modal button{
+  margin:0px;
+  margin-top:2px;
+
+height:40px;
+  width:100%;
+  border-radius: 3px;
+}
