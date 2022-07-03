@@ -119,12 +119,12 @@ const businessReducer = (state = {}, action) => {
       delete newState[action.id];
       return newState;
 
-      case GET_RAT:
-
-        const updBus = action.payload;
-        const newState2 = {...state}
-    newState2[updBus.id].rating = updBus.rating;
-        return newState2;
+    case GET_RAT:
+      const updBus = action.payload;
+      const newState2 = { ...state }
+      newState2[updBus.id].rating = updBus.rating;
+      console.log('=========', updBus.rating)
+      return newState2;
     default:
       return state;
   }

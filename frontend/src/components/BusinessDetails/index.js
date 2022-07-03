@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getBusinesses } from "../../store/business";
@@ -8,7 +8,7 @@ import DeleteBusModal from "../DeleteBusModal";
 
 
 import Reviews from "../Reviews";
-import StarRating from "../StarRating";
+import StarRatingBusiness from "../StarRatingBusiness";
 import './BusinessDetails.css'
 
 
@@ -52,7 +52,7 @@ const BusinessDetails = () => {
                                 <div id='business-title'>
                                     <h1>{business.title}</h1>
                                     <div id="large-stars">
-                                        <StarRating key={business.rating} rating={business.rating} id={business.id} />
+                                        <StarRatingBusiness key={business.id} id={business.id} />
                                     </div>
                                     <h4>Owner: {`${business.User.firstName} ${business.User.lastName}`}</h4>
                                 </div>

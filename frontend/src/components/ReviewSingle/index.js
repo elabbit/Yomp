@@ -2,9 +2,11 @@ import { useState } from "react";
 import RevEditToggle from "../RevEditToggle";
 import StarRating from "../StarRating";
 import "./ReviewSingle.css"
+import PhotoModal from "../PhotoModel";
 
 const ReviewSingle = ({ rev, sessionUser }) => {
     const [showRev, setShowRev] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
 
 const datify = (date) => {
@@ -22,15 +24,17 @@ return newDate.toDateString();
                 <div className='rev-date'>{datify(rev.createdAt)}</div>
                     </div>
                     <div className='single-star-div'>
-                        <StarRating rating={rev.rating} id={null} />
+                        <StarRating rating={rev.rating} />
                     </div>
                     <div>{rev.review}</div>
                     {rev?.Photos?.length ?
                         <div className="rev-img-container">
                             {rev.Photos.map((photo) => (
                                 <div key={photo.id} className="rev-img">
-
-                                        <img src={photo.imageURL}></img>
+                                    <button>
+                                    <PhotoModal hideModal={()=>setShowModal(false)} showModal={showModal} imageURL={photo.imageURL} />
+                                        <img src={photo.imageURL} alt=''></img>
+                                    </button>
 
                                 </div>
                             ))
