@@ -2,7 +2,7 @@ import { useState } from "react";
 import RevEditToggle from "../RevEditToggle";
 import StarRating from "../StarRating";
 import "./ReviewSingle.css"
-import PhotoModal from "../PhotoModel";
+import PhotoModal from "../PhotoModal";
 
 const ReviewSingle = ({ rev, sessionUser }) => {
     const [showRev, setShowRev] = useState(true);
@@ -31,11 +31,10 @@ return newDate.toDateString();
                         <div className="rev-img-container">
                             {rev.Photos.map((photo) => (
                                 <div key={photo.id} className="rev-img">
-                                    <button>
-                                    <PhotoModal hideModal={()=>setShowModal(false)} showModal={showModal} imageURL={photo.imageURL} />
+                                    <button onClick={()=>setShowModal(true)}>
                                         <img src={photo.imageURL} alt=''></img>
                                     </button>
-
+                                    <PhotoModal hideModal={()=>setShowModal(false)} showModal={showModal} imageURL={photo.imageURL} />
                                 </div>
                             ))
                             }

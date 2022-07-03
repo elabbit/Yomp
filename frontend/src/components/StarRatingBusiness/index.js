@@ -9,7 +9,7 @@ const dispatch = useDispatch();
 
     const rounded = Math.round(businessRating / 0.5) * 0.5;
     useEffect(() => {
-    dispatch(getRating(id))},[dispatch])
+    dispatch(getRating(id))},[dispatch, id])
 
 
 
