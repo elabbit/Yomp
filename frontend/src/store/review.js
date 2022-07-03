@@ -108,6 +108,7 @@ const reviewReducer = (state = [], action) => {
     case EDIT_REV:
       const editState = [...state]
       const replaceRev = editState.find((rev) => rev.id === action.rev.id)
+      replaceRev.Photos = [...action.rev.Photos]
       replaceRev.rating = action.rev.rating;
       replaceRev.review = action.rev.review;
       return editState;

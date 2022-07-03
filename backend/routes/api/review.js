@@ -107,7 +107,6 @@ console.log(oldPhotos)
     editedReview.rating = rating;
     editedReview.review = review;
     await editedReview.save();
-
     await updateRating(editedReview.businessId);
 
     return res.json(editedReview);
