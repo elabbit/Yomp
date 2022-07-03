@@ -6,11 +6,21 @@ import "./ReviewSingle.css"
 const ReviewSingle = ({ rev, sessionUser }) => {
     const [showRev, setShowRev] = useState(true);
 
+
+const datify = (date) => {
+const newDate = new Date(date)
+return newDate.toDateString();
+
+}
+
     return (
         <div key={rev.id} className="single-review">
             {showRev &&
                 <>
-                    <div>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
+                    <div className='user-date-container'>
+                    <div className='rev-name'>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
+                <div className='rev-date'>{datify(rev.createdAt)}</div>
+                    </div>
                     <div className='single-star-div'>
                         <StarRating rating={rev.rating} id={null} />
                     </div>

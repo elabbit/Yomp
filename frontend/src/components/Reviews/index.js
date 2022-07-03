@@ -40,13 +40,14 @@ function Reviews({ reviews, business, userId }) {
                                 <span> to leave a review!</span>
                             </div>
                         }
-                        <div>
+
+                    </>
+                }
+                      <div>
                             {reviews.map((rev) => (
                                 <ReviewSingle key={rev.id} rev={rev} sessionUser={sessionUser} />
                             ))}
                         </div>
-                    </>
-                }
             </div>
         </div>
     )

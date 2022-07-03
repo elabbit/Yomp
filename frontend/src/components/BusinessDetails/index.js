@@ -52,7 +52,7 @@ const BusinessDetails = () => {
                                 <div id='business-title'>
                                     <h1>{business.title}</h1>
                                     <div id="large-stars">
-                                        <StarRating key={`rating${business.title}`} rating={business.rating} id={business.id} />
+                                        <StarRating key={business.rating} rating={business.rating} id={business.id} />
                                     </div>
                                     <h4>Owner: {`${business.User.firstName} ${business.User.lastName}`}</h4>
                                 </div>

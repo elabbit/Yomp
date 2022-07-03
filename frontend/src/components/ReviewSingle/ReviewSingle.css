@@ -1,7 +1,7 @@
 .single-review {
     border-radius: 8px;
     padding: 20px;
-    border: 1px solid rgba(188, 220, 124, .3);
+    border: 2px solid rgba(188, 220, 124, .3);
     margin-top: 20px;
 }
 
@@ -27,4 +27,16 @@ border-radius: 8px;
     max-width:100%;
     max-width:100%;
     transform: scale(2);
+}
+
+.user-date-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rev-name{
+    font-weight: bold;;
+}
+.rev-date{
+    font-style: italic;
 }

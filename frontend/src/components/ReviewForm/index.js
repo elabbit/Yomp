@@ -49,6 +49,7 @@ const ReviewForm = ({ userId, hideForm }) => {
 
     return (
         <div className='add-rev-container'>
+            <h3>Write A Review</h3>
             <form onSubmit={handleSubmit}>
             <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} />
                 <h4>Please select a rating:</h4>
