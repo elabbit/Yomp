@@ -9,16 +9,22 @@ async function updateRating(businessId) {
         where: { businessId },
     });
     const business = await Business.findByPk(businessId)
-    const ratings = reviews.map((review) => review.rating)
-    let sum = 0;
-    ratings.forEach((num) => sum += num)
-    const average = sum / ratings.length;
 
-    business.rating = average;
+    if (!reviews.length) {
+        business.rating = 0;
+        await business.save();
+        return;
+    } else {
+        const ratings = reviews.map((review) => review.rating)
+        let sum = 0;
+        ratings.forEach((num) => sum += num)
+        const average = sum / ratings.length;
+        business.rating = average;
+        await business.save();
+        return;
 
-    await business.save();
+    }
 
-    return;
 
 }
 
