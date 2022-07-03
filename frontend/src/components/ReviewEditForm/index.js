@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
 // import ErrorModal from '../ErrorModal';
@@ -11,6 +11,13 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState(rev.rating);
     const [review, setReview] = useState(rev.review);
+    const [urlOne, setUrlOne] = useState('');
+    const [urlTwo, setUrlTwo] = useState('');
+
+    useEffect(() => {
+    if(rev.Photos[0]) setUrlOne(rev.Photos[0].imageURL);
+    if(rev.Photos[1]) setUrlTwo(rev.Photos[1].imageURL);
+    }, []);
     // const [validationErrors, setValidationErrors] = useState([]);
     // const [showModal, setShowModal] = useState(false);
 
@@ -30,7 +37,11 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
             ...rev,
             rating, review
         }
-        const edited = await dispatch(editReview(editedRev))
+
+
+        const photos = [urlOne,urlTwo]
+
+        const edited = await dispatch(editReview(editedRev, photos))
         if (edited) {
             await dispatch(getRating(rev.businessId))
             hideForm();
@@ -73,6 +84,27 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
                         value={review}
                         onChange={e => setReview(e.target.value)} />
                 </div>
+
+                <div className="url-input-container">
+                    <h5>Add up to two image URLs ending in .jpg .jpeg or .png:</h5>
+                    <div>
+                        <input
+                            type="urlOne"
+                            placeholder="Image URL (Optional)"
+                            value={urlOne}
+                            onChange={e => setUrlOne(e.target.value)} />
+                    </div>
+                    <div>
+                        <input
+                            type="urlTwo"
+                            placeholder="Image URL (Optional)"
+                            value={urlTwo}
+                            onChange={e => setUrlTwo(e.target.value)} />
+                    </div>
+                </div>
+
+
+
                 <div className="edit-rev-buttons">
                 <button type="submit" >Submit Edit</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>

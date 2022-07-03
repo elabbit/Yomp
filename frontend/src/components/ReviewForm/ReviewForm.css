@@ -125,3 +125,31 @@ justify-content: center;
    color: white;
    opacity: .5;
 }
+
+
+.url-input-container{
+	margin-right:15px;
+}
+
+.url-input-container h5{
+margin-bottom:5px;
+
+
+}
+
+.url-input-container input {
+	width:100%;
+    margin: 4px;
+    background-color: rgb(188, 220, 124, .4);
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    color: rgba(45, 46, 47, 1);
+
+}
+
+.url-input-container input:focus{
+    background-color: rgb(188, 220, 124, .7);
+    outline: solid 2px rgba(0, 128, 128, .8);
+
+}
