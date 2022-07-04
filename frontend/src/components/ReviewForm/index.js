@@ -21,8 +21,12 @@ const ReviewForm = ({ userId, hideForm }) => {
     useEffect(() => {
         const errors = []
         if (!rating) errors.push("Please select a rating.")
-
-
+        if (urlOne !== '') {
+            if (!urlOne.endsWith('.jpg') && !urlOne.endsWith('.jpeg') && !urlOne.endsWith('.png')) errors.push("Please enter a valid image URL for the first image.")
+        }
+        if (urlTwo !== '') {
+            if (!urlTwo.endsWith('.jpg') && !urlTwo.endsWith('.jpeg') && !urlTwo.endsWith('.png')) errors.push("Please enter a valid image URL for the second image.")
+        }
         setValidationErrors(errors)
 
     }, [rating, urlOne, urlTwo]);

@@ -111,6 +111,7 @@ const BusinessForm = ({ hideModal }) => {
                         </select>
                         <input
                         id="add-zipcode"
+                        maxLength={5}
                             className="addbus-input"
                             type="zipcode"
                             placeholder="Zip Code"
@@ -121,6 +122,7 @@ const BusinessForm = ({ hideModal }) => {
                         className="addbus-input single"
                         type="phonenumber"
                         placeholder="Phone Number (no spaces or dashes)"
+                        maxLength={10}
                         value={phoneNumber}
                         onChange={e => setPhoneNumber(e.target.value)} />
                     <input

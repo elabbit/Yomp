@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
-// import ErrorModal from '../ErrorModal';
-// import {useEffect} from "react";
+import ErrorModal from '../ErrorModal';
 import './ReviewEditForm.css'
 import { getRating } from "../../store/business";
 
@@ -19,21 +18,26 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     if(rev.Photos[1]) setUrlTwo(rev.Photos[1].imageURL);
     // eslint-disable-next-line
     }, []);
-    // const [validationErrors, setValidationErrors] = useState([]);
-    // const [showModal, setShowModal] = useState(false);
+    const [validationErrors, setValidationErrors] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
-    // useEffect(() => {
-    //     const errors = []
-    //     if (!rating) errors.push("Please select a rating.")
-    //     setValidationErrors(errors)
+    useEffect(() => {
+        const errors = []
+        if (urlOne !== '') {
+            if (!urlOne.endsWith('.jpg') && !urlOne.endsWith('.jpeg') && !urlOne.endsWith('.png')) errors.push("Please enter a valid image URL for the first image.")
+        }
+        if (urlTwo !== '') {
+            if (!urlTwo.endsWith('.jpg') && !urlTwo.endsWith('.jpeg') && !urlTwo.endsWith('.png')) errors.push("Please enter a valid image URL for the second image.")
+        }
+        setValidationErrors(errors)
 
-    // }, [rating]);
+    }, [urlOne, urlTwo]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    //     if (validationErrors.length){
-    //      return setShowModal(true);
-    // }
+        if (validationErrors.length){
+         return setShowModal(true);
+    }
         const editedRev = {
             ...rev,
             rating, review
@@ -60,7 +64,7 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
         <div className='edit-rev-container'>
     <h3>Edit Your Review</h3>
             <form onSubmit={handleSubmit}>
-            {/* <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} /> */}
+            <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} />
                     <h5>Please select a rating:</h5>
                 <div id="edit-rating-container">
                     <div className="wrapper">

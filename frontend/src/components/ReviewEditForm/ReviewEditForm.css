@@ -21,8 +21,8 @@
 
 }
 #edit-reviewtext:focus{
-    outline: none;
-    border: solid 2px teal;
+    background-color: rgb(188, 220, 124, .7);
+    outline: solid 2px rgba(0, 128, 128, .4);
 }
 
 
