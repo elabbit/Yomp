@@ -85,3 +85,20 @@
     justify-content: center;
 margin-bottom: -15px;
 }
+
+#edit-bus-container h3 {
+margin-top:-15px;
+border-bottom:2px solid rgb(188, 220, 124);
+padding-bottom:5px;
+margin-bottom:25px;
+
+}
+
+#edit-bus-container{
+    outline:2px solid teal;
+    margin:-15px;
+    padding:20px;
+    padding-top:30px;
+    padding-bottom:30px;
+    border-radius: 8px;
+}

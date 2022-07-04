@@ -4,6 +4,7 @@ import { getBusinesses } from "../../store/business";
 import ReviewList from "../ReviewList";
 import TopBurgers from "../TopBurgers";
 import { getTopReviewed } from "../../store/misc";
+import Splash from "../Splash";
 
 
 const HomePage = () => {
@@ -19,6 +20,7 @@ const HomePage = () => {
     return (
         <div className="body-container">
             <div className="body-content">
+                <Splash />
                 {businesses && topThree ?
                     <>
                         <TopBurgers businesses={businesses} topThree={topThree} />

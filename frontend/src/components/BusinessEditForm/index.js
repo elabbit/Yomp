@@ -70,10 +70,11 @@ const BusinessEditForm = ({ hideForm, business }) => {
     }
 
     return (
-        <div>
+        <div id="edit-bus-container">
+            <h3>Edit Burger Joint</h3>
             <form onSubmit={handleSubmit} id="edit-businessform">
                     <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} />
-                <h4>Business Name</h4>
+                <h4>Name</h4>
                 <input
                     className="bus-edit"
                     id="bus-title"

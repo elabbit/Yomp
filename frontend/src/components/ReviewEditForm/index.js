@@ -57,10 +57,10 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
 
     return (
         <div className='edit-rev-container'>
-
+    <h3>Edit Your Review</h3>
             <form onSubmit={handleSubmit}>
             {/* <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} /> */}
-                    <h4>Please select a rating:</h4>
+                    <h5>Please select a rating:</h5>
                 <div id="edit-rating-container">
                     <div className="wrapper">
                         <input type="radio" name="rate" id="rate1" value={5} onChange={e => setRating(e.target.value)} />

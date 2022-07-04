@@ -33,7 +33,7 @@ const BusinessListSorter = () => {
             }))
         }
 
-    }, [sortType, businesses])
+    }, [sortType])
 
 
     return (

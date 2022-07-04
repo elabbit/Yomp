@@ -73,36 +73,36 @@ button {
     opacity: .5;
 }
 
-#business-info {grid-area: two;
+#business-info {
+    grid-area: two;
     position: fixed;
-margin-top:20px;
+    margin-top: 20px;
     padding: 15px;
     border: 2px solid rgba(0, 128, 129, .3);
-    border-radius: 6px;
-width:275px;
+    border-radius: 8px;
+    width: 275px;
 }
 
-#business-info>div {
-    margin: 15px;
-}
+
 
 .topbus-container {
-    display:grid;
+    display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
-    'one two';
+        'one two';
 }
 
 .column-one {
-grid-area:one;
+    grid-area: one;
 }
 
 .column-two {
-grid-area:two;
-position: sticky;
+    grid-area: two;
+    position: sticky;
 }
 
-#spacer{margin:140px;
+#spacer {
+    margin: 140px;
 
 
 }
@@ -111,26 +111,31 @@ position: sticky;
 
 @media (max-width: 800px) {
     .topbus-container {
-        display:flex;
+        display: flex;
         flex-direction: column;
 
 
     }
-    #spacer{margin:0px;}
+
+    #spacer {
+        margin: 0px;
+    }
+
     #business-info {
         position: static;
-        width:auto;
+        width: auto;
         min-width: 200px;
-max-width:300px;
+        max-width: 300px;
 
     }
+
     .column-two {
 
         display: flex;
 
-    justify-content: center;
+        justify-content: center;
 
-    width:100%;
-        }
+        width: 100%;
+    }
 
 }

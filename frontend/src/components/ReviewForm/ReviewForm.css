@@ -46,11 +46,11 @@
 	transition: .6s;
 	background-color: rgb(188, 220, 124);
 	border-radius: 5px;
-    height: 20px;
-    width: 20px;
-    margin: 1px;
-    line-height: 20px;
-    text-align: center;
+	height: 20px;
+	width: 20px;
+	margin: 1px;
+	line-height: 20px;
+	text-align: center;
 
 }
 
@@ -67,89 +67,108 @@
 }
 
 
-#add-reviewtext{
-	padding:10px;
-    font-family: Arial, Helvetica, sans-serif;
-    resize: none;
-    border: none;
-    border-radius: 4px;
-    height:100px;
-    background-color: rgba(188, 220, 124, .4);
-	width:100%;
+#add-reviewtext {
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	resize: none;
+	border: none;
+	border-radius: 4px;
+	height: 100px;
+	background-color: rgba(188, 220, 124, .4);
+	width: 100%;
 
 
 
 }
-#add-reviewtext:focus{
-    outline: none;
-    border: solid 2px teal;
+
+#add-reviewtext:focus {
+	outline: none;
+	border: solid 2px teal;
 }
 
-.add-rev-container{
+.add-rev-container {
 
-		border-radius: 8px;
-		padding: 20px;
-		padding-top:10px;
-		border: 2px solid rgba(0, 128, 128, .3);
-		margin-top: 20px;
-
-}
-
-#add-text-container{
-margin-right:20px;
+	border-radius: 8px;
+	padding: 20px;
+	padding-top: 10px;
+	border: 2px solid rgb(0, 128, 128);
+	/* background-color: rgba(0, 128, 128,.1); */
+	margin-top: 20px;
 
 }
 
-.add-rev-container h4{
-	font-weight:480;
-	margin-top:0px;
+#add-text-container {
+	margin-right: 20px;
+
+}
+
+.add-rev-container h4 {
+	font-weight: 480;
+	margin-top: 0px;
 	margin-bottom: 20px;
 }
 
-#add-rev-buttons{
+#add-rev-buttons {
 	margin-top: 10px;
-display: flex;
-justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
-#add-rev-buttons button{
-    padding:5px;
-    padding-left:10px;
-    padding-right:10px;
-    color:teal;
-    background-color: rgb(188, 220, 124);
-    transition:.5s;
-}
-#add-rev-buttons button:hover{
-    background-color:teal;
-   color: white;
-   opacity: .5;
+#add-rev-buttons button {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: teal;
+	background-color: rgb(188, 220, 124);
+	transition: .5s;
 }
 
-
-.url-input-container{
-	margin-right:15px;
+#add-rev-buttons button:hover {
+	background-color: teal;
+	color: white;
+	opacity: .5;
 }
 
-.url-input-container h5{
-margin-bottom:5px;
+
+.url-input-container {
+	margin-right: 15px;
+}
+
+.url-input-container h5 {
+	margin-bottom: 5px;
+
 
 
 }
 
 .url-input-container input {
-	width:100%;
-    margin: 4px;
-    background-color: rgb(188, 220, 124, .4);
-    border: none;
-    padding: 5px;
-    border-radius: 4px;
-    color: rgba(45, 46, 47, 1);
+	width: 100%;
+	margin: 4px;
+	background-color: rgb(188, 220, 124, .4);
+	border: none;
+	padding: 5px;
+	border-radius: 4px;
+	color: rgba(45, 46, 47, 1);
 
 }
 
-.url-input-container input:focus{
-    background-color: rgb(188, 220, 124, .7);
-    outline: solid 2px rgba(0, 128, 128, .8);
+.url-input-container input:focus {
+	background-color: rgb(188, 220, 124, .7);
+	outline: solid 2px rgba(0, 128, 128, .8);
+
+}
+
+.add-rev-container h3 {
+	border-bottom: 2px solid rgb(188, 220, 124);
+	padding-bottom: 2px;
+	margin-top: 5px;
+	padding-left: 5px;
+	padding-bottom:5px;
+
+}
+
+.add-rev-container h5 {
+	font-weight: 460;
+	padding-left: 4px;
 
 }
