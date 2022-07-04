@@ -53,12 +53,12 @@ export const getReviews = (id) => async dispatch => {
   }
 };
 
-export const addReview = (newRev) => async dispatch => {
+export const addReview = (newRev, photos) => async dispatch => {
 
   const response = await csrfFetch(`/api/review/${newRev.businessId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newRev)
+    body: JSON.stringify({newRev, photos})
   });
 
   if (response.ok) {
@@ -68,12 +68,12 @@ export const addReview = (newRev) => async dispatch => {
   }
 };
 
-export const editReview = (editedRev) => async dispatch => {
+export const editReview = (editedRev, photos) => async dispatch => {
 
   const response = await csrfFetch(`/api/review/${editedRev.businessId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(editedRev)
+    body: JSON.stringify({editedRev, photos})
   });
 
   if (response.ok) {
@@ -103,12 +103,12 @@ const reviewReducer = (state = [], action) => {
       return [...action.revList];
 
     case ADD_REV:
-
       return [action.rev, ...state]
 
     case EDIT_REV:
       const editState = [...state]
       const replaceRev = editState.find((rev) => rev.id === action.rev.id)
+      replaceRev.Photos = [...action.rev.Photos]
       replaceRev.rating = action.rev.rating;
       replaceRev.review = action.rev.review;
       return editState;

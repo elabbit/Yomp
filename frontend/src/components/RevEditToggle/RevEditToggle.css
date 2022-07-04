@@ -12,7 +12,7 @@ justify-content: center;
     background-color: rgb(188, 220, 124);
     transition:.5s;
 }
-.add-rev-buttons button:hover{
+.edit-rev-buttons button:hover{
     background-color:teal;
    color: white;
    opacity: .5;

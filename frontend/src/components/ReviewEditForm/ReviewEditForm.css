@@ -3,6 +3,7 @@
 	margin-top: -15px;
 	height: 30px;
 	position: relative;
+
 }
 
 
@@ -20,8 +21,8 @@
 
 }
 #edit-reviewtext:focus{
-    outline: none;
-    border: solid 2px teal;
+    background-color: rgb(188, 220, 124, .7);
+    outline: solid 2px rgba(0, 128, 128, .4);
 }
 
 
@@ -31,8 +32,24 @@ margin-right:20px;
 
 }
 
-.edit-rev-container h4{
-	font-weight:450;
-	margin-top:0px;
-	margin-bottom: 20px;
+.edit-rev-container h5{
+	font-weight: 460;
+	padding-left: 4px;
+}
+
+
+
+.edit-rev-container h3 {
+	border-bottom: 2px solid rgb(188, 220, 124);
+	padding-bottom: 5px;
+
+	padding-left: 5px;
+	margin-top:-5px;
+}
+.edit-rev-container{
+    outline:solid 2px teal; ;
+
+margin:-20px;
+padding:20px;
+border-radius:8px;
 }

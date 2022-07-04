@@ -29,7 +29,7 @@ const BusinessForm = ({ hideModal }) => {
         if (city.length > 30) errors.push('City can not exceed 30 characters.')
         if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 numerical digits.')
         if (phoneNumber.length !== 10 || isNaN(phoneNumber)) errors.push('Phone number must be 10 numerical digits.')
-        if (website.length > 250) errors.push('URL can not exceed 250 characters.')
+        if (website.length > 300) errors.push('URL can not exceed 300 characters.')
         setValidationErrors(errors)
 
     }, [title, description, address, city, zipcode, phoneNumber, website]);
@@ -111,6 +111,7 @@ const BusinessForm = ({ hideModal }) => {
                         </select>
                         <input
                         id="add-zipcode"
+                        maxLength={5}
                             className="addbus-input"
                             type="zipcode"
                             placeholder="Zip Code"
@@ -121,6 +122,7 @@ const BusinessForm = ({ hideModal }) => {
                         className="addbus-input single"
                         type="phonenumber"
                         placeholder="Phone Number (no spaces or dashes)"
+                        maxLength={10}
                         value={phoneNumber}
                         onChange={e => setPhoneNumber(e.target.value)} />
                     <input

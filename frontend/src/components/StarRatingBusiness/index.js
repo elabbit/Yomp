@@ -1,10 +1,21 @@
-import './StarRating.css'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRating } from '../../store/business';
 
-const StarRating = ({ rating }) => {
+const StarRatingBusiness = ({id}) => {
+    const businessRating = useSelector(state => state.business[id].rating);
 
-    const rounded = Math.round(+rating / 0.5) * 0.5;
+const dispatch = useDispatch();
+
+    const rounded = Math.round(businessRating / 0.5) * 0.5;
+    useEffect(() => {
+    dispatch(getRating(id))},[dispatch, id])
+
+
+
 
     return (
+        businessRating &&
         <div className='stars'>
             {rounded === 0 ?
                 <div>
@@ -90,8 +101,9 @@ const StarRating = ({ rating }) => {
 
             }
         </div>
+
     )
 
 }
 
-export default StarRating;
+export default StarRatingBusiness;

@@ -1,81 +1,112 @@
 #modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 
-  #modal-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(47, 79, 79,.7);
+#modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(47, 79, 79, .7);
 
-  }
+}
 
-  #modal-content {
-    position: absolute;
-    background-color:white;
-    border-radius: 5px;
-    display:flex;
-  }
-
-
-  #modal button {
-    padding:5px;
-    padding-left:10px;
-    padding-right:10px;
-    background-color:teal;
-    color: white;
-    transition:.5s;
-    font-size:11pt;
-  }
-  #modal button:hover{
-    color:teal;
-    background-color:teal;
-    background-color: rgb(188, 220, 124);
-  }
+#modal-content {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+}
 
 
-  #modal-form-container {
-    border-radius: 4px;
-    width: 350px;
-    min-height: 100px;
-    padding: 20px;
+#modal button {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: teal;
+  color: white;
+  transition: .5s;
+  font-size: 11pt;
+}
+
+#modal button:hover {
+  color: teal;
+  background-color: teal;
+  background-color: rgb(188, 220, 124);
+}
+
+
+#modal-form-container {
+  border-radius: 5px;
+  width: 350px;
+  min-height: 100px;
+  padding: 20px;
 
 }
 
 #modal-header {
-    border-bottom: 4px solid teal;
-    margin-bottom: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-top: -20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border-bottom: 4px solid teal;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #modal-header h2 {
-    font-family: Arial Rounded MT Bold;
+  font-family: Arial Rounded MT Bold;
 }
 
 
 #modal-btn-container {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 #modal-container ul {
-    font-style: italic;
-    list-style: none;
-    margin-bottom:5px;
-    margin-left: -25px;
+  font-style: italic;
+  list-style: none;
+  margin-bottom: 5px;
+  margin-left: -25px;
+}
+
+#photo-modal {
+  margin-top: -50px;
+  border: 5px;
+  height: 100%;
+  width: 100%;
+  background-color: teal;
+
+  border-radius: 3px;
+
+}
+
+
+
+.actual-photo {
+  max-height: 80vh;
+  border-radius: 3px;
+  margin-bottom: -20px;
+}
+
+
+#photo-modal button {
+  margin: 0px;
+  margin-top: 2px;
+
+  height: 40px;
+  width: 100%;
+  border-radius: 3px;
 }

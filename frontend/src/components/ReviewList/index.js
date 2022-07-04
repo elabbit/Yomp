@@ -31,8 +31,8 @@ rev?.Business ?
                                 <div id='review-header'>
                                     <div id="review-name">{rev.User.firstName} {rev.User.lastName[0]}.</div>
                                     <div id='review-text'>Wrote a review</div>
-
                                 </div>
+
                                 <div className="reviewlist-nav">
                                     <NavLink key={rev.Business.id} to={`/burgerjoints/${rev.Business.id}`}>{rev.Business.title}</NavLink>
                                 </div>

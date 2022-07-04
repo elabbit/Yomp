@@ -1,4 +1,5 @@
 import './About.css'
+import portrait from "../../images/teal3.png"
 
 
 const About = () => {
@@ -9,6 +10,7 @@ const About = () => {
 
             <div className="body-content">
                 <div className="about-container">
+                    <img id="portrait" src={portrait} alt=''/>
                     <div className='about-text'>
                         Combining my love for burgers and the desire to grow my skills as a software developer. This is my first solo full stack project built with a <span className='bold'>React/Redux</span> frontend and a <span className='bold'>NodeJS/Express</span> backend.
                     </div>

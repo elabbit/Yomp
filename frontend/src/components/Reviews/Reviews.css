@@ -41,6 +41,7 @@ width:60%;
 
 
 
+
 #write-review-button {
     cursor: pointer;
     background-color: teal;
@@ -93,6 +94,13 @@ width:60%;
 .link-div a:hover {
     color:rgb(188, 220, 124);
 }
+
+
+
+
+
+
+
 
 
 @media (min-width: 1000px) {

@@ -1,4 +1,5 @@
 .about-container {
+    min-height:115px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,8 +8,9 @@
     max-width: 500px;
     border: 2px solid rgba(188, 220, 124, .3);
     padding: 40px;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-top: 30px;
+    min-width:210px;
 }
 
 .bold {
@@ -61,18 +63,30 @@ font-size:20pt;
     }
 
 .about-container-contact {
+    min-height:180px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: auto;
     max-width: 500px;
-    border: 2px solid rgba(188, 220, 124, .3);
+    border: 2px solid rgba(0, 128, 128, .3);
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-top: 30px;
     padding-left:40px;
     padding-right:40px;
     padding-top:0px;
+    min-width:210px;
+
+}
+
+#portrait{
+    max-height:200px;
+    width:auto;
+
+    border-radius: 8px;
+    margin-top: -10px;
+    margin-bottom:25px;
 
 }

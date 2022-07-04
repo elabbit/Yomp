@@ -32,8 +32,8 @@ const BusinessListSorter = () => {
                 return 0;
             }))
         }
-
-    }, [sortType, businesses])
+// eslint-disable-next-line
+    }, [sortType])
 
 
     return (

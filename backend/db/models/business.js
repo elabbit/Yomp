@@ -48,6 +48,8 @@ module.exports = (sequelize, DataTypes) => {
     Business.belongsTo(models.User, {foreignKey: 'ownerId'})
     Business.hasMany(models.Review, {foreignKey: 'businessId', onDelete: 'cascade',
     hooks: true})
+    Business.hasMany(models.Photo, {foreignKey: 'businessId', onDelete: 'cascade',
+    hooks: true})
   };
   return Business;
 };

@@ -30,7 +30,7 @@ const BusinessEditForm = ({ hideForm, business }) => {
         if (city.length > 30) errors.push('City can not exceed 30 characters.')
         if (zipcode.length !== 5 || isNaN(zipcode)) errors.push('Zip Code must be 5 digits.')
         if (phoneNumber.length !== 10 || isNaN(phoneNumber)) errors.push('Phone number must be 10 numerical digits.')
-        if (website.length > 250) errors.push('URL can not exceed 250 characters.')
+        if (website.length > 300) errors.push('URL can not exceed 300 characters.')
         setValidationErrors(errors)
 
     }, [title, description, address, city, zipcode, phoneNumber, website]);
@@ -70,10 +70,11 @@ const BusinessEditForm = ({ hideForm, business }) => {
     }
 
     return (
-        <div>
+        <div id="edit-bus-container">
+            <h3>Edit Burger Joint</h3>
             <form onSubmit={handleSubmit} id="edit-businessform">
                     <ErrorModal hideModal={()=>setShowModal(false)} showModal={showModal} validationErrors={validationErrors} />
-                <h4>Business Name</h4>
+                <h4>Name</h4>
                 <input
                     className="bus-edit"
                     id="bus-title"

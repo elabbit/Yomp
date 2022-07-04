@@ -56,8 +56,7 @@
 
 .login-input:focus {
     background-color: rgb(188, 220, 124, .7);
-    outline: solid 2px rgba(0, 128, 128, .8);
-
+    outline: solid 2px rgba(0, 128, 128, .4);
 }
 
 #login-input-container {

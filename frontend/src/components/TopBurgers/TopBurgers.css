@@ -82,11 +82,10 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: space-evenly;
-width:100%;
+    width: 100%;
 
 
 }
-
 
 .leaderboard-list h3 {
     display: flex;
@@ -102,7 +101,7 @@ width:100%;
     justify-content: left;
     margin: 10px;
     padding: 20px;
-    border: 2px solid rgba(188, 220, 124, .3);
+    border: 2px solid rgba(0, 128, 128, .3);
     border-radius: 8px;
 }
 
