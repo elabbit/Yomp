@@ -24,12 +24,9 @@
 
 #businesslist-container a {
     color: #008080;
-    font-size: 13pt;
 }
 
-#businesslist-container a:hover {
-    color: rgb(188, 220, 124);
-}
+
 
 #list-container {
     display: flex;
@@ -41,16 +38,6 @@
 
 }
 
-.businesslist-box {
-    /* flex: 1 0 calc(25% - 10px); */
-    min-width: 215px;
-    max-width: 215px;
-    height: 200px;
-    border-radius: 8px;
-    padding: 20px;
-    border: 2px solid rgba(0, 128, 128, .3);
-
-}
 
 .businesslist-add {
     margin-top: 10px;
@@ -65,6 +52,8 @@
 }
 
 .businesslist-des {
+    font-size:13px;
+    font-weight:460;
     color: rgba(47, 79, 79, .6);
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -81,4 +70,26 @@
 #phone-number {
     margin-top: 5px;
 
+}
+
+
+.bus-titleee{
+    margin-left:5px;
+}
+
+
+.bus-list-link{
+min-width: 215px;
+max-width: 215px;
+height: 200px;
+border-radius: 8px;
+padding: 20px;
+border: 2px solid rgba(0, 128, 128, .3);
+}
+
+.bus-list-link:hover{
+    transform: scale(1.06);
+    border: 2px solid rgb(188, 220, 124);
+    border: 2px solid rgb(0, 128, 128);
+    background-color: rgba(188, 220, 124, .2);
 }

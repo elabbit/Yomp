@@ -17,6 +17,7 @@ const ReviewEditForm = ({ hideForm, rev, toggleRev }) => {
     useEffect(() => {
     if(rev.Photos[0]) setUrlOne(rev.Photos[0].imageURL);
     if(rev.Photos[1]) setUrlTwo(rev.Photos[1].imageURL);
+    // eslint-disable-next-line
     }, []);
     // const [validationErrors, setValidationErrors] = useState([]);
     // const [showModal, setShowModal] = useState(false);

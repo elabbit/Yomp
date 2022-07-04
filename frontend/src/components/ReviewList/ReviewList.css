@@ -27,8 +27,7 @@
 
 .reviewlist-box {
    /* flex: 1 0 calc(25% - 10px); */
-    min-width: 215px;
-    max-width: 215px;
+    width: 215px;
     height: 180px;
     border-radius: 8px;
     padding: 20px;

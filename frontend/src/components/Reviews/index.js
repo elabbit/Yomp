@@ -20,13 +20,8 @@ function Reviews({ reviews, business, userId }) {
     return (
         <div id="big-review-container">
             <div id="rev-container">
-            <h2>Photos</h2>
-<Photos reviews={reviews}/>
-
-
-
-
-
+                <h2>Photos</h2>
+                <Photos reviews={reviews} />
                 <h2>Reviews</h2>
                 {showRevForm ?
                     <ReviewForm hideForm={() => setShowRevForm(false)} business={business} userId={userId} />
@@ -51,11 +46,11 @@ function Reviews({ reviews, business, userId }) {
 
                     </>
                 }
-                      <div>
-                            {reviews.map((rev) => (
-                                <ReviewSingle key={rev.id} rev={rev} sessionUser={sessionUser} />
-                            ))}
-                        </div>
+                <div>
+                    {reviews.map((rev) => (
+                        <ReviewSingle key={rev.id} rev={rev} sessionUser={sessionUser} />
+                    ))}
+                </div>
             </div>
         </div>
     )

@@ -22,9 +22,10 @@ const ReviewForm = ({ userId, hideForm }) => {
         const errors = []
         if (!rating) errors.push("Please select a rating.")
 
+
         setValidationErrors(errors)
 
-    }, [rating]);
+    }, [rating, urlOne, urlTwo]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,7 +36,7 @@ const ReviewForm = ({ userId, hideForm }) => {
             userId, businessId, rating, review
         }
 
-const photos = [urlOne,urlTwo]
+        const photos = [urlOne, urlTwo]
 
         const createdRev = await dispatch(addReview(newRev, photos))
         await dispatch(getRating(businessId))

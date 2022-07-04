@@ -21,10 +21,10 @@ const ReviewSingle = ({ rev, sessionUser }) => {
                 <>
                     <div className='user-date-container'>
                         <div className='rev-name'>{`${rev.User.firstName} ${rev.User.lastName[0]}.`}</div>
-                        <div className='rev-date'>{datify(rev.createdAt)}</div>
                     </div>
                     <div className='single-star-div'>
                         <StarRating rating={rev.rating} />
+                        <div className='rev-date'>{datify(rev.createdAt)}</div>
                     </div>
                     <div>{rev.review}</div>
                     {rev?.Photos?.length ?

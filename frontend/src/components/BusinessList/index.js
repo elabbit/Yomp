@@ -15,9 +15,12 @@ const BusinessList = ({ businesses }) => {
 
             <div id='list-container'>
                 {businesses.map(bus => (
+                     <NavLink className="bus-list-link" key={bus.id} to={`/burgerjoints/${bus.id}`}>
                     <div className='businesslist-box' key={`div${bus.title}`}>
                         <div className="businesslist-nav">
-                            <NavLink key={bus.id} to={`/burgerjoints/${bus.id}`}>{bus.title}</NavLink>
+                           <div className='bus-titleee'>
+                            {bus.title}
+                            </div>
                         </div>
                         <StarRating key={`rating${bus.title}`} rating={bus.rating} />
                         <div className="businesslist-add">
@@ -30,6 +33,7 @@ const BusinessList = ({ businesses }) => {
                             {bus.description}
                         </p>
                     </div>
+                    </NavLink>
                 ))}
             </div>
         </>

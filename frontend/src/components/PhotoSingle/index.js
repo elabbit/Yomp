@@ -5,15 +5,10 @@ const PhotoSingle = ({imageURL }) => {
     const [showModal, setShowModal] = useState(false);
 
 
-    const datify = (date) => {
-        const newDate = new Date(date)
-        return newDate.toDateString();
-
-    }
-
     return (
         <div key={imageURL} className='image-container'>
-                    <button onClick={() => setShowModal(true)}>
+                    <button className='photo-modal-btn' onClick={() => setShowModal(true)}>
+                        <div className= 'photo-modal-btntxt'>Invalid image URL</div>
                         <img className='actual-image' src={imageURL} alt=''></img>
                     </button>
                     <PhotoModal hideModal={() => setShowModal(false)} showModal={showModal} imageURL={imageURL} />
