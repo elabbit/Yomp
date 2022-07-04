@@ -12,6 +12,7 @@ import StarRatingBusiness from "../StarRatingBusiness";
 import './BusinessDetails.css'
 
 
+
 const BusinessDetails = () => {
     const { businessId } = useParams();
     const business = useSelector(state => state.business[businessId]);
@@ -74,42 +75,37 @@ const BusinessDetails = () => {
                                                     </span>
                                                 )
                                             }
-                                            <div>
-                                                <h4>Address</h4>
-                                                <div>{business.address}</div>
-                                                <div>{business.city}, {business.state} {business.zipcode}</div>
-                                            </div>
-                                            <div>
-                                                <h4>Phone Number</h4>
-                                                <div>{formatNumber(business.phoneNumber)}</div>
-                                            </div>
-                                            <div>
-                                                <h4>Website</h4>
-                                                <div><a id="website-link" href={business.website}>{business.website}</a></div>
-                                            </div>
-                                            <div>
-                                                <h4>About the Business</h4>
-                                                <div>{business.description}</div>
+                                            <div id="bus-info-display">
+                                                <div>
+                                                    <h4>Address</h4>
+                                                    <div>{business.address}</div>
+                                                    <div>{business.city}, {business.state} {business.zipcode}</div>
+                                                </div>
+                                                <div>
+                                                    <h4>Phone Number</h4>
+                                                    <div>{formatNumber(business.phoneNumber)}</div>
+                                                </div>
+                                                <div>
+                                                    <h4>Website</h4>
+                                                    <div><a id="website-link" href={business.website}>{business.website}</a></div>
+                                                </div>
+                                                <div>
+                                                    <h4>About the Business</h4>
+                                                    <div>{business.description}</div>
+                                                </div>
                                             </div>
                                         </div>
                                     }
                                 </div>
                                 <div id='spacer'>
-
                                 </div>
-
                             </div>
-
-
                         </div>
-
-
-
                         <Reviews reviews={reviews} business={business} userId={sessionUser?.id} />
                     </>
                     :
                     (
-                       <h4>Loading...</h4>
+                        <h4>Loading...</h4>
                     )}
 
             </div>

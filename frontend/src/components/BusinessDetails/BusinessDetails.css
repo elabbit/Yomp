@@ -83,6 +83,15 @@ button {
     width: 275px;
 }
 
+#bus-info-display{
+
+    padding:10px;
+
+}
+#bus-info-display > div{
+
+margin-bottom:15px;
+}
 
 
 .topbus-container {

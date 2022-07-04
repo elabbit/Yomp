@@ -12,9 +12,9 @@ const PhotoSingle = ({imageURL }) => {
     }
 
     return (
-        <div key={imageURL} className="single-review">
+        <div key={imageURL} className='image-container'>
                     <button onClick={() => setShowModal(true)}>
-                        <img src={imageURL} alt=''></img>
+                        <img className='actual-image' src={imageURL} alt=''></img>
                     </button>
                     <PhotoModal hideModal={() => setShowModal(false)} showModal={showModal} imageURL={imageURL} />
         </div>
