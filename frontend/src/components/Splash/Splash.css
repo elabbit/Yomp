@@ -1,10 +1,18 @@
 #splash-banner {
-max-width: 1100px;
-border-radius:8px;
-overflow: hidden;
+
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
-#splash-banner img{
- width:100%;
- height:auto;
+
+#splash-banner img {
+    max-width: 100%;
+    height: auto;
+
+}
+#splash-banner button{
+background-color: transparent;
+cursor:default;
 
 }

@@ -10,6 +10,7 @@
     padding: 40px;
     border-radius: 8px;
     margin-top: 30px;
+    min-width:210px;
 }
 
 .bold {
@@ -76,5 +77,16 @@ font-size:20pt;
     padding-left:40px;
     padding-right:40px;
     padding-top:0px;
+    min-width:210px;
+
+}
+
+#portrait{
+    max-height:200px;
+    width:auto;
+
+    border-radius: 8px;
+    margin-top: -10px;
+    margin-bottom:25px;
 
 }

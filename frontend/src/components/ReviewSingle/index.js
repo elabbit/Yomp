@@ -26,7 +26,7 @@ const ReviewSingle = ({ rev, sessionUser }) => {
                         <StarRating rating={rev.rating} />
                         <div className='rev-date'>{datify(rev.createdAt)}</div>
                     </div>
-                    <div>{rev.review}</div>
+                    <div className="the-review">{rev.review}</div>
                     {rev?.Photos?.length ?
                         <div className="rev-img-container">
                             {rev.Photos.map((photo) => (
