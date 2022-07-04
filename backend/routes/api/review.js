@@ -91,7 +91,6 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const oldPhotos = await Photo.findAll({
         where: { reviewId: id }
     })
-console.log(oldPhotos)
 
     if (oldPhotos && oldPhotos[0]) await oldPhotos[0].destroy();
     if (oldPhotos && oldPhotos[1]) await oldPhotos[1].destroy();
