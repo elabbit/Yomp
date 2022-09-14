@@ -76,7 +76,7 @@ button {
 #business-info {
     grid-area: two;
     position: fixed;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px;
     border: 2px solid rgba(0, 128, 129, .3);
     border-radius: 8px;

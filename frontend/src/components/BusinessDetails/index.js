@@ -5,11 +5,11 @@ import { getBusinesses } from "../../store/business";
 import { clearReviews, getReviews } from "../../store/review";
 import BusinessEditForm from '../BusinessEditForm'
 import DeleteBusModal from "../DeleteBusModal";
-
-
 import Reviews from "../Reviews";
 import StarRatingBusiness from "../StarRatingBusiness";
 import './BusinessDetails.css'
+import MapContainer from "../Maps";
+
 
 
 
@@ -21,13 +21,9 @@ const BusinessDetails = () => {
     const [showEditForm, setShowEditForm] = useState(false);
     const dispatch = useDispatch();
 
-
-
     useEffect(() => {
         clearReviews();
     }, [])
-
-
 
     useEffect(() => {
         dispatch(getReviews(businessId));
@@ -42,10 +38,7 @@ const BusinessDetails = () => {
 
     return (
         <div className="body-container">
-
             <div className="body-content">
-
-
                 {business && reviews ?
                     <>
                         <div className="topbus-container">
@@ -76,6 +69,7 @@ const BusinessDetails = () => {
                                                 )
                                             }
                                             <div id="bus-info-display">
+                                                <MapContainer address={business.address}/>
                                                 <div>
                                                     <h4>Address</h4>
                                                     <div>{business.address}</div>
