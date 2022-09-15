@@ -12,7 +12,6 @@ const BusinessList = ({ businesses }) => {
 
     return (
         <>
-
             <div id='list-container'>
                 {businesses.map(bus => (
                      <NavLink className="bus-list-link" key={bus.id} to={`/burgerjoints/${bus.id}`}>
@@ -28,7 +27,6 @@ const BusinessList = ({ businesses }) => {
                             <div>{bus.city}, {bus.state} {bus.zipcode}</div>
                             <div id="phone-number">{formatNumber(bus.phoneNumber)}</div>
                         </div>
-
                         <p className="businesslist-des">
                             {bus.description}
                         </p>

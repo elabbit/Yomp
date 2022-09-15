@@ -2,23 +2,39 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { getBusinesses } from "../../store/business";
 import BusinessList from "../BusinessList";
-import "./BusinessListSorter.css"
-
-
+import "./BusinessListSorter.css";
 
 const BusinessListSorter = () => {
-    const businesses = Object.values(useSelector(state => state.business))
+    const businessList = Object.values(useSelector(state => state.business))
     const [sortType, setSortType] = useState('default');
-    const [sorted, setSorted] = useState(null)
-
+    const [sorted, setSorted] = useState(null);
+    const [search, setSearch] = useState('');
+    const [businesses, setBusinesses] = useState([])
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getBusinesses());
+        dispatch(getBusinesses())
     }, [dispatch])
 
     useEffect(() => {
+        if(businessList.length) setBusinesses(businessList)
+    }, [businessList.length])
 
+    useEffect(() => {
+        if(search.length > 0){
+            const busList = businessList.filter((ele)=>{
+                return ele.title.toLowerCase().includes(search.toLowerCase()) ||
+                ele.city.toLowerCase().startsWith(search.toLowerCase()) ||
+                ele.state.toLowerCase().startsWith(search.toLowerCase()) ||
+                ele.address.toLowerCase().includes(search.toLowerCase())
+            })
+            setBusinesses(busList)
+        } else{
+            setBusinesses(businessList)
+        }
+    }, [search])
+
+    useEffect(() => {
         if (sortType === 'default') {
             setSortType(businesses)
         } else if (sortType === 'highest') {
@@ -32,9 +48,7 @@ const BusinessListSorter = () => {
                 return 0;
             }))
         }
-// eslint-disable-next-line
     }, [sortType])
-
 
     return (
         <div className="body-container">
@@ -42,14 +56,20 @@ const BusinessListSorter = () => {
                 <div id="big-businesslist-container">
                     <div id='businesslist-container'>
                         <div id='businesslist-header'>
-                            <h2>Browse Burger Joints</h2>
                             <div className='sort-nav-div'>
+                                <h2>Browse Burger Joints</h2>
                                 <div className='button-container'>
-
                                     <button className='sort-nav-but' onClick={() => setSortType('highest')}>Highest Rated</button>
                                     <button className='sort-nav-but' onClick={() => setSortType('lowest')}>Lowest Rated</button>
                                     <button className='sort-nav-but' onClick={() => setSortType('alpha')}>A-Z</button>
                                 </div>
+                            </div>
+                            <div className='search-div'>
+                                <input
+                                    placeholder="Search"
+                                    onChange={(e) => setSearch(e.target.value)}
+                                >
+                                </input>
                             </div>
                         </div>
                         {sorted ?

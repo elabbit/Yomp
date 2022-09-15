@@ -15,11 +15,9 @@
     max-width: 1100px;
     margin: auto;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     margin-bottom: 5px;
     margin-top: -15px;
-
-
 }
 
 #businesslist-container a {
@@ -92,4 +90,11 @@ border: 2px solid rgba(0, 128, 128, .3);
     border: 2px solid rgb(188, 220, 124);
     border: 2px solid rgb(0, 128, 128);
     background-color: rgba(188, 220, 124, .2);
+}
+
+
+@media (max-width: 650px){
+    #businesslist-header {
+        flex-direction: column;
+    }
 }
